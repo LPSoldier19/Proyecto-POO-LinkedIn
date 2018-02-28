@@ -1,0 +1,18 @@
+.navbar{
+    background-color:#2B3E4A;
+}
+
+#logo-in{
+    width: 100%;
+}
+
+#navbar-a{
+    text-decoration: none;
+    color: white;
+}
+
+body{
+    background-image: url(../img/fondo.jpg);
+    background-size: cover;
+    filter: blur(5%);
+}
