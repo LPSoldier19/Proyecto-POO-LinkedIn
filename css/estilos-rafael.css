@@ -14,5 +14,8 @@
 body{
     background-image: url(../img/fondo.jpg);
     background-size: cover;
-    filter: blur(5%);
+}
+
+.form-signin{
+    background-color: white;
 }
