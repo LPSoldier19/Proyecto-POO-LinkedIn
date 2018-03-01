@@ -3,7 +3,7 @@
 }
 
 #logo-in{
-    width: 100%;
+    width: 80%;
 }
 
 #navbar-a{
@@ -16,6 +16,11 @@ body{
     background-size: cover;
 }
 
-.form-signin{
-    background-color: white;
+
+.form-signing{
+    border-top: 1px solid black;
+}
+
+#politicas{
+    font-size: 14px;
 }
