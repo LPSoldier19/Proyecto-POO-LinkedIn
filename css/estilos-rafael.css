@@ -1,5 +1,10 @@
 .navbar{
     background-color:#2B3E4A;
+    width: 100%;
+}
+
+#navbar-a{
+    color: white
 }
 
 #logo-in{
