@@ -3,6 +3,7 @@
     width: 100%;
 }
 
+
 #navbar-a{
     color: white
 }
@@ -11,7 +12,11 @@
     width: 100%;
 }
 
-body{
+#logo-muro{
+    width: 75%;
+}
+
+#cuerpo-index{
     background-image: url(../img/fondo.jpg);
     background-size: cover;
 }
