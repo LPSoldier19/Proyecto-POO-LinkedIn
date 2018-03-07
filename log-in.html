@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+
+<head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -7,35 +9,36 @@
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="stylesheet" href="css/estilos-rafael.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-<body id="cuerpo-index">
+</head>
+    <body id="cuerpo-index">
 
-	<div class="navbar">
-    <div class="container">
+	<div class="navbar sticky-top">
+    <div class="container-fluid">
         <div class="row">
-            <div class="offset-lg-1 col-lg-2 offset-md-1 col-md-3 col-sm-5 offset-sm-4 col-6 offset-3">
+            <div class="col-lg-2 col-md-3 col-sm-5 col-5">
                 <a href="index.html"><img src="img/logo-in.png" id="logo-in"></a>
             </div>
             
-            <div class="offset-lg-4 col-lg-4 offset-md-2 col-md-6 col-sm-3 col-3 d-none d-sm-none d-md-block">
-            	<a href="#" id="navbar-a">No tienes una cuenta?</a>
-                <a href="registro.html" class="btn btn-outline-danger">Unete Ahora</a>
+            <div class="offset-lg-9 col-lg-1 offset-md-5 col-md-3 offset-sm-5 col-sm-3 offset-3 col-4">
+                <a href="sing-in.html" class="btn btn-outline-danger">Unete Ahora</a>
             </div>
         </div>
     </div>
     </div>
 
-    <div class="container pt-5 mt-5">
+    <div class="container pt-5 mt-5 mb-5">
         <div class="row" id="form-signin">
-        <div class="offset-lg-2 col-lg-8 offset-md-2 col-md-9	 col-sm-10 offset-sm-1 col-12">
-            <form class="card">
-                <div class="row">
+        <div class="offset-lg-3 col-lg-6 offset-md-2 col-md-9 col-sm-10 offset-sm-1 col-10 offset-1">
+            <form class="card"  id="color">
+                <div class="row text-center">
                     <div class="col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-10 offset-sm-1 col-10 offset-1">
-                         <br>
-                            <label>Correo Electronico:</label><br>
-                            <input type="email" class="form-control"><br>
-                            <label>Contraseña:</label><br>
-                            <input type="password" class="form-control"><br>
-                            <input type="buttom" value="Únete Ahora" class="btn btn-outline-danger btn-block">
+                            <img src="img/logo-form.png" class="card-img-top mt-3">    
+                            <br>
+                            <input type="email" class="form-control mt-4 " placeholder="Direccion de Correo Electronico"><br>
+                            <input type="password" class="form-control" placeholder="Contraseña"><br>
+                            <a href="#">¿Has olvidado tu contraseña?</a><br>
+                            ¿Todavía no eres miembro?<a href="sing-in.html">Únete Ahora</a><br>
+                            <input type="buttom" value="Únete Ahora" class="btn btn-outline-danger btn-block mt-2">
                             <br>
                     </div>
                 </div>
@@ -43,6 +46,54 @@
         </div>
     </div>
 </div>
+<br>
+
+ <div class="mt-5">
+        <div class="footer p-4">
+        
+        <div class="row">
+            <div class="col-lg-5 offset-lg-1 mt-2" id="footer">
+                <p><strong>General</strong></p>
+                <a href="#" id="footer-a">Registrate |</a>
+                <a href="#" id="footer-a">Centro de Ayuda |</a>
+                <a href="#" id="footer-a">Acerca de |</a>
+                <a href="#" id="footer-a">Prensa |</a>
+                <a href="#" id="footer-a">Blog |</a>
+                <a href="#" id="footer-a">Empleo |</a>
+                <a href="#" id="footer-a">Desarrolladores</a>
+                <br><br>
+                <p><strong>Navegar por LinkedIn</strong></p>
+                <a href="#" id="footer-a">Learning |</a>
+                <a href="#" id="footer-a">Empleos |</a>
+                <a href="#" id="footer-a">Sueldo |</a>
+                <a href="#" id="footer-a">Móvil |</a>
+                <a href="#" id="footer-a">ProFinder</a>
+            </div>
+
+            <div class="col-lg-4 mt-2 " id="footer">
+                <p><strong>Business Solution</strong></p>
+                <a href="#" id="footer-a">Talent |</a>
+                <a href="#" id="footer-a">Marketing |</a>
+                <a href="#" id="footer-a">Sales |</a>
+                <a href="#" id="footer-a">Learning</a>
+                <br><br>
+                <p><strong>Directorios</strong></p>
+                <a href="#" id="footer-a">Miembros |</a>
+                <a href="#" id="footer-a">Empleos |</a>
+                <a href="#" id="footer-a">Pulse |</a>
+                <a href="#" id="footer-a">Temas |</a>
+                <a href="#" id="footer-a">Empresas |</a>
+                <a href="#" id="footer-a">Sueldos |</a>
+                <a href="#" id="footer-a">Universidades |</a>
+                <a href="#" id="footer-a">Cargos |</a>
+                <a href="#" id="footer-a">Universidades |</a>
+                <a href="#" id="footer-a">Cargos |</a>
+                <a href="#" id="footer-a">Personas |</a>
+                <a href="#" id="footer-a">Principales Empleos |</a>
+            </div>
+        </div>   
+    </div>
+    </div>
     
 </body>
 </html>
