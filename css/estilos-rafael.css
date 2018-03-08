@@ -18,7 +18,7 @@
 }
 
 #logo-muro{
-    width: 60%;
+    width: 50%;
 }
 
 #cuerpo-index{
@@ -56,3 +56,17 @@
     border-top: 1px solid white;
 }
 
+.btn-link{
+    color: white;
+    font-size: 90%;
+}
+
+.btn-link:hover{
+    color: rgb(129, 129, 129);
+    text-decoration: none;
+}
+
+#usuario-img{
+    border-radius: 50%;
+    width: 90%;
+}

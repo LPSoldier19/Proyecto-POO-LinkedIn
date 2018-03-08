@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilos-rafael.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 </head>
 
 <body>
@@ -15,17 +16,32 @@
     <nav class="navbar">
         <div class="container">
             <div class="row no-gutters">
-                <div class="col-lg-1">
+                <div class="col-lg-1 pt-1">
                     <a href="#">
                         <img src="img/favicon.png" id="logo-muro">
                     </a>
                 </div>
-                <div class="col-lg-5">
-                    <form>
-                        <input class="form-control" type="text" placeholder="Buscar" aria-label="Search">
+                <div class="col-lg-3 pb-0">
+                    <form class="inner-addon pt-2">
+                        <input class="form-control" type="text" placeholder="Buscar">
                     </form>
                 </div>
 
+                <div class="offset-lg-1 col-lg-5 btn-group btn-group-toggle pb-0">
+                    <a href="#Muro" class="btn btn-link"><i class="fas fa-home fa-lg"></i><br>Inicio</a>
+                    <a href="#MiRed" class="btn btn-link"><i class="fas fa-users fa-lg"></i><br>Mi Red</a>
+                    <a href="#Empleos" class="btn btn-link"><i class="fas fa-briefcase fa-lg"></i><br>Empleos</a>
+                    <a href="#Mensajes" class="btn btn-link"><i class="fas fa-envelope fa-lg"></i><br>Mensajes</a>
+                    <a href="#Notificaciones" class="btn btn-link"><i class="fas fa-bell fa-lg"></i><br>Notificaciones</a>
+                    <a class="dropdown-toggle btn btn-link border-right pr-4" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/usuario.png" id="usuario-img"><br>Yo</a>
+                </div>
+
+
+                <div class="col-lg-2 pb-0">
+                    <a class="dropdown-toggle btn btn-link pl-5" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-th fa-2x"></i><br>
+                    Productos</a>  
+                </div>
             </div>
         </div>
 
