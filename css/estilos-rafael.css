@@ -95,3 +95,20 @@
     background-color: rgba(82, 139, 224, 0.534);
     color: dodgerblue;
 }
+
+#card-muro{
+    font-size: 90%;
+}
+
+#card-muro:hover{
+    box-shadow: 3px 5px 20px 0px #0000006c;
+}
+
+#btn-link{
+    color: #84878a;
+    font-size: 90%;
+}
+
+#btn-link:hover{
+    color: dodgerblue;
+}
