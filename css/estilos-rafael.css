@@ -70,3 +70,28 @@
     border-radius: 50%;
     width: 90%;
 }
+
+#header{
+    background-color: #e1e9ee;
+}
+
+#container-muro{
+    background-color: #EEEEEE;
+}
+
+#img-usuario-perfil{
+    border-radius: 50%;
+}
+
+#boton-input-escribir{
+    color: dodgerblue;
+}
+
+#boton-input-text{
+    color: #84878a;
+}
+
+#boton-input-text:hover{
+    background-color: rgba(82, 139, 224, 0.534);
+    color: dodgerblue;
+}

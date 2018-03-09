@@ -11,7 +11,7 @@
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 </head>
 
-<body>
+<body id="container-muro">
    
     <nav class="navbar sticky-top">
         <div class="container">
@@ -46,6 +46,68 @@
         </div>
 
     </nav>
+
+    <div class="container mt-5" >
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="card fixed-left">
+                    <img src="img/fondo-card.svg" class="img-fluid pt-0" >
+                   <div class="card-header text-center">
+                        <img src="img/usuario.png" class="img-fluid"  id="img-usuario-perfil">
+                        <p><strong>Te damos la bienvenida, Usuario</strong></p>
+                   </div>
+                   <div class="card-subtitle text-center pt-4">
+                      <h6><a href="#">Numero</a></h6>
+                      <p>Contacto
+                        <br>
+                        <strong>Amplia tu Red</strong>
+                      </p>
+                   </div>
+                   <div class="card-footer text-center">
+                    <p>Accede a informacion exclusiva y herramientas exclusivas</p>
+                   </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <textarea class="form-control" id="txta-publicar" cols="30" rows="2" placeholder="Comparte un artículo, foto, vídeo o idea"></textarea>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row no-gutters">
+                            <div class="col-lg-1  pt-2" id="boton-input-escribir">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <div class="col-lg-1 pt-2" id="boton-input-text">
+                                <label class="btn btn-default btn-file fas fa-camera-retro">
+                                    <input type="file" style="display: none;" class="form-control-file">
+                                </label>
+                            </div>
+                            <div class="col-lg-1 pt-2" id="boton-input-text">
+                                <label class="btn btn-default btn-file fas fa-video">
+                                <input type="file" style="display: none;" class="form-control-file">
+                                </label>
+                            </div>
+                            <div class="col-lg-2 offset-lg-7">
+                                <button type="submit" class="btn btn-primary">Publicar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="card fixed-right">
+                    <div class="card-body text-center">
+                        <a href="empleos.html">
+                            <img src="https://static.licdn.com/scds/common/u/images/promo/ads/li_evergreen_jobs_ad_300x250_v1.jpg" alt="Advertise on LinkedIn" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
     
    <script src="js/bootstrap.min.js"></script>
 </body>
