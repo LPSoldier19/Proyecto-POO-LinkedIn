@@ -113,6 +113,10 @@
     color: dodgerblue;
 }
 
-#card-left{
-    display: block;
+#Bienvenida{
+    font-size: 100%; 
+}
+
+#Bienvenida:hover{
+    color: slateblue;
 }

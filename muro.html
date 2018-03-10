@@ -27,21 +27,16 @@
                     </form>
                 </div>
 
-                <div class="offset-lg-1 col-lg-5 btn-group btn-group-toggle pb-0">
+                <div class="offset-lg-3 col-lg-5 btn-group btn-group-toggle pb-0">
                     <a href="#Muro" class="btn btn-link"><i class="fas fa-home fa-lg"></i><br>Inicio</a>
                     <a href="#MiRed" class="btn btn-link"><i class="fas fa-users fa-lg"></i><br>Mi Red</a>
                     <a href="#Empleos" class="btn btn-link"><i class="fas fa-briefcase fa-lg"></i><br>Empleos</a>
                     <a href="#Mensajes" class="btn btn-link"><i class="fas fa-envelope fa-lg"></i><br>Mensajes</a>
                     <a href="#Notificaciones" class="btn btn-link"><i class="fas fa-bell fa-lg"></i><br>Notificaciones</a>
-                    <a class="dropdown-toggle btn btn-link border-right pr-4" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/usuario.png" id="usuario-img"><br>Yo</a>
+                    <a class="dropdown-toggle btn btn-link pr-4" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/usuario.png" id="usuario-img"><br>Yo</a>
                 </div>
 
 
-                <div class="col-lg-2 pb-0">
-                    <a class="dropdown-toggle btn btn-link pl-5" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-th fa-2x"></i><br>
-                    Productos</a>  
-                </div>
             </div>
         </div>
 
@@ -50,11 +45,11 @@
     <div class="container mt-5" >
         <div class="row">
             <div class="col-lg-3">
-                <div class="card" id="card-left">
+                <div class="card" id="card-muro">
                     <img src="img/fondo-card.svg" class="img-fluid pt-0" >
                    <div class="card-header text-center">
                         <img src="img/usuario.png" class="img-fluid"  id="img-usuario-perfil">
-                        <p><strong>Te damos la bienvenida, Usuario</strong></p>
+                        <p id="Bienvenida"><strong>Te damos la bienvenida, Usuario</strong></p>
                    </div>
                    <div class="card-subtitle text-center pt-4">
                       <h6><a href="#">Numero</a></h6>
@@ -285,7 +280,7 @@
             </div>
 
             <div class="col-lg-3">
-                <div class="card fixed-right">
+                <div class="card" id="card-muro">
                     <div class="card-body text-center">
                         <a href="empleos.html">
                             <img src="img/blanco-linkedin.jpg" alt="Advertise on LinkedIn" class="img-fluid">
@@ -297,6 +292,6 @@
         </div>
     </div>
     
-   <script src="js/bootstrap.min.js"></script>
+   <script src="js/bootstrap.js"></script>
 </body>
 </html>
