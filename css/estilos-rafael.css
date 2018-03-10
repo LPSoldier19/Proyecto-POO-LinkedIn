@@ -40,6 +40,10 @@
     background-color:#434649;
 }
 
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #footer{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
@@ -119,4 +123,35 @@
 
 #Bienvenida:hover{
     color: slateblue;
+}
+
+#numero-mi-red:hover{
+    color: #0084bf;
+    text-decoration: none;
+}
+
+#ver-mi-red:hover{
+    color: #0084bf;
+}
+
+#gestion-invitaciones{
+    color: black;
+}
+
+#gestion-invitaciones:hover{
+    color: black;
+    text-decoration: none;
+}
+
+#btn-grupo-red{
+    color: #84878a;
+}
+
+#btn-grupo-red:hover{
+    color: rgb(77, 77, 77);
+    text-decoration: none;
+}
+
+#card-usuarios-red{
+    font-size: 80%;
 }
