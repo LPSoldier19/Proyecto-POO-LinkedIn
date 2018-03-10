@@ -101,7 +101,7 @@
 }
 
 #card-muro:hover{
-    box-shadow: 3px 5px 20px 0px #0000006c;
+    box-shadow: 3px 5px 20px 0px #8d8d8d6c;
 }
 
 #btn-link{
@@ -111,4 +111,8 @@
 
 #btn-link:hover{
     color: dodgerblue;
+}
+
+#card-left{
+    display: block;
 }
