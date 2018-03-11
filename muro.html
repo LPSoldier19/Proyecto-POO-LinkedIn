@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilos-rafael.css">
+    <link rel="stylesheet" href="css/estiloscss-matt.css">
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 </head>
 
@@ -34,16 +35,17 @@
                         <a href="#Notificaciones" class="btn btn-link"><i class="fas fa-bell fa-lg"></i><br>Notificaciones</a>
                         <!--Inicio de Dropdown--> 
                         <div class="dropdown">
-                            <!--El dropdown no funciona, las clases del JS y del Bootstrap estan incluidas-->
-                            <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/usuario.png" id="usuario-img"><br>Yo
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </div>
-                        <!--Aqui termina el dropdwon-->
+					  <a style="color: white;" class="dropdown-toggle btn btn-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    <img style="width: 18px; height: 18px" src="img/usuario.png" id="usuario-img">
+					    <br>
+					  	Yo
+					  </a>
+					  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+					    <a class="dropdown-item" href="#">Action</a>
+					    <a class="dropdown-item" href="#">Another action</a>
+					    <a class="dropdown-item" href="#">Something else here</a>
+					  </div>
+					</div>
                 </div>
 
             </div>
@@ -301,7 +303,7 @@
         </div>
     </div>
     
-   <script src="js/bootstrap.min.js"></script>
-   <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+   <script src="js/bootstrap.js"></script>
 </body>
 </html>

@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilos-rafael.css">
+    <link rel="stylesheet" href="css/estiloscss-matt.css">
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 </head>
 
@@ -29,15 +30,17 @@
                         <a href="#Notificaciones" class="btn btn-link"><i class="fas fa-bell fa-lg"></i><br>Notificaciones</a>
                         <!--Inicio de Dropdown--> 
                         <div class="dropdown">
-                            <!--El dropdown no funciona, las clases del JS y del Bootstrap estan incluidas-->
-                            <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/usuario.png" id="usuario-img"><br>Yo
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </div>
+					  <a style="color: white;" class="dropdown-toggle btn btn-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    <img style="width: 18px; height: 18px" src="img/usuario.png" id="usuario-img">
+					    <br>
+					  	Yo
+					  </a>
+					  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+					    <a class="dropdown-item" href="#">Action</a>
+					    <a class="dropdown-item" href="#">Another action</a>
+					    <a class="dropdown-item" href="#">Something else here</a>
+					  </div>
+					</div>
                         <!--Aqui termina el dropdwon-->
                     </div>
                     <div class="col-lg-5">
@@ -57,255 +60,25 @@
 
     <div class="container mt-5" >
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-12">
                 <div class="card" id="card-muro">
-                    <img src="img/fondo-card.svg" class="img-fluid pt-0" >
                    <div class="card-header text-center">
-                        <img src="img/usuario.png" class="img-fluid"  id="img-usuario-perfil">
-                        <p id="Bienvenida"><strong>Te damos la bienvenida, Usuario</strong></p>
-                   </div>
-                   <div class="card-subtitle text-center pt-4">
-                      <h6><a href="#">Numero</a></h6>
-                      <p>Contacto
-                        <br>
-                        <strong>Amplia tu Red</strong>
-                      </p>
-                   </div>
-                   <div class="card-footer text-center">
-                    <p>Accede a informacion exclusiva y herramientas exclusivas</p>
-                   </div>
+                       <div class="row no-gutters pt-2 pb-2">
+                           <div class="col-lg-2 border-right">
+                               <strong style="color:#105879;">1</strong> Empleo Guardado
+                           </div>
+                           <div class="col-lg-2 border-right">
+                                <strong style="color: #84878a;">0</strong> Empleos Solicitados
+                            </div>
+                        </div>
+                   
+                    </div>
                 </div>
             </div>
-
-            <div class="col-lg-6">
-                <div class="card mb-5" id="card-muro">
-                    <div class="card-header">
-                        <textarea class="form-control" id="txta-publicar" cols="30" rows="2" placeholder="Comparte un artículo, foto, vídeo o idea"></textarea>
-                    </div>
-                    <div class="card-footer">
-                        <div class="row no-gutters">
-                            <div class="col-lg-1  pt-2 mt-1" id="boton-input-escribir">
-                                <i class="fas fa-edit"></i>
-                            </div>
-                            <div class="col-lg-1 pt-2" id="boton-input-text">
-                                <label class="btn btn-default btn-file fas fa-camera-retro">
-                                    <input type="file" style="display: none;" class="form-control-file">
-                                </label>
-                            </div>
-                            <div class="col-lg-1 pt-2" id="boton-input-text">
-                                <label class="btn btn-default btn-file fas fa-video">
-                                <input type="file" style="display: none;" class="form-control-file">
-                                </label>
-                            </div>
-                            <div class="col-lg-2 offset-lg-7">
-                                <button type="submit" class="btn btn-primary">Publicar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card mb-5" id="card-muro">
-                    <div class="card-header">
-                        <div class="row">
-                            <div class="col-lg-2">
-                                <img src="img/goku.png" class="img-fluid rounded-circle"> 
-                            </div>
-                            <div class="col-lg-6">
-                                <p><strong>Goku</strong><br>
-                                    Guerrero del 7º Universo <br>
-                                    1 hora
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <p>Al final he logrado alcanzar el nivel perfecto de la doctrina egoista, espero que Jiren tenga la capacidad de hacerme frente
-                            ante esta nueva y poderosa transformacion.
-                        </p>
-                        <img src="img/goku-ultrainstinto.jpg" class="img-fluid">
-                    </div>
-                    <div class="card-body">
-                        <div class="row no-gutters">
-                            <div class="col-lg-1  pt-2" id="boton-input-text">
-                                <label class="btn btn-default btn-file fas fa-thumbs-up">
-                                    <input type="button" style="display: none;" class="form-control-file">
-                                </label>
-                            </div>
-                            <div class="col-lg-1 pt-2" id="boton-input-text">
-                                <label class="btn btn-default btn-file fas fa-comments">
-                                    <input type="button" style="display: none;" class="form-control-file">
-                                </label>
-                            </div>
-                            <div class="col-lg-1 pt-2" id="boton-input-text">
-                                <label class="btn btn-default btn-file fas fa-reply">
-                                <input type="button" style="display: none;" class="form-control-file">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card-footer">
-                        <div class="row no-gutters pb-3">
-                            <div class="col-lg-1">
-                                <img src="img/usuario.png" class="img-fluid rounded-circle">
-                            </div>
-                            <div class="col-lg-9 ml-2">
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="col-lg-1">
-                                <label class="btn btn-default btn-file fas fa-camera-retro">
-                                    <input type="file" style="display: none;" class="form-control-file">
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row no-gutters pb-3">
-                            <div class="col-lg-1 mr-2">
-                                <img src="img/vegeta.jpg" class="img-fluid rounded-circle">
-                            </div>
-                            <div class="col-lg-9 text-justify">
-                                <p><strong>Vegeta:</strong> Valio la pena darte la ultima pequeña cantidad de energia que tenia, aprovechalo, el Universo 7 debe ganar el gran torneo del poder. Recuerda que deje en tus manos todas las promesas que hice antes y durante el torneo.
-                                </p>
-                                <a href="#" id="btn-link">Recomendar</a>
-                                <a href="#" id="btn-link">Responder</a>
-                                Hace 1 Hora
-                            </div>
-                            <div class="col-lg-1">
-                                <label class="btn btn-default btn-file fas fa-ellipsis-h">
-                                    <input type="button" style="display: none;" class="form-control-file">
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row no-gutters pb-3">
-                            <div class="col-lg-1 mr-2">
-                                <img src="img/jiren.png" class="img-fluid rounded-circle">
-                            </div>
-                            <div class="col-lg-9 text-justify">
-                                <p><strong>Jiren:</strong> Tu poder comparado con el mio, es muy inferior y te lo demostrare, no dudes que hare que el Universo 11 sea el vencedor del gran torneo del poder y reclamar el deseo.
-                                </p>
-                                <a href="#" id="btn-link">Recomendar</a>
-                                <a href="#" id="btn-link">Responder</a>
-                                Hace 50 minutos
-                            </div>
-                            <div class="col-lg-1">
-                                <label class="btn btn-default btn-file fas fa-ellipsis-h">
-                                    <input type="button" style="display: none;" class="form-control-file">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                   
-                </div>
-
-                <div class="card  mb-5" id="card-muro">
-                    <div class="card-header">
-                        <div class="row">
-                            <div class="col-lg-2">
-                                <img src="img/goku.png" id="img-usuario-perfil" class="img-fluid"> 
-                            </div>
-                            <div class="col-lg-6">
-                                <p><strong>Goku</strong><br>
-                                    Guerrero del 7º Universo <br>
-                                    1 hora
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <p>Al final he logrado alcanzar el nivel perfecto de la doctrina egoista, espero que Jiren tenga la capacidad de hacerme frente
-                            ante esta nueva y poderosa transformacion.
-                        </p>
-                        <img src="img/goku-ultrainstinto.jpg" class="img-fluid">
-                    </div>
-                    <div class="card-body">
-                        <div class="row no-gutters">
-                            <div class="col-lg-1  pt-2" id="boton-input-text">
-                                <label class="btn btn-default btn-file fas fa-thumbs-up">
-                                    <input type="button" style="display: none;" class="form-control-file">
-                                </label>
-                            </div>
-                            <div class="col-lg-1 pt-2" id="boton-input-text">
-                                <label class="btn btn-default btn-file fas fa-comments">
-                                    <input type="button" style="display: none;" class="form-control-file">
-                                </label>
-                            </div>
-                            <div class="col-lg-1 pt-2" id="boton-input-text">
-                                <label class="btn btn-default btn-file fas fa-reply">
-                                <input type="button" style="display: none;" class="form-control-file">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="card-footer">
-                            <div class="row no-gutters pb-3">
-                                <div class="col-lg-1">
-                                    <img src="img/usuario.png" class="img-fluid rounded-circle">
-                                </div>
-                                <div class="col-lg-9 ml-2">
-                                    <input type="text" class="form-control">
-                                </div>
-                                <div class="col-lg-1">
-                                    <label class="btn btn-default btn-file fas fa-camera-retro">
-                                        <input type="file" style="display: none;" class="form-control-file">
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="row no-gutters pb-3">
-                                <div class="col-lg-1 mr-2">
-                                    <img src="img/vegeta.jpg" class="img-fluid rounded-circle">
-                                </div>
-                                <div class="col-lg-9 text-justify">
-                                    <p><strong>Vegeta:</strong> Valio la pena darte la ultima pequeña cantidad de energia que tenia, aprovechalo, el Universo 7 debe ganar el gran torneo del poder. Recuerda que deje en tus manos todas las promesas que hice antes y durante el torneo.
-                                    </p>
-                                    <a href="#" id="btn-link">Recomendar</a>
-                                    <a href="#" id="btn-link">Responder</a>
-                                    Hace 1 Hora
-                                </div>
-                                <div class="col-lg-1">
-                                    <label class="btn btn-default btn-file fas fa-ellipsis-h">
-                                        <input type="button" style="display: none;" class="form-control-file">
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="row no-gutters pb-3">
-                                <div class="col-lg-1 mr-2">
-                                    <img src="img/jiren.png" class="img-fluid rounded-circle">
-                                </div>
-                                <div class="col-lg-9 text-justify">
-                                    <p><strong>Jiren:</strong> Tu poder comparado con el mio, es muy inferior y te lo demostrare, no dudes que hare que el Universo 11 sea el vencedor del gran torneo del poder y reclamar el deseo.
-                                    </p>
-                                    <a href="#" id="btn-link">Recomendar</a>
-                                    <a href="#" id="btn-link">Responder</a>
-                                    Hace 50 minutos
-                                </div>
-                                <div class="col-lg-1">
-                                    <label class="btn btn-default btn-file fas fa-ellipsis-h">
-                                        <input type="button" style="display: none;" class="form-control-file">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                   
-                </div>
-
-            </div>
-
-            <div class="col-lg-3">
-                <div class="card" id="card-muro">
-                    <div class="card-body text-center">
-                        <a href="empleos.html">
-                            <img src="img/blanco-linkedin.jpg" alt="Advertise on LinkedIn" class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="card-footer"></div>
-                </div>
-            </div>  
         </div>
     </div>
     
-   <script src="js/bootstrap.min.js"></script>
-   <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+   <script src="js/bootstrap.js"></script>
 </body>
 </html>
