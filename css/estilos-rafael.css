@@ -155,3 +155,15 @@ body{
 #card-usuarios-red{
     font-size: 80%;
 }
+
+.carousel-caption{
+    background-color: #0083bf83;
+}
+
+#text-muted{
+    color: #105879;
+}
+
+#img-footer{
+    width: 7%;
+}
