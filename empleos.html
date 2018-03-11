@@ -26,7 +26,7 @@
                         <a href="muro.html" class="btn btn-link"><i class="fas fa-home fa-lg"></i><br>Inicio</a>
                         <a href="mi-red.html" class="btn btn-link"><i class="fas fa-users fa-lg"></i><br>Mi Red</a>
                         <a href="empleos.html" class="btn btn-link"><i class="fas fa-briefcase fa-lg"></i><br>Empleos</a>
-                        <a href="#Mensajes" class="btn btn-link"><i class="fas fa-envelope fa-lg"></i><br>Mensajes</a>
+                        <a href="mensajes.html" class="btn btn-link"><i class="fas fa-envelope fa-lg"></i><br>Mensajes</a>
                         <a href="#Notificaciones" class="btn btn-link"><i class="fas fa-bell fa-lg"></i><br>Notificaciones</a>
                         <!--Inicio de Dropdown--> 
                         <div class="dropdown">
@@ -35,10 +35,15 @@
 					    <br>
 					  	Yo
 					  </a>
-					  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-					    <a class="dropdown-item" href="#">Action</a>
-					    <a class="dropdown-item" href="#">Another action</a>
-					    <a class="dropdown-item" href="#">Something else here</a>
+					  <div class="dropdown-menu dropdown-menu-right pr-2 pl-2" aria-labelledby="dropdownMenuButton">
+                            <div class="card text-center">
+                                <img src="img/usuario.png" class="rounded-circle img-fluid">
+                                <p><strong>Usuario</strong><br>
+                                Estudiante en Universidad Nacional Autonoma de Honduras(UNAH)
+                                </p>
+                            </div>
+					    <a class="dropdown-item btn btn-link text-center" href="perfil.html" id="perfil-muro">Ver Perfil</a>
+					    <a class="dropdown-item btn btn-link text-center" href="index.html" id="perfil-muro">Cerrar Sesion</a>
 					  </div>
 					</div>
                         <!--Aqui termina el dropdwon-->
@@ -58,10 +63,10 @@
 
     </nav>
 
-    <div class="container mt-5" >
+    <div class="container mt-5 mb-5" >
         <div class="row">
             <div class="col-lg-12">
-                <div class="card" id="card-muro">
+                <div class="card mb-3" id="card-muro">
                    <div class="card-header text-center">
                        <div class="row no-gutters pt-2 pb-2">
                            <div class="col-lg-2 border-right">
@@ -74,8 +79,90 @@
                    
                     </div>
                 </div>
+
+                <div class="card" id="card-muro">
+                   <div class="card-header text-left">
+                       <h5 class="pt-2">Empresas que podrian interesarte</h5>
+                        <p class="pt-2">
+                            <h6><strong>Empresas donde conoces a alguien</strong></h6>
+                            Pregunta a tus contactos si recomendarían su empresa
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-4 card-text border">
+                                <div class="row no-gutters">
+                                    <div class="col-lg-4 pt-2">
+                                        <img src="img/kamehouse.jpeg" class="img-fluid img-thumbnail">
+                                    </div>
+                                    <div class="col-lg-8 pl-2">
+                                        <p class="pt-4">
+                                            <strong>Kame-House</strong><br>
+                                            Escuela de Artes Marciales
+                                        </p>
+                                    </div>
+                                </div>
+                                <p class="text-justify pt-2">
+                                    Kame-House es una escuela de artes marciales mixtas que fue fundada cuando el maestro Roshi se encargo de ser el maestro de un joven Krillin y de un pequeño Goku.
+                                </p>
+                                <div class="card-footer text-center">
+                                    <a href="#" class="btn btn-link btn-block" id="link-empleo">Más Información</a>
+                                </div>
+                            </div>
+                            
+                      </div>
+                      
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+
+    <div>
+        <div class="footer p-4" id="footer-empleos">
+        
+        <div class="row">
+            <div class="col-lg-5 offset-lg-1 mt-2" id="footer">
+                <p><strong>General</strong></p>
+                <a href="#" id="footer-a">Registrate |</a>
+                <a href="#" id="footer-a">Centro de Ayuda |</a>
+                <a href="#" id="footer-a">Acerca de |</a>
+                <a href="#" id="footer-a">Prensa |</a>
+                <a href="#" id="footer-a">Blog |</a>
+                <a href="#" id="footer-a">Empleo |</a>
+                <a href="#" id="footer-a">Desarrolladores</a>
+                <br><br>
+                <p><strong>Navegar por LinkedIn</strong></p>
+                <a href="#" id="footer-a">Learning |</a>
+                <a href="#" id="footer-a">Empleos |</a>
+                <a href="#" id="footer-a">Sueldo |</a>
+                <a href="#" id="footer-a">Móvil |</a>
+                <a href="#" id="footer-a">ProFinder</a>
+            </div>
+
+            <div class="col-lg-4 mt-2 " id="footer">
+                <p><strong>Business Solution</strong></p>
+                <a href="#" id="footer-a">Talent |</a>
+                <a href="#" id="footer-a">Marketing |</a>
+                <a href="#" id="footer-a">Sales |</a>
+                <a href="#" id="footer-a">Learning</a>
+                <br><br>
+                <p><strong>Directorios</strong></p>
+                <a href="#" id="footer-a">Miembros |</a>
+                <a href="#" id="footer-a">Empleos |</a>
+                <a href="#" id="footer-a">Pulse |</a>
+                <a href="#" id="footer-a">Temas |</a>
+                <a href="#" id="footer-a">Empresas |</a>
+                <a href="#" id="footer-a">Sueldos |</a>
+                <a href="#" id="footer-a">Universidades |</a>
+                <a href="#" id="footer-a">Cargos |</a>
+                <a href="#" id="footer-a">Universidades |</a>
+                <a href="#" id="footer-a">Cargos |</a>
+                <a href="#" id="footer-a">Personas |</a>
+                <a href="#" id="footer-a">Principales Empleos |</a>
+            </div>
+        </div>   
+    </div>
     </div>
     
     <script src="js/jquery-3.3.1.min.js"></script>

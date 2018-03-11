@@ -167,3 +167,26 @@ body{
 #img-footer{
     width: 7%;
 }
+
+#perfil-muro{
+    color: #0084bf;
+}
+
+#perfil-muro:hover{
+    color: #0084bf;
+    background-color: #5252528e;
+}
+
+#link-empleo{
+    color: #0084bf;
+    font-size: 100%;
+}
+
+#link-empleo:hover{
+    color: #0084bf;
+    text-decoration: underline #0084bf;
+}
+
+#footer-empleos{
+    background-color: #84878a;
+}
