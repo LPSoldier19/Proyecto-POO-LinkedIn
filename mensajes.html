@@ -31,10 +31,10 @@
                 <div class="offset-lg-1 col-lg-5 btn-group btn-group-toggle pb-0">
                     <a href="muro.html" class="btn btn-link"><i class="fas fa-home fa-lg"></i><br>Inicio</a>
                     <a href="mi-red.html" class="btn btn-link"><i class="fas fa-users fa-lg"></i><br>Mi Red</a>
-                    <a href="empleos.html" class="btn btn-link"><i class="fas fa-briefcase fa-lg"></i><br>Empleos</a>
-                    <a href="mensajes.html" class="btn btn-link"><i class="fas fa-envelope fa-lg"></i><br>Mensajes</a>
+                    <a href="#Empleos" class="btn btn-link"><i class="fas fa-briefcase fa-lg"></i><br>Empleos</a>
+                    <a href="#Mensajes" class="btn btn-link"><i class="fas fa-envelope fa-lg"></i><br>Mensajes</a>
                     <a href="#Notificaciones" class="btn btn-link"><i class="fas fa-bell fa-lg"></i><br>Notificaciones</a>
-	                <div class="dropdown">
+	                 <div class="dropdown">
 					  <a style="color: white;" class="dropdown-toggle btn btn-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					    <img style="width: 18px; height: 18px" src="img/usuario.png" id="usuario-img">
 					    <br>
@@ -60,66 +60,81 @@
         </div>
 
     </nav>
-
-    <div class="container mt-5" >
+                  
+    <div class="container mt-5">   
         <div class="row">
-            <div class="col-lg-3">
-                <div class="card sticky-top" style="top: 7em;" id="card-muro">
-                   <div class="card-subtitle text-center pt-4 pb-5">
-                      <h3><a href="#" id="numero-mi-red">Numero</a></h3>
-                      <h6>Tus Contactos</h6>
-                      <h6><a href="" id="ver-mi-red">Ver Todo</a></h6>
-                   </div>
-                   <div class="card-footer text-center pb-4 pt-4">
-                    <a href="" id="ver-mi-red"><strong>Encontrar Contactos</strong></a>
-                   </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6">
-                <div class="card mb-3" id="card-muro">
-                    <div class="card-header">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <h5>No hay invitaciones pendientes</h5>
+            <div class="col-lg-9 card">
+                <div class="row">
+                    <div class="col-lg-4 card-header">
+                            <div class="row border-bottom">
+                                <div class="col-lg-6">
+                                    <h6><strong>Mensajes</strong></h6>
+                                </div>
+                                <div class="offset-lg-3 col-lg-2 mb-2">
+                                   <button class="btn btn-link" style="color: #0084bf;"><i class="fas fa-edit fa-lg"></i></button>
+                                </div>
                             </div>
-                            <div class="col-lg-4 pt-1" >
-                                <a href="" id="gestion-invitaciones">Gestionar invitaciones</a>
+                            <div class="row card-header-tabs border-bottom">
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control-plaintext" placeholder="Buscar Mensajes">
+                                </div>
+                                <div class="col-lg-1">
+                                   <button class="btn btn-light rounded-circle"><i class="fas fa-list-alt"></i></button>
+                                </div>
                             </div>
-                        </div>
+                            <div class="row btn btn-toolbar mt-4 border pt-2 pb-2 no-gutters">
+                                <div class="col-lg-4">
+                                    <img src="img/freezer.jpg" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="col-lg-4 pl-2">
+                                   <p><strong>Freezer</strong><br>
+                                    <i class="fas fa-camera-retro"></i>Imagen</p>
+                                </div>
+                                <div class="col-lg-4">
+                                   <p><strong>Mar 11</strong><br></p>
+                                </div>
+                            </div>
+                            <div class="row btn btn-toolbar mt-4 border pt-2 pb-2 no-gutters">
+                                <div class="col-lg-4">
+                                    <img src="img/jiren.png" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="col-lg-4 pl-2">
+                                   <p><strong>Jiren</strong><br>
+                                    ...</p>
+                                </div>
+                                <div class="col-lg-4">
+                                   <p><strong>Mar 4</strong><br></p>
+                                </div>
+                            </div>
+                            <div class="row btn btn-toolbar mt-4 border pt-2 pb-2 no-gutters">
+                                <div class="col-lg-4">
+                                    <img src="img/vegeta.jpg" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="col-lg-4 pl-2">
+                                   <p><strong>Freezer</strong><br>
+                                   Todo queda...</p>
+                                </div>
+                                <div class="col-lg-4">
+                                   <p><strong>Feb 24 </strong><br></p>
+                                </div>
+                            </div>
                     </div>
-                </div>
-
-                <div class="card mb-5" id="card-muro">
-                   <div class="card-header">
-                        <h5>Gente que podrias conocer</h5>
-                   </div>
-                <div class="card-header">
-                       <div class="btn-group btn-group-toggle">
-                        <div class="row">
-                            <div>
-                                <a href="" class="col-lg-2" id="btn-grupo-red"><strong>Todos</strong></a>
+                    <div class="col-lg-8 frame">
+                        <ul>
+                        <li class="card-header" style="background-color: white;">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <h5>Freezer</h5>
+                                    <strong>Activo ahora</strong>
+                                </div>
+                                <div class="offset-lg-5 col-lg-2 pt-3">
+                                   <button class="btn btn-link" style="color:black;"><i class="fas fa-ellipsis-h fa-lg"></i></button>
+                                </div>
                             </div>
-                            <div >
-                                <a href="" class="col-lg-2" id="btn-grupo-red"><strong>Antiguos Alumnos</strong></a>
-                            </div>
-                            <div>
-                                <a href="" id="btn-grupo-red"><strong>Compañeros de Trabajo</strong></a>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
-                      <div class="row card-body" id="card-usuarios-red">
-                        
-
-
-                        <div class="col-lg-12 frame">
-                              <ul>
-
-
-                                <li style="width:100%">
-                                    <div class="msj macro">
-                                    <div class="avatar"><img class="img-circle" style="width:100%;" src="img/goku.png" /></div>
+                        </li>
+                        <li style="width:100%">
+                             <div class="msj macro">
+                             <div class="avatar"> <img class="img-circle" style="width:100%;" src="img/goku.png" /> </div>
                                         <div class="text text-l">
                                             <p>Freezer ya deja de matar gente inocente!!!!</p>
                                             <p><small>date</small></p>
@@ -196,30 +211,28 @@
                                             </p>
                                             <p><small>date</small></p>
                                         </div>
-                                    <div class="avatar" style="padding:0px 0px 0px 10px !important"><img class="img-circle" style="width:100%;" src="img/freezer.jpg" /></div>                               
+                                    <div class="avatar" style="padding:0px 0px 0px 10px !important"><img class="img-circle" style="width:100%;" src="img/freezer.jpg" /></div>
+
                               </li>
 
 
-                            </ul>
-                            <div>
-                                <div class="msj-rta macro ">  
-
-                                    <div class="text text-r " style="background:whitesmoke !important">
+                     </ul>
+                            <div class="ml-2 mb-1">
+                                <div class=" msj-rta macro">                        
+                                    <div class="text text-r" style="background:whitesmoke !important">
                                         <input class="mytext" placeholder="Type a message"/>
                                     </div> 
-
+                
                                 </div>
-                                <button class="btn btn-primary ml-2">
-                                    Send
-                                </button>             
+                                <button type="submit" class="btn btn-outline-primary ml-2 pr-4 mt-1"><i class="fas fa-paper-plane pl-2"> </i></button>            
                             </div>
-                        </div> 
-                      </div>
-                  </div>
-
-            </div>     
-    
-
+                    </div>       
+                </div>
+            </div>
+        
+            <!---->
+         <!-- aqui termina el chat -->
+        <!-- aqui comienza el negro blanco xd -->
             <div class="col-lg-3">
                 <div class="card sticky-top" style="top: 7em;" id="card-muro">
                     <div class="card-body text-center">
@@ -227,11 +240,12 @@
                             <img src="img/blanco-linkedin.jpg" alt="Advertise on LinkedIn" class="img-fluid">
                         </a>
                     </div>
-                    <div class="card-footer"></div>
+
                 </div>
             </div>  
         </div>
     </div>
+       
     <script src="js/jquery-3.3.1.min.js"></script>
    <script src="js/bootstrap.js"></script>
 
