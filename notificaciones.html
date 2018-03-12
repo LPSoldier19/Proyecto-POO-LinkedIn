@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificaciones</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos-rafael.css">
+     <link rel="stylesheet" href="css/estilos-notificaciones-matt.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+</head>
+<body>
+ <nav class="navbar sticky-top">
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="offset-lg-1 col-lg-1 pt-1">
+                    <a href="#">
+                        <img src="img/favicon.png" id="logo-muro">
+                    </a>
+                </div>
+                <div class="col-lg-3 pb-0">
+                    <form class="inner-addon pt-2">
+                        <input class="form-control" type="text" placeholder="Buscar">
+                    </form>
+                </div>
+                    <div class="offset-lg-1 col-lg-5 btn-group btn-group-toggle pb-0">
+                        <a href="muro.html" class="btn btn-link"><i class="fas fa-home fa-lg"></i><br>Inicio</a>
+                        <a href="mi-red.html" class="btn btn-link"><i class="fas fa-users fa-lg"></i><br>Mi Red</a>
+                        <a href="empleos.html" class="btn btn-link"><i class="fas fa-briefcase fa-lg"></i><br>Empleos</a>
+                        <a href="mensajes.html" class="btn btn-link"><i class="fas fa-envelope fa-lg"></i><br>Mensajes</a>
+                        <a href="notificaciones.html" class="btn btn-link"><i class="fas fa-bell fa-lg"></i><br>Notificaciones</a>
+                        <!--Inicio de Dropdown--> 
+                        <div class="dropdown">
+					  <a style="color: white;" class="dropdown-toggle btn btn-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    <img style="width: 18px; height: 18px" src="img/usuario.png" id="usuario-img">
+					    <br>
+					  	Yo
+					  </a>
+					  <div class="dropdown-menu dropdown-menu-right pr-2 pl-2" aria-labelledby="dropdownMenuButton">
+                            <div class="card text-center">
+                                <img src="img/usuario.png" class="rounded-circle img-fluid">
+                                <p><strong>Usuario</strong><br>
+                                Estudiante en Universidad Nacional Autonoma de Honduras(UNAH)
+                                </p>
+                            </div>
+					    <a class="dropdown-item btn btn-link text-center" href="perfil.html" id="perfil-muro">Ver Perfil</a>
+					    <a class="dropdown-item btn btn-link text-center" href="index.html" id="perfil-muro">Cerrar Sesion</a>
+					  </div>
+					</div>
+                        <!--Aqui termina el dropdwon-->
+                </div>
+
+            </div>
+        </div>
+
+    </nav>  
+<div class="row">
+    <div class="col-lg-3">
+            <div class="card sticky-top"  id="card-muroizq">
+                    
+                   <div class="card-subtitle text-center pt-4">
+                      <h5 >Notificaciones</h5>
+                      <p>¡Estás al día! Vuelve más tarde para ver nuevas notificaciones.
+                      </p>
+                   </div>
+                   <div class="card-footer text-center">
+                    <p>Mejora tus notificaciones <br>
+                    <a href="#">verconfiguracion</a>
+                    </p>
+                   </div>
+                </div>
+    </div>
+        
+            <div class="col-lg-6" id="notificaciones-centro"> 
+            <div class="row">
+                <div class="col-lg-2"><img class="img-fluid rounded-circle" src="img/freezer.jpg"> </div>
+               <div class="col-lg-6" class="card-body"><p> freezer <b>ha visitado tu perfil</b> <br>   el malvado emperador galactico</p> <br> <button  type="redirect"  id="visualizaciones">ver todas las visualuzaciones</button> </div>
+              
+</div>
+ <script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

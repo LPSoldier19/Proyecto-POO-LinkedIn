@@ -1,0 +1,39 @@
+#card-muroizq{
+	top: 8em;
+	margin: 51px 0 0 111px;
+    width: 216px;
+	height: 197px;
+	font-size: 90%;
+	box-shadow: 3px 5px 20px 0px #8d8d8d6c;
+}
+#negro-puto{
+	margin-top: 46px;
+	box-shadow: 3px 5px 20px 0px #8d8d8d6c;
+}
+
+#notificaciones-centro{
+	
+  display: inline-block;
+  margin-top: 46px;
+  width: 525px;
+  height: 275px;
+  box-shadow: 3px 5px 20px 0px #8d8d8d6c
+}
+.nueva-notificacion{
+	width: 525px;
+	height: 137px;
+	box-shadow: 3px 5px 20px 0px #8d8d8d6c;
+
+}
+#visualizaciones{
+	color: #006097
+}
+#visualizaciones:hover{
+	color: #006097
+}
+
+#tres-puntos{
+	
+}
+
+
