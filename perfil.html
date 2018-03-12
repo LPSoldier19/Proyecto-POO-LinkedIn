@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos-rafael.css">
+    <link rel="stylesheet" href="css/estiloscss-matt.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+</head>
+
+<body id="container-muro">
+   
+    <nav class="navbar sticky-top">
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-lg-1 pt-1">
+                    <a href="#">
+                        <img src="img/favicon.png" id="logo-muro">
+                    </a>
+                </div>
+                <div class="col-lg-3 pb-0">
+                    <form class="inner-addon pt-2">
+                        <input class="form-control" type="text" placeholder="Buscar">
+                    </form>
+                </div>
+                    <div class="offset-lg-3 col-lg-5 btn-group btn-group-toggle pb-0">
+                        <a href="muro.html" class="btn btn-link"><i class="fas fa-home fa-lg"></i><br>Inicio</a>
+                        <a href="mi-red.html" class="btn btn-link"><i class="fas fa-users fa-lg"></i><br>Mi Red</a>
+                        <a href="empleos.html" class="btn btn-link"><i class="fas fa-briefcase fa-lg"></i><br>Empleos</a>
+                        <a href="mensajes.html" class="btn btn-link"><i class="fas fa-envelope fa-lg"></i><br>Mensajes</a>
+                        <a href="#Notificaciones" class="btn btn-link"><i class="fas fa-bell fa-lg"></i><br>Notificaciones</a>
+                        <!--Inicio de Dropdown--> 
+                        <div class="dropdown">
+					  <a style="color: white;" class="dropdown-toggle btn btn-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    <img style="width: 18px; height: 18px" src="img/usuario.png" id="usuario-img">
+					    <br>
+					  	Yo
+					  </a>
+					  <div class="dropdown-menu dropdown-menu-right pr-2 pl-2" aria-labelledby="dropdownMenuButton">
+                            <div class="card text-center">
+                                <img src="img/usuario.png" class="rounded-circle img-fluid">
+                                <p><strong>Usuario</strong><br>
+                                Estudiante en Universidad Nacional Autonoma de Honduras(UNAH)
+                                </p>
+                            </div>
+					    <a class="dropdown-item btn btn-link text-center" href="perfil.html" id="perfil-muro">Ver Perfil</a>
+					    <a class="dropdown-item btn btn-link text-center" href="index.html" id="perfil-muro">Cerrar Sesion</a>
+					  </div>
+					</div>
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="container mt-5" >
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card mb-5" id="card-muro">
+                    <img src="img/fondo-card.svg" class="img-fluid pt-0">
+                    <div class="card-header text-center">
+                        <img src="img/usuario.png" class="img-fluid rounded-circle"  >
+                        <h4 class="pt-2">Usuario</h4>
+                        <h5>Estudiante en Universidad Nacional Autonoma de Honduras(UNAH)</h5>
+                        <h6>Universidad Nacional Autónoma de Honduras (UNAH)</h6>
+                        <h6>País <i class="fas fa-circle" style="font-size: 40%;"></i> Numero de Contactos <i class="fas fa-users" style="font-size: 100%;"></i></h6>
+                   </div>
+                </div>
+
+                <div class="card mb-5" style="background-image: url(img/background-perfil.jpg)">
+                    <div class="container">
+                        <h5 style="color:white;" class="pt-3 mt-1">Tu panel</h5>
+                        <h6 style="color:white;" class="text-truncate">Solo para ti</h6>
+
+                        <div class="card-text container mb-4">
+                            <div class="row">
+                                <div class="col-lg-4 border card-body" style="background-color: white;" >
+                                    <h1 style="color: #0084bf;">Numero</h1>
+                                    <h6 style="font-size: 80%;">Quien ha visto tu perfil</h6>
+                                </div>
+                                <div class="col-lg-4 border card-body" style="background-color: white;" >
+                                    <h1 style="color: #0084bf;">Numero</h1>
+                                    <h6 style="font-size: 80%;">Visualizaciones de publicaciones</h6>
+                                </div>
+                                <div class="col-lg-4 border card-body" style="background-color: white;" >
+                                    <h1 style="color: #0084bf;">Numero</h1>
+                                    <h6 style="font-size: 80%;">Apariciones en busqueda</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-5" id="card-muro">
+                    <div class="card-header">
+                        <h4>Eduación</h4>
+                   </div>
+                </div>
+
+                <div class="card mb-5" id="card-muro">
+                    <div class="card-header">
+                        <h4>Logros</h4>
+                   </div>
+                </div>
+
+                <div class="card mb-5" id="card-muro">
+                    <div class="card-header">
+                        <h4>Intereses</h4>
+                   </div>
+                </div>
+
+                </div>
+
+
+            <div class="col-lg-4">
+                <button class="btn btn-primary mb-2 btn-block">Añadir seccion de perfil</button>
+                <button class="btn btn-outline-secondary mb-2 btn-block">Editar URL y perfil publico</button>
+                <button class="btn btn-outline-secondary mb-2 btn-block">Añadir perfil en otro sistema</button>
+                <div class="card" id="card-muro">
+                    <div class="card-body text-center"> 
+                        <a href="empleos.html">
+                            <img src="img/blanco-linkedin.jpg" alt="Advertise on LinkedIn" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+
+    <div>
+        <div class="footer p-4" id="footer-empleos">
+        
+        <div class="row">
+            <div class="col-lg-5 offset-lg-1 mt-2" id="footer">
+                <p><strong>General</strong></p>
+                <a href="#" id="footer-a">Registrate |</a>
+                <a href="#" id="footer-a">Centro de Ayuda |</a>
+                <a href="#" id="footer-a">Acerca de |</a>
+                <a href="#" id="footer-a">Prensa |</a>
+                <a href="#" id="footer-a">Blog |</a>
+                <a href="#" id="footer-a">Empleo |</a>
+                <a href="#" id="footer-a">Desarrolladores</a>
+                <br><br>
+                <p><strong>Navegar por LinkedIn</strong></p>
+                <a href="#" id="footer-a">Learning |</a>
+                <a href="#" id="footer-a">Empleos |</a>
+                <a href="#" id="footer-a">Sueldo |</a>
+                <a href="#" id="footer-a">Móvil |</a>
+                <a href="#" id="footer-a">ProFinder</a>
+            </div>
+
+            <div class="col-lg-4 mt-2 " id="footer">
+                <p><strong>Business Solution</strong></p>
+                <a href="#" id="footer-a">Talent |</a>
+                <a href="#" id="footer-a">Marketing |</a>
+                <a href="#" id="footer-a">Sales |</a>
+                <a href="#" id="footer-a">Learning</a>
+                <br><br>
+                <p><strong>Directorios</strong></p>
+                <a href="#" id="footer-a">Miembros |</a>
+                <a href="#" id="footer-a">Empleos |</a>
+                <a href="#" id="footer-a">Pulse |</a>
+                <a href="#" id="footer-a">Temas |</a>
+                <a href="#" id="footer-a">Empresas |</a>
+                <a href="#" id="footer-a">Sueldos |</a>
+                <a href="#" id="footer-a">Universidades |</a>
+                <a href="#" id="footer-a">Cargos |</a>
+                <a href="#" id="footer-a">Universidades |</a>
+                <a href="#" id="footer-a">Cargos |</a>
+                <a href="#" id="footer-a">Personas |</a>
+                <a href="#" id="footer-a">Principales Empleos |</a>
+            </div>
+        </div>   
+    </div>
+    </div>
+    
+    <script src="js/jquery-3.3.1.min.js"></script>
+   <script src="js/bootstrap.js"></script>
+</body>
+</html>
