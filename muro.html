@@ -17,17 +17,24 @@
     <nav class="navbar sticky-top">
         <div class="container">
             <div class="row no-gutters">
-                <div class="col-lg-1 pt-1">
+                <div class="col-lg-1 col-2 navbar-brand">
                     <a href="#">
                         <img src="img/favicon.png" id="logo-muro">
                     </a>
                 </div>
-                <div class="col-lg-3 pb-0">
-                    <form class="inner-addon pt-2">
-                        <input class="form-control" type="text" placeholder="Buscar">
-                    </form>
+                <div class="col-lg-3 col-9">
+                    <form class="form-inline pt-2">
+                        <div class="input-group">
+                          <input type="text" class="form-control" placeholder="Buscar" aria-label="Username" aria-describedby="basic-addon1">
+                          <div class="input-group-prepend">
+                            <button type="button" class="input-group-text">
+                                <i class="fas fa-search"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </form>
                 </div>
-                    <div class="offset-lg-3 col-lg-5 btn-group btn-group-toggle pb-0">
+                    <div class="offset-lg-2 col-lg-5 btn-group btn-group-toggle pb-0">
                         <a href="muro.html" class="btn btn-link"><i class="fas fa-home fa-lg"></i><br>Inicio</a>
                         <a href="mi-red.html" class="btn btn-link"><i class="fas fa-users fa-lg"></i><br>Mi Red</a>
                         <a href="empleos.html" class="btn btn-link"><i class="fas fa-briefcase fa-lg"></i><br>Empleos</a>
@@ -59,8 +66,8 @@
 
     <div class="container mt-5" >
         <div class="row">
-            <div class="col-lg-3">
-                <div class="card sticky-top" style="top: 7em;" id="card-muro">
+            <div class="col-lg-3 col-7 offset-3  offset-lg-0 mb-5">
+                <div class="card" id="card-muro">
                     <img src="img/fondo-card.svg" class="img-fluid pt-0" >
                    <div class="card-header text-center">
                         <img src="img/usuario.png" class="img-fluid"  id="img-usuario-perfil">
@@ -79,27 +86,27 @@
                 </div>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-11 offset-1 offset-lg-0">
                 <div class="card mb-5" id="card-muro">
                     <div class="card-header">
                         <textarea class="form-control" id="txta-publicar" cols="30" rows="2" placeholder="Comparte un artículo, foto, vídeo o idea"></textarea>
                     </div>
                     <div class="card-footer">
                         <div class="row no-gutters">
-                            <div class="col-lg-1  pt-2 mt-1" id="boton-input-escribir">
+                            <div class="col-lg-1 col-1 pt-2 mt-1" id="boton-input-escribir">
                                 <i class="fas fa-edit"></i>
                             </div>
-                            <div class="col-lg-1 pt-2" id="boton-input-text">
+                            <div class="col-lg-1 col-1 pt-2" id="boton-input-text">
                                 <label class="btn btn-default btn-file fas fa-camera-retro">
                                     <input type="file" style="display: none;" class="form-control-file">
                                 </label>
                             </div>
-                            <div class="col-lg-1 pt-2" id="boton-input-text">
+                            <div class="col-lg-1 col-1 pt-2" id="boton-input-text">
                                 <label class="btn btn-default btn-file fas fa-video">
                                 <input type="file" style="display: none;" class="form-control-file">
                                 </label>
                             </div>
-                            <div class="col-lg-2 offset-lg-7">
+                            <div class="col-lg-2 offset-lg-7 col-2 offset-7">
                                 <button type="submit" class="btn btn-primary">Publicar</button>
                             </div>
                         </div>
@@ -109,10 +116,10 @@
                 <div class="card mb-5" id="card-muro">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-lg-2">
+                            <div class="col-lg-2 col-2">
                                 <img src="img/goku.png" class="img-fluid rounded-circle"> 
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-6 col-6">
                                 <p><strong>Goku</strong><br>
                                     Guerrero del 7º Universo <br>
                                     1 hora
@@ -128,17 +135,17 @@
                     </div>
                     <div class="card-body">
                         <div class="row no-gutters">
-                            <div class="col-lg-1  pt-2" id="boton-input-text">
+                            <div class="col-lg-1 col-1  pt-2" id="boton-input-text">
                                 <label class="btn btn-default btn-file fas fa-thumbs-up">
                                     <input type="button" style="display: none;" class="form-control-file">
                                 </label>
                             </div>
-                            <div class="col-lg-1 pt-2" id="boton-input-text">
+                            <div class="col-lg-1 col-1 pt-2" id="boton-input-text">
                                 <label class="btn btn-default btn-file fas fa-comments">
                                     <input type="button" style="display: none;" class="form-control-file">
                                 </label>
                             </div>
-                            <div class="col-lg-1 pt-2" id="boton-input-text">
+                            <div class="col-lg-1 col-1 pt-2" id="boton-input-text">
                                 <label class="btn btn-default btn-file fas fa-reply">
                                 <input type="button" style="display: none;" class="form-control-file">
                                 </label>
@@ -148,47 +155,47 @@
 
                     <div class="card-footer">
                         <div class="row no-gutters pb-3">
-                            <div class="col-lg-1">
+                            <div class="col-lg-1 col-1">
                                 <img src="img/usuario.png" class="img-fluid rounded-circle">
                             </div>
-                            <div class="col-lg-9 ml-2">
+                            <div class="col-lg-9 col-9 ml-2">
                                 <input type="text" class="form-control">
                             </div>
-                            <div class="col-lg-1">
+                            <div class="col-lg-1 col-1">
                                 <label class="btn btn-default btn-file fas fa-camera-retro">
                                     <input type="file" style="display: none;" class="form-control-file">
                                 </label>
                             </div>
                         </div>
                         <div class="row no-gutters pb-3">
-                            <div class="col-lg-1 mr-2">
+                            <div class="col-lg-1 col-1 mr-2">
                                 <img src="img/vegeta.jpg" class="img-fluid rounded-circle">
                             </div>
-                            <div class="col-lg-9 text-justify">
+                            <div class="col-lg-9 col-9 text-justify">
                                 <p><strong>Vegeta:</strong> Valio la pena darte la ultima pequeña cantidad de energia que tenia, aprovechalo, el Universo 7 debe ganar el gran torneo del poder. Recuerda que deje en tus manos todas las promesas que hice antes y durante el torneo.
                                 </p>
                                 <a href="#" id="btn-link">Recomendar</a>
                                 <a href="#" id="btn-link">Responder</a>
                                 Hace 1 Hora
                             </div>
-                            <div class="col-lg-1">
+                            <div class="col-lg-1 col-1">
                                 <label class="btn btn-default btn-file fas fa-ellipsis-h">
                                     <input type="button" style="display: none;" class="form-control-file">
                                 </label>
                             </div>
                         </div>
                         <div class="row no-gutters pb-3">
-                            <div class="col-lg-1 mr-2">
+                            <div class="col-lg-1 col-1 mr-2">
                                 <img src="img/jiren.png" class="img-fluid rounded-circle">
                             </div>
-                            <div class="col-lg-9 text-justify">
+                            <div class="col-lg-9 col-9 text-justify">
                                 <p><strong>Jiren:</strong> Tu poder comparado con el mio, es muy inferior y te lo demostrare, no dudes que hare que el Universo 11 sea el vencedor del gran torneo del poder y reclamar el deseo.
                                 </p>
                                 <a href="#" id="btn-link">Recomendar</a>
                                 <a href="#" id="btn-link">Responder</a>
                                 Hace 50 minutos
                             </div>
-                            <div class="col-lg-1">
+                            <div class="col-lg-1 col-1">
                                 <label class="btn btn-default btn-file fas fa-ellipsis-h">
                                     <input type="button" style="display: none;" class="form-control-file">
                                 </label>
@@ -202,10 +209,10 @@
                 <div class="card  mb-5" id="card-muro">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-lg-2">
+                            <div class="col-lg-2 col-2">
                                 <img src="img/goku.png" id="img-usuario-perfil" class="img-fluid"> 
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-6 col-6">
                                 <p><strong>Goku</strong><br>
                                     Guerrero del 7º Universo <br>
                                     1 hora
@@ -221,17 +228,17 @@
                     </div>
                     <div class="card-body">
                         <div class="row no-gutters">
-                            <div class="col-lg-1  pt-2" id="boton-input-text">
+                            <div class="col-lg-1 col-1 pt-2" id="boton-input-text">
                                 <label class="btn btn-default btn-file fas fa-thumbs-up">
                                     <input type="button" style="display: none;" class="form-control-file">
                                 </label>
                             </div>
-                            <div class="col-lg-1 pt-2" id="boton-input-text">
+                            <div class="col-lg-1 col-1 pt-2" id="boton-input-text">
                                 <label class="btn btn-default btn-file fas fa-comments">
                                     <input type="button" style="display: none;" class="form-control-file">
                                 </label>
                             </div>
-                            <div class="col-lg-1 pt-2" id="boton-input-text">
+                            <div class="col-lg-1 col-1 pt-2" id="boton-input-text">
                                 <label class="btn btn-default btn-file fas fa-reply">
                                 <input type="button" style="display: none;" class="form-control-file">
                                 </label>
@@ -241,47 +248,47 @@
                     
                     <div class="card-footer">
                             <div class="row no-gutters pb-3">
-                                <div class="col-lg-1">
+                                <div class="col-lg-1 col-1">
                                     <img src="img/usuario.png" class="img-fluid rounded-circle">
                                 </div>
-                                <div class="col-lg-9 ml-2">
+                                <div class="col-lg-9 col-9 ml-2">
                                     <input type="text" class="form-control">
                                 </div>
-                                <div class="col-lg-1">
+                                <div class="col-lg-1 col-1">
                                     <label class="btn btn-default btn-file fas fa-camera-retro">
                                         <input type="file" style="display: none;" class="form-control-file">
                                     </label>
                                 </div>
                             </div>
                             <div class="row no-gutters pb-3">
-                                <div class="col-lg-1 mr-2">
+                                <div class="col-lg-1 col-1 mr-2">
                                     <img src="img/vegeta.jpg" class="img-fluid rounded-circle">
                                 </div>
-                                <div class="col-lg-9 text-justify">
+                                <div class="col-lg-9 col-9 text-justify">
                                     <p><strong>Vegeta:</strong> Valio la pena darte la ultima pequeña cantidad de energia que tenia, aprovechalo, el Universo 7 debe ganar el gran torneo del poder. Recuerda que deje en tus manos todas las promesas que hice antes y durante el torneo.
                                     </p>
                                     <a href="#" id="btn-link">Recomendar</a>
                                     <a href="#" id="btn-link">Responder</a>
                                     Hace 1 Hora
                                 </div>
-                                <div class="col-lg-1">
+                                <div class="col-lg-1 col-1">
                                     <label class="btn btn-default btn-file fas fa-ellipsis-h">
                                         <input type="button" style="display: none;" class="form-control-file">
                                     </label>
                                 </div>
                             </div>
                             <div class="row no-gutters pb-3">
-                                <div class="col-lg-1 mr-2">
+                                <div class="col-lg-1 col-1 mr-2">
                                     <img src="img/jiren.png" class="img-fluid rounded-circle">
                                 </div>
-                                <div class="col-lg-9 text-justify">
+                                <div class="col-lg-9 col-9 text-justify">
                                     <p><strong>Jiren:</strong> Tu poder comparado con el mio, es muy inferior y te lo demostrare, no dudes que hare que el Universo 11 sea el vencedor del gran torneo del poder y reclamar el deseo.
                                     </p>
                                     <a href="#" id="btn-link">Recomendar</a>
                                     <a href="#" id="btn-link">Responder</a>
                                     Hace 50 minutos
                                 </div>
-                                <div class="col-lg-1">
+                                <div class="col-lg-1 col-1">
                                     <label class="btn btn-default btn-file fas fa-ellipsis-h">
                                         <input type="button" style="display: none;" class="form-control-file">
                                     </label>
@@ -294,14 +301,24 @@
 
             </div>
 
-            <div class="col-lg-3">
-                <div class="card sticky-top" style="top: 7em;" id="card-muro">
+            <div class="col-lg-3 d-none d-lg-block">
+                <div class="card" id="card-muro">
                     <div class="card-body text-center">
                         <a href="empleos.html">
                             <img src="img/blanco-linkedin.jpg" alt="Advertise on LinkedIn" class="img-fluid">
                         </a>
                     </div>
-                    <div class="card-footer"></div>
+                    <div class="card-footer">
+                        <div class="row no-gutters">
+                            <div class="col-lg-3">
+                                <p style="font-size: 20px;">&copy; &middot;</p>
+                            </div>
+                            <div class="col-lg-6">
+                                <img src="img/logo-form.png" class="img-fluid"> 
+                            </div>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>  
         </div>
