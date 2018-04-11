@@ -17,26 +17,32 @@
     <nav class="navbar sticky-top">
         <div class="container">
             <div class="row no-gutters">
-                <div class="col-lg-1 pt-1">
+                <div class="col-lg-1 col-2 navbar-brand">
                     <a href="#">
                         <img src="img/favicon.png" id="logo-muro">
                     </a>
                 </div>
-                <div class="col-lg-3 pb-0">
-                    <form class="inner-addon pt-2">
-                        <input class="form-control" type="text" placeholder="Buscar">
-                    </form>
+                <div class="col-lg-3 col-9">
+                    <form class="form-inline pt-2">
+                        <div class="input-group">
+                          <input type="text" class="form-control" placeholder="Buscar" aria-label="Username" aria-describedby="basic-addon1">
+                          <div class="input-group-prepend">
+                            <button type="button" onclick="window.location.href='empleos.html'" class="input-group-text">
+                                <i class="fas fa-search"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </form>
                 </div>
-
-                <div class="offset-lg-3 col-lg-5 btn-group btn-group-toggle pb-0">
-                    <a href="muro.html" class="btn btn-link"><i class="fas fa-home fa-lg"></i><br>Inicio</a>
+                    <div class="offset-lg-2 col-lg-5 btn-group btn-group-toggle pb-0">
+                        <a href="muro.html" class="btn btn-link"><i class="fas fa-home fa-lg"></i><br>Inicio</a>
                         <a href="mi-red.html" class="btn btn-link"><i class="fas fa-users fa-lg"></i><br>Mi Red</a>
                         <a href="empleos.html" class="btn btn-link"><i class="fas fa-briefcase fa-lg"></i><br>Empleos</a>
                         <a href="mensajes.html" class="btn btn-link"><i class="fas fa-envelope fa-lg"></i><br>Mensajes</a>
                         <a href="notificaciones.html" class="btn btn-link"><i class="fas fa-bell fa-lg"></i><br>Notificaciones</a>
-                    <div class="dropdown">
-					  <a style="color: white;" class="dropdown-toggle btn btn-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    <img style="width: 18px; height: 18px" src="img/usuario.png" id="usuario-img">
+                        <div class="dropdown">
+					  <a style="color: white;" class="dropdown-toggle-split btn btn-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    <img style="width: 24px; height: 24px" src="img/usuario.png" id="usuario-img">
 					    <br>
 					  	Yo
 					  </a>
@@ -53,7 +59,6 @@
 					</div>
                 </div>
 
-
             </div>
         </div>
 
@@ -61,7 +66,7 @@
 
     <div class="container mt-5" >
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-3 offset-lg-0 col-8 offset-2 mb-5">
                 <div class="card pt-5" id="card-muro">
                    <div class="card-subtitle text-center pt-4 pb-5">
                       <h3><a href="#" id="numero-mi-red">Numero</a></h3>
@@ -74,7 +79,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-6 offset-lg-0 col-10 offset-1">
                 <div class="card mb-3" id="card-muro">
                     <div class="card-header">
                         <div class="row">
@@ -102,7 +107,7 @@
                                 <a href="" class="col-lg-2" id="btn-grupo-red"><strong>Antiguos Alumnos</strong></a>
                             </div>
                             <div>
-                                <a href="" id="btn-grupo-red"><strong>Compañeros de Trabajo</strong></a>
+                                <a href="" class="col-lg-4" id="btn-grupo-red"><strong>Compañeros de Trabajo</strong></a>
                             </div>
                         </div>
                     </div>
@@ -161,7 +166,7 @@
 
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 d-none d-lg-block">
                 <div class="card" id="card-muro">
                     <div class="card-body text-center">
                         <a href="empleos.html">

@@ -17,29 +17,35 @@
     <nav class="navbar sticky-top">
         <div class="container">
             <div class="row no-gutters">
-                <div class="offset-lg-1 col-lg-1 pt-1">
+                <div class="col-lg-1 col-2 navbar-brand">
                     <a href="#">
                         <img src="img/favicon.png" id="logo-muro">
                     </a>
                 </div>
-                <div class="col-lg-3 pb-0">
-                    <form class="inner-addon pt-2">
-                        <input class="form-control" type="text" placeholder="Buscar">
-                    </form>
+                <div class="col-lg-3 col-9">
+                    <form class="form-inline pt-2">
+                        <div class="input-group">
+                          <input type="text" class="form-control" placeholder="Buscar" aria-label="Username" aria-describedby="basic-addon1">
+                          <div class="input-group-prepend">
+                            <button type="button" onclick="window.location.href='empleos.html'" class="input-group-text">
+                                <i class="fas fa-search"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </form>
                 </div>
-
-                <div class="offset-lg-1 col-lg-5 btn-group btn-group-toggle pb-0">
-                    <a href="muro.html" class="btn btn-link"><i class="fas fa-home fa-lg"></i><br>Inicio</a>
+                    <div class="offset-lg-2 col-lg-5 btn-group btn-group-toggle pb-0">
+                        <a href="muro.html" class="btn btn-link"><i class="fas fa-home fa-lg"></i><br>Inicio</a>
                         <a href="mi-red.html" class="btn btn-link"><i class="fas fa-users fa-lg"></i><br>Mi Red</a>
                         <a href="empleos.html" class="btn btn-link"><i class="fas fa-briefcase fa-lg"></i><br>Empleos</a>
                         <a href="mensajes.html" class="btn btn-link"><i class="fas fa-envelope fa-lg"></i><br>Mensajes</a>
                         <a href="notificaciones.html" class="btn btn-link"><i class="fas fa-bell fa-lg"></i><br>Notificaciones</a>
-	                 <div class="dropdown">
-					  <a style="color: white;" class="dropdown-toggle btn btn-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    <img style="width: 18px; height: 18px" src="img/usuario.png" id="usuario-img">
-					    <br>
-					  	Yo
-					  </a>
+                        <div class="dropdown">
+                        <a style="color: white;" class="dropdown-toggle-split btn btn-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img style="width: 24px; height: 24px" src="img/usuario.png" id="usuario-img">
+                            <br>
+                            Yo
+                        </a>
 					  <div class="dropdown-menu dropdown-menu-right pr-2 pl-2" aria-labelledby="dropdownMenuButton">
                             <div class="card text-center">
                                 <img src="img/usuario.png" class="rounded-circle img-fluid">
@@ -51,10 +57,7 @@
 					    <a class="dropdown-item btn btn-link text-center" href="index.html" id="perfil-muro">Cerrar Sesion</a>
 					  </div>
 					</div>
-
-
                 </div>
-
 
             </div>
         </div>
@@ -63,71 +66,62 @@
                   
     <div class="container mt-5">   
         <div class="row">
-            <div class="col-lg-9 card">
+            <div class="col-lg-9 col-12 card">
                 <div class="row">
-                    <div class="col-lg-4 card-header">
+                    <div class="col-lg-4 col-5 card-header">
                             <div class="row border-bottom">
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 col-8 mt-2">
                                     <h6><strong>Mensajes</strong></h6>
                                 </div>
-                                <div class="offset-lg-3 col-lg-2 mb-2">
+                                <div class="offset-lg-3 col-lg-2 col-2 mb-2">
                                    <button class="btn btn-link" style="color: #0084bf;"><i class="fas fa-edit fa-lg"></i></button>
                                 </div>
                             </div>
                             <div class="row card-header-tabs border-bottom">
-                                <div class="col-lg-9">
+                                <div class="col-lg-9 col-9">
                                     <input type="text" class="form-control-plaintext" placeholder="Buscar Mensajes">
                                 </div>
-                                <div class="col-lg-1">
+                                <div class="col-lg-1 col-1">
                                    <button class="btn btn-light rounded-circle"><i class="fas fa-list-alt"></i></button>
                                 </div>
                             </div>
                             <div class="row btn btn-toolbar mt-4 border pt-2 pb-2 no-gutters">
-                                <div class="col-lg-4">
+                                <div class="col-lg-4 col-4">
                                     <img src="img/freezer.jpg" class="img-fluid rounded-circle">
                                 </div>
-                                <div class="col-lg-4 pl-2">
+                                <div class="col-lg-4 col-4 pl-2">
                                    <p><strong>Freezer</strong><br>
                                     <i class="fas fa-camera-retro"></i>Imagen</p>
                                 </div>
-                                <div class="col-lg-4">
-                                   <p><strong>Mar 11</strong><br></p>
-                                </div>
                             </div>
                             <div class="row btn btn-toolbar mt-4 border pt-2 pb-2 no-gutters">
-                                <div class="col-lg-4">
+                                <div class="col-lg-4 col-4">
                                     <img src="img/jiren.png" class="img-fluid rounded-circle">
                                 </div>
-                                <div class="col-lg-4 pl-2">
+                                <div class="col-lg-4 col-4 pl-2">
                                    <p><strong>Jiren</strong><br>
                                     ...</p>
                                 </div>
-                                <div class="col-lg-4">
-                                   <p><strong>Mar 4</strong><br></p>
-                                </div>
                             </div>
                             <div class="row btn btn-toolbar mt-4 border pt-2 pb-2 no-gutters">
-                                <div class="col-lg-4">
+                                <div class="col-lg-4 col-4">
                                     <img src="img/vegeta.jpg" class="img-fluid rounded-circle">
                                 </div>
-                                <div class="col-lg-4 pl-2">
-                                   <p><strong>Freezer</strong><br>
+                                <div class="col-lg-4 col-4 pl-2">
+                                   <p><strong>Vegeta</strong><br>
                                    Todo queda...</p>
-                                </div>
-                                <div class="col-lg-4">
-                                   <p><strong>Feb 24 </strong><br></p>
                                 </div>
                             </div>
                     </div>
-                    <div class="col-lg-8 frame">
+                    <div class="col-lg-8 col-7 frame">
                         <ul>
                         <li class="card-header" style="background-color: white;">
                             <div class="row">
-                                <div class="col-lg-5">
+                                <div class="col-lg-5 col-9">
                                     <h5>Freezer</h5>
                                     <strong>Activo ahora</strong>
                                 </div>
-                                <div class="offset-lg-5 col-lg-2 pt-3">
+                                <div class="offset-lg-5 col-lg-2 col-2 pt-3">
                                    <button class="btn btn-link" style="color:black;"><i class="fas fa-ellipsis-h fa-lg"></i></button>
                                 </div>
                             </div>
@@ -217,14 +211,14 @@
 
 
                      </ul>
-                            <div class="ml-2 mb-1">
-                                <div class=" msj-rta macro">                        
+                            <div class="mb-1">
+                                <div class="ml-2 mr-2 msj-rta macro">                        
                                     <div class="text text-r" style="background:whitesmoke !important">
                                         <input class="mytext" placeholder="Type a message"/>
                                     </div> 
                 
                                 </div>
-                                <button type="submit" class="btn btn-outline-primary ml-2 pr-4 mt-1"><i class="fas fa-paper-plane pl-2"> </i></button>            
+                                <button type="submit" class="btn btn-outline-primary mt-1"><i class="fas fa-paper-plane pl-2"> </i></button>            
                             </div>
                     </div>       
                 </div>
@@ -233,14 +227,24 @@
             <!---->
          <!-- aqui termina el chat -->
         <!-- aqui comienza el negro blanco xd -->
-            <div class="col-lg-3">
-                <div class="card sticky-top" style="top: 7em;" id="card-muro">
+             <div class="col-lg-3 d-none d-lg-block">
+                <div class="card" id="card-muro">
                     <div class="card-body text-center">
                         <a href="empleos.html">
                             <img src="img/blanco-linkedin.jpg" alt="Advertise on LinkedIn" class="img-fluid">
                         </a>
                     </div>
-
+                    <div class="card-footer">
+                        <div class="row no-gutters">
+                            <div class="col-lg-3">
+                                <p style="font-size: 20px;">&copy; &middot;</p>
+                            </div>
+                            <div class="col-lg-6">
+                                <img src="img/logo-form.png" class="img-fluid"> 
+                            </div>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>  
         </div>
