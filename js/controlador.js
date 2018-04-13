@@ -9,6 +9,7 @@ $("#btn-enviar").click(function(){
 		data:parametros,
         success: function(respuesta){
             $("#ul-chat").append(respuesta);
+            $("#txt-mensaje").val('');
         }
     });
 });
