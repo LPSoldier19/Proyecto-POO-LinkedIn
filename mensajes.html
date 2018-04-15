@@ -130,19 +130,22 @@
                             </button>
                     </div>
                     <div class="col-lg-8 col-12 frame d-none d-lg-block" id="msj-chat">
-                        <ul id="ul-chat">
-                        <li class="card-header" style="background-color:#2B3E4A;">
+                        <header class="card-header mb-5" style="background-color:#2B3E4A;" >
                             <div class="row">
-                                <div class="col-lg-1 col-2 d-md-none d-lg-none">
+                                <div class="col-lg-1 col-1 mr-3 d-md-none d-lg-none">
                                     <button class="btn btn-link" style="color:white;" id="msj-regresar"><i class="fas fa-arrow-circle-left fa-lg"></i></button>
                                 </div>
-                                <div class="col-lg-6 col-6">
+                                <div class="col-lg-6 col-6 ">
                                     <h5 style="color:white;">Freezer</h5>
-                                    <strong style="color: seagreen;">Activo ahora</strong>
+                                    <div id="animacion">
+                                    <i class="fas fa-circle"></i> <strong>Activo ahora</strong>
+                                    </div>
                                    
                                 </div>
                             </div>
-                        </li>
+                        </header>
+                        <div id="scrollbar" style="">
+                        <ul id="ul-chat" class="mt-4 ">
                         <li style="width:100%">
                              <div class="msj-rta macro">
                              
@@ -159,9 +162,8 @@
                                     <div class="msj macro">
                                         <div class="avatar" style="padding:0px 0px 0px 10px !important"><img class="rounded-circle" style="width:100%;" src="img/freezer.jpg" /></div>                               
                                         <div class="text text-r">
-                                            <p>Yo matare a quien se me de la gana, y un inferior Sayayin como tu, no me vendra a dar ordenes a mi, el Emperador del Mal <br>
-                                                <img src="img/krilin-levitando.jpg" height="50%" width="50%">
-                                            </p>
+                                            <p>Yo matare a quien se me de la gana, y un inferior Sayayin como tu, no me vendra a dar ordenes a mi, el Emperador del Mal </p>
+                                            <img src="img/krilin-levitando.jpg" height="50%" width="50%">
                                             <p><small>date</small></p>
                                         </div>
                                     
@@ -229,14 +231,17 @@
 
 
                      </ul>
-                            <div class="mb-1">
-                                <div class="ml-2 mr-2 msj-rta macro">                        
-                                    <div class="text text-r" style="background:whitesmoke !important">
-                                        <input class="mytext" placeholder="Type a message" id="txt-mensaje"/>
+                    </div>
+                            <div class="mb-1 row no-gutters pb-2">
+                                <div class="col-lg-11 col-10 pl-2">                        
+                                    <div class="bottom" style="background:whitesmoke !important">
+                                        <input class="form-control pt-2" placeholder="Type a message" id="txt-mensaje"/>
                                     </div> 
-                
                                 </div>
-                                <button type="submit" class="btn btn-outline-primary mt-1" id="btn-enviar"><i class="fas fa-paper-plane pl-2 pr-2"> </i></button>            
+                                <div class="col-lg-1 col-2">
+                                    <button type="submit" class="btn btn-outline-primary" id="btn-enviar"><i class="fas fa-paper-plane "> </i></button>   
+                                </div>
+                                         
                             </div>
                     </div>       
                 </div>

@@ -192,3 +192,21 @@ body{
     background-color: #84878a;
 }
 
+#animacion{
+    animation-name: miAnimacion;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes miAnimacion{
+    0%{
+        color: seagreen;
+    }
+    50%{
+        color: rgb(167, 167, 167);    
+    }
+    100%{
+        color: seagreen;
+    }
+}
+

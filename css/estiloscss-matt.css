@@ -33,19 +33,25 @@
                 padding-right:10px;
             }
             .macro{
-                margin-top:5px;width:85%;border-radius:5px;padding:5px;display:flex;
+                margin-top:10px;
+                width:80%;
+                border-radius:5px;
+                padding:5px;
+                display:flex;
             }
             .msj-rta{
-                float:right;background:whitesmoke;
+                float:right;
+                background:whitesmoke;
             }
             .msj{
-                float:left;background:white;
+                float:left;
+                background:white;
             }
             .frame{
                 background:#e0e0de;
-                height:450px;
-                overflow:hidden;
+                height:750px;
                 padding:0;
+                
             }
             .frame > div:last-of-type{
                 position:absolute;bottom:0;width:100%;display:flex;
@@ -62,10 +68,8 @@
                 padding:18px;
                 position:absolute;
                 bottom:47px;
-                display:flex;
-                flex-direction: column;
-                top:0;
-                overflow-y:scroll;
+                top:58px;
+                overflow:auto;
             }
             .msj:before{
                 width: 0;
@@ -104,3 +108,4 @@
             :-moz-placeholder { /* Firefox 18- */
                 color: #d4d4d4;
             } 
+            

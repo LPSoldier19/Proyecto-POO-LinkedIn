@@ -7,3 +7,4 @@ $( "#msj-regresar" ).click(function() {
     $("#msj-contactos").removeClass('d-none d-lg-block');
     $("#msj-chat").addClass('d-none d-lg-block');
 });
+
