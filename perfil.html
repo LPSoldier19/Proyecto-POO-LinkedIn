@@ -17,35 +17,24 @@
     <nav class="navbar sticky-top">
         <div class="container">
             <div class="row no-gutters">
-                <div class="col-lg-1 col-2 navbar-brand">
+                <div class="col-lg-3 col-2 navbar-brand">
                     <a href="#">
-                        <img src="img/favicon.png" id="logo-muro">
+                        <img src="img/logo-in.png" id="logo-muro">
                     </a>
                 </div>
-                <div class="col-lg-3 col-9">
-                    <form class="form-inline pt-2">
-                        <div class="input-group">
-                          <input type="text" class="form-control" placeholder="Buscar" aria-label="Username" aria-describedby="basic-addon1">
-                          <div class="input-group-prepend">
-                            <button type="button" onclick="window.location.href='empleos.html'" class="input-group-text">
-                                <i class="fas fa-search"></i>
-                            </button>
-                          </div>
-                        </div>
-                      </form>
-                </div>
-                    <div class="offset-lg-2 col-lg-5 btn-group btn-group-toggle pb-0">
+                
+                    <div class="offset-lg-3 col-lg-5 btn-group btn-group-toggle pb-0">
                         <a href="muro.html" class="btn btn-link"><i class="fas fa-home fa-lg"></i><br>Inicio</a>
                         <a href="mi-red.html" class="btn btn-link"><i class="fas fa-users fa-lg"></i><br>Mi Red</a>
                         <a href="empleos.html" class="btn btn-link"><i class="fas fa-briefcase fa-lg"></i><br>Empleos</a>
                         <a href="mensajes.html" class="btn btn-link"><i class="fas fa-envelope fa-lg"></i><br>Mensajes</a>
                         <a href="notificaciones.html" class="btn btn-link"><i class="fas fa-bell fa-lg"></i><br>Notificaciones</a>
                         <div class="dropdown">
-					    <a style="color: white;" class="dropdown-toggle-split btn btn-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img style="width: 24px; height: 24px" src="img/usuario.png" id="usuario-img">
-                            <br>
-                            Yo
-                        </a>
+					  <a style="color: white;" class="dropdown-toggle-split btn btn-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    <img style="width: 24px; height: 24px" src="img/usuario.png" id="usuario-img">
+					    <br>
+					  	Yo
+					  </a>
 					  <div class="dropdown-menu dropdown-menu-right pr-2 pl-2" aria-labelledby="dropdownMenuButton">
                             <div class="card text-center">
                                 <img src="img/usuario.png" class="rounded-circle img-fluid">
@@ -70,7 +59,77 @@
                 <div class="card mb-5" id="card-muro">
                     <img src="img/fondo-card.svg" class="img-fluid pt-0">
                     <div class="card-header text-center">
-                        <img src="img/usuario.png" class="img-fluid rounded-circle"  >
+                        <div class="row">
+                            <div class="offset-lg-11 col-lg-1">
+                                <a class="btn btn-link rounded-circle" href="#modal-perfil" data-toggle="modal" style="color: #0084bf;"><i class="fas fa-pencil-alt fa-lg"></i></a >
+                            </div>
+                            <div class="modal fade" id="modal-perfil" tabindex="5" role="application" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Editar perfil</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="img/fondo-card.svg" class="img-fluid pt-0">
+                                        <img src="img/usuario.png" class="img-fluid rounded-circle">
+                                        <label class="btn btn-default btn-file fas fa-pencil-alt" style="color: #0084bf;">
+                                            <input type="file" style="display: none;" class="form-control-file">
+                                        </label>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <label class="float-left">Nombre: <span style="color: #0084bf;">*</span></label>
+                                                <input type="text" class="form-control mt-2" placeholder="Nombre" id="txt-nombre-modal">
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="float-left">Apellido: <span style="color: #0084bf;">*</span></label>
+                                                <input type="text" class="form-control mt-2" placeholder="Apellido" id="txt-apellido-modal">
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <label class="float-left mt-2">Titular: <span style="color: #0084bf;">*</span></label>
+                                                <textarea class="form-control" id="txta-titular-modal" cols="30" rows="2" 
+                                                placeholder="Titular" ></textarea>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <label class="float-left mt-2">Educacion: <span style="color: #0084bf;">*</span></label>
+                                                <input type="text" class="form-control mt-2" placeholder="Añade tu nivel de Educacion" id="txt-educacion-modal">
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="float-left mt-2">Pais/Region: <span style="color: #0084bf;">*</span></label>
+                                                <select class="form-control" name="slc-pais" id="slc-pais-modal">
+                                                    <option value="1">Honduras</option>
+                                                    <option value="2">Mexico</option>
+                                                    <option value="3">Costa Rica</option>
+                                                    <option value="4">Panama</option>
+                                                    <option value="5">El Salvador</option>
+                                                    <option value="6">Nicaragua</option>
+                                                    <option value="7">Guatemala</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <label class="float-left mt-2">Sector: <span style="color: #0084bf;">*</span></label>
+                                                <select class="form-control" name="slc-sector" id="slc-sector-modal">
+                                                    <option value="1">Diseño Grafico</option>
+                                                    <option value="2">Desarrollo Web</option>
+                                                    <option value="3">Diseño</option>
+                                                    <option value="4">Arte</option>
+                                                    <option value="5">Contabilidad</option>
+                                                    <option value="6">Marketing</option>
+                                                    <option value="7">Música</option>
+                                                </select>
+                                            </div>                                                     
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" id="btn-guardar-modal">Guardar</button>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="img/usuario.png" class="img-fluid rounded-circle">
                         <h4 class="pt-2">Usuario</h4>
                         <h5>Estudiante en Universidad Nacional Autonoma de Honduras(UNAH)</h5>
                         <h6>Universidad Nacional Autónoma de Honduras (UNAH)</h6>
@@ -124,9 +183,6 @@
 
 
             <div class="col-lg-4">
-                <button class="btn btn-primary mb-2 btn-block">Añadir seccion de perfil</button>
-                <button class="btn btn-outline-secondary mb-2 btn-block">Editar URL y perfil publico</button>
-                <button class="btn btn-outline-secondary mb-2 btn-block">Añadir perfil en otro sistema</button>
                 <div class="card" id="card-muro">
                     <div class="card-body text-center"> 
                         <a href="empleos.html">
@@ -187,5 +243,6 @@
     
     <script src="js/jquery-3.3.1.min.js"></script>
    <script src="js/bootstrap.js"></script>
+   <script src="js/controlador.js"></script>
 </body>
 </html>

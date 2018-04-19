@@ -17,24 +17,13 @@
     <nav class="navbar sticky-top">
         <div class="container">
             <div class="row no-gutters">
-                <div class="col-lg-1 col-2 navbar-brand">
+                <div class="col-lg-3 col-2 navbar-brand">
                     <a href="#">
-                        <img src="img/favicon.png" id="logo-muro">
+                        <img src="img/logo-in.png" id="logo-muro">
                     </a>
                 </div>
-                <div class="col-lg-3 col-9">
-                    <form class="form-inline pt-2">
-                        <div class="input-group">
-                          <input type="text" class="form-control" placeholder="Buscar" aria-label="Username" aria-describedby="basic-addon1">
-                          <div class="input-group-prepend">
-                            <button type="button" onclick="window.location.href='empleos.html'" class="input-group-text">
-                                <i class="fas fa-search"></i>
-                            </button>
-                          </div>
-                        </div>
-                      </form>
-                </div>
-                    <div class="offset-lg-2 col-lg-5 btn-group btn-group-toggle pb-0">
+                
+                    <div class="offset-lg-3 col-lg-5 btn-group btn-group-toggle pb-0">
                         <a href="muro.html" class="btn btn-link"><i class="fas fa-home fa-lg"></i><br>Inicio</a>
                         <a href="mi-red.html" class="btn btn-link"><i class="fas fa-users fa-lg"></i><br>Mi Red</a>
                         <a href="empleos.html" class="btn btn-link"><i class="fas fa-briefcase fa-lg"></i><br>Empleos</a>
@@ -74,7 +63,7 @@
                         <p id="Bienvenida"><strong>Te damos la bienvenida, Usuario</strong></p>
                    </div>
                    <div class="card-subtitle text-center pt-4">
-                      <h6><a href="#">Numero</a></h6>
+                      <h6><a href="mi-red.html">Numero</a></h6>
                       <p>Contacto
                         <br>
                         <strong>Amplia tu Red</strong>
@@ -89,7 +78,8 @@
             <div class="col-lg-6 col-10 offset-1 offset-lg-0">
                 <div class="card mb-4" id="card-muro">
                     <div class="card-header">
-                        <textarea class="form-control" id="txta-publicar" cols="30" rows="2" placeholder="Comparte un artículo, foto, vídeo o idea"></textarea>
+                        <textarea class="form-control" id="txta-publicar" cols="30" rows="2" 
+                        placeholder="Comparte un artículo, foto, vídeo o idea" ></textarea>
                     </div>
                     <div class="card-footer">
                         <div class="row no-gutters">
@@ -107,7 +97,7 @@
                                 </label>
                             </div>
                             <div class="col-lg-2 offset-lg-7 col-2 offset-6">
-                                <button type="submit" class="btn btn-primary">Publicar</button>
+                                <button type="button" class="btn btn-primary" id="btn-post">Publicar</button>
                             </div>
                         </div>
                     </div>
@@ -136,8 +126,8 @@
                     <div class="card-body">
                         <div class="row no-gutters">
                             <div class="col-lg-1 col-1  pt-2" id="boton-input-text">
-                                <label class="btn btn-default btn-file fas fa-thumbs-up">
-                                    <input type="button" style="display: none;" class="form-control-file">
+                                <label class="btn btn-default btn-file fas fa-thumbs-up" id="like-logo">
+                                    <input type="button" style="display: none;" class="form-control-file" id="like">
                                 </label>
                             </div>
                             <div class="col-lg-1 col-1 pt-2" id="boton-input-text">
@@ -229,8 +219,8 @@
                     <div class="card-body">
                         <div class="row no-gutters">
                             <div class="col-lg-1 col-1 pt-2" id="boton-input-text">
-                                <label class="btn btn-default btn-file fas fa-thumbs-up">
-                                    <input type="button" style="display: none;" class="form-control-file">
+                                <label class="btn btn-default btn-file fas fa-thumbs-up" id="like-logo">
+                                    <input type="button" style="display: none;" class="form-control-file" id="like">
                                 </label>
                             </div>
                             <div class="col-lg-1 col-1 pt-2" id="boton-input-text">
@@ -326,5 +316,7 @@
     
     <script src="js/jquery-3.3.1.min.js"></script>
    <script src="js/bootstrap.js"></script>
+   <script src="js/controlador.js"></script>
+   <script src="js/javascript-rafa.js"></script>
 </body>
 </html>
