@@ -1,7 +1,7 @@
 $("#btn-enviar").click(function(){
     var parametros ="mensaje="+$("#txt-mensaje").val();
 
-    console.log(parametros);
+    alert(parametros);
 
     $.ajax({
         url: 'class/procesar.php',
@@ -20,20 +20,20 @@ $("#btn-registro").click(function(){
                      "correo=" + $("#txt-email").val() + "&" +
                      "contrasenia=" + $("#txt-contrasena").val();
 
-    console.log(parametros);
+    alert(parametros);
 });
 
 $("#btn-inicio-sesion").click(function(){
     var parametros = "correo=" + $("#txt-correo").val() + "&" +
                      "contrasenia=" + $("#txt-contrasenia").val();
 
-    console.log(parametros);
+    alert(parametros);
 });
 
 $("#btn-post").click(function(){
     var parametros = "post=" + $("#txta-publicar").val()
 
-    console.log(parametros);
+    alert(parametros);
 });
 
 $("#btn-guardar-modal").click(function(){
@@ -44,5 +44,5 @@ $("#btn-guardar-modal").click(function(){
                      "pais=" + $("#slc-pais-modal").val() + "&" +
                      "sector=" + $("#slc-sector-modal").val();
 
-    console.log(parametros);
+    alert(parametros);
 });

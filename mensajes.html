@@ -13,26 +13,29 @@
 </head>
 
 <body id="container-muro">
-    <nav class="navbar sticky-top">
-        <div class="container">
+    
+    <nav class="navbar sticky-top ">
+    
+        <div>
             <div class="row no-gutters">
-                <div class="col-lg-3 col-2 navbar-brand">
-                    <a href="#">
-                        <img src="img/logo-in.png" id="logo-muro">
-                    </a>
+                <div class="col-lg-2 col-12 col-sm-4 col-md-4 navbar-brand text-center form-inline">
+                    <button class="btn btn-link">
+                        <img src="img/logo-in.png" id="logo-muro" class="img-fluid">
+                    </button>
                 </div>
                 
-                    <div class="offset-lg-3 col-lg-5 btn-group btn-group-toggle pb-0">
-                        <a href="muro.html" class="btn btn-link"><i class="fas fa-home fa-lg"></i><br>Inicio</a>
-                        <a href="mi-red.html" class="btn btn-link"><i class="fas fa-users fa-lg"></i><br>Mi Red</a>
-                        <a href="empleos.html" class="btn btn-link"><i class="fas fa-briefcase fa-lg"></i><br>Empleos</a>
-                        <a href="mensajes.html" class="btn btn-link"><i class="fas fa-envelope fa-lg"></i><br>Mensajes</a>
-                        <a href="notificaciones.html" class="btn btn-link"><i class="fas fa-bell fa-lg"></i><br>Notificaciones</a>
+                    <div class="offset-lg-6 col-lg-3 col-12 col-sm-7 col-md-7 offset-md-0 form-inline text-center">
+                        <div class="row">
+                        <a href="muro.html" class="btn btn-link nav-item"><i class="fas fa-home fa-lg"></i><br><small>Inicio</small></a>
+                        <a href="mi-red.html" class="btn btn-link nav-item"><i class="fas fa-users fa-lg"></i><br><small>Mi Red</small></a>
+                        <a href="empleos.html" class="btn btn-link nav-item"><i class="fas fa-briefcase fa-lg"></i><br><small>Empleos</small></a>
+                        <a href="mensajes.html" class="btn btn-link nav-item active"><i class="fas fa-envelope fa-lg"></i><br><small>Mensajes</small></a>
+                        <a href="notificaciones.html" class="btn btn-link nav-item"><i class="fas fa-bell fa-lg"></i><br><small>Notificaciones</small></a>
                         <div class="dropdown">
-					  <a style="color: white;" class="dropdown-toggle-split btn btn-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    <img style="width: 24px; height: 24px" src="img/usuario.png" id="usuario-img">
+					  <a style="color: white;" class="dropdown-toggle-split btn btn-link nav-item active" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    <img style="width: 24px; height: 24px" src="img/usuario.png" id="usuario-img" class="img-fluid">
 					    <br>
-					  	Yo
+                        <small>Yo</small>
 					  </a>
 					  <div class="dropdown-menu dropdown-menu-right pr-2 pl-2" aria-labelledby="dropdownMenuButton">
                             <div class="card text-center">
@@ -46,17 +49,19 @@
 					  </div>
 					</div>
                 </div>
+            </div>
 
             </div>
         </div>
+
 
     </nav>
     
     <div class="container mt-5 mb-5">   
         <div class="row">
-            <div class="col-lg-9 col-10 offset-1 offset-lg-0 card" >
+            <div class="col-lg-9 col-10 col-md-8 offset-md-2 offset-1 offset-lg-0 card" >
                 <div class="row">
-                    <div class="col-lg-4 col-12 card-header" id="msj-contactos">
+                    <div class="col-lg-4 col-12 col-md-12 card-header" id="msj-contactos">
                             <div class="row border-bottom">
                                 <div class="col-lg-6 col-8 mt-2">
                                     <h6><strong>Mensajes</strong></h6>
@@ -74,16 +79,16 @@
                                 </div>
                             </div>
                             <button class="row btn btn-toolbar mt-4 border pt-2 pb-2 no-gutters pr-5" id="contacto-chat">
-                                <div class="col-lg-6 col-4">
+                                <div class="col-lg-6 col-4 col-md-4">
                                     <img src="img/freezer.jpg" class="img-fluid rounded-circle">
                                 </div>
-                                <div class="col-lg-3 col-4 pl-2">
+                                <div class="col-lg-3 col-4 col-md-4 pl-2 pr-5 mr-md-4">
                                    <p><strong>Freezer</strong><br>
                                     <i class="fas fa-camera-retro"></i>Imagen</p>
                                 </div>
                             </button>
-                            <button class="row btn btn-toolbar mt-4 border pt-2 pb-2 no-gutters">
-                                <div class="col-lg-5 col-4">
+                            <button class="row btn btn-toolbar mt-4 border pt-2 pb-2 no-gutters pr-5">
+                                <div class="col-lg-6 col-4 col-md-4">
                                     <img src="img/jiren.png" class="img-fluid rounded-circle">
                                 </div>
                                 <div class="col-lg-3 col-2 pl-2">
@@ -91,13 +96,14 @@
                                     ...</p>
                                 </div>
                             </button>
-                            <button class="row btn btn-toolbar mt-4 border pt-2 pb-2 no-gutters">
-                                <div class="col-lg-5 col-4">
+                            <button class="row btn btn-toolbar mt-4 border pt-2 pb-2 no-gutters pr-5" id="contacto-chat">
+                                <div class="col-lg-6 col-4 col-md-4">
                                     <img src="img/vegeta.jpg" class="img-fluid rounded-circle">
                                 </div>
-                                <div class="col-lg-4 col-1 pl-2">
+                                <div class="col-lg-3 col-4 col-md-4 pl-2 pl-md-3 pr-5 mr-md-4">
                                    <p><strong>Vegeta</strong><br>
-                                   Todo queda...</p>
+                                    Insecto!!
+                                   </p>
                                 </div>
                             </button>
                             <button class="row btn btn-toolbar mt-4 border pt-2 pb-2 no-gutters">
@@ -122,7 +128,7 @@
                     <div class="col-lg-8 col-12 frame d-none d-lg-block" id="msj-chat">
                         <header class="card-header mb-5" style="background-color:#2B3E4A;" >
                             <div class="row">
-                                <div class="col-lg-1 col-1 mr-3 d-md-none d-lg-none">
+                                <div class="col-lg-1 col-1 mr-3 d-lg-none">
                                     <button class="btn btn-link" style="color:white;" id="msj-regresar"><i class="fas fa-arrow-circle-left fa-lg"></i></button>
                                 </div>
                                 <div class="col-lg-6 col-6 ">
@@ -240,7 +246,7 @@
             <!---->
          <!-- aqui termina el chat -->
         <!-- aqui comienza el negro blanco xd -->
-             <div class="col-lg-3 d-none d-lg-block">
+             <div class="col-lg-3 col-md-4 d-none d-lg-block">
                 <div class="card" id="card-muro">
                     <div class="card-body text-center">
                         <a href="empleos.html">
