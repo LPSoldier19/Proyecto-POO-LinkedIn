@@ -35,19 +35,19 @@
                 </div>
 
                 <div class="row">
-                    <div class="form-signing col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-10 offset-sm-1 col-10 offset-1">
+                    <div class="form-signing col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-10 offset-sm-1 col-10 offset-1" id="form-check">
                          <br>
                             <label>Nombre:</label><br>
-                            <input type="text" class="form-control" id="txt-nombre" required><br>
+                            <input type="text" class="form-control" id="txt-nombre" onkeydown="validar(this)"><br>
                             <label>Apellidos:</label><br>
-                            <input type="text" class="form-control" id="txt-apellido" required><br>
+                            <input type="text" class="form-control" id="txt-apellido" onkeydown="validar(this)"><br>
                             <label>Correo Electronico:</label><br>
-                            <input type="email" class="form-control" id="txt-email" required><br>
+                            <input type="email" class="form-control" id="txt-email" onkeydown="validarEmail(this)"><br>
                             <label>Contraseña (6 o más caracteres):</label><br>
-                            <input type="password" class="form-control" id="txt-contrasena" required><br>
+                            <input type="password" class="form-control" id="txt-contrasena" onkeydown="validarContrasena(this)"><br>
                             <p class="text-center" id="politicas">Al hacer click en Únete ahora, aceptas las Condiciones de Uso, la Politica de Privacidad
                             y la Politica de cookies de LinkedIn</p>
-                            <button type="button" class="btn btn-primary btn-block" id="btn-registro">Únete Ahora</button>
+                            <button type="button" class="btn btn-primary btn-block" id="btn-registro" >Únete Ahora</button>
                             <br>
                     </div>
                 </div>
