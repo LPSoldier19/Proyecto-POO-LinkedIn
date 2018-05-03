@@ -107,7 +107,7 @@ $("#btn-guardar-modal").click(function(){
     alert(parametros);
 });
 
-var button = $("#colorForm button[type='button']").attr("disabled", true);
+var button = $("#btn-inicio-sesion").attr("disabled", true);
 
 $("#colorForm input.required").change(function () {
     var valid = true;

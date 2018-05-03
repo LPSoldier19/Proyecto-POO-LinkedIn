@@ -18,7 +18,7 @@
                 <a href="index.html"><img src="img/logo-in.png" class="img-fluid"></a>
             </div>
             
-            <div class="offset-lg-9 col-lg-1 offset-md-5 col-md-3 offset-sm-5 col-sm-3 offset-3 col-4">
+            <div class="offset-lg-9 col-lg-1 offset-md-5 col-md-3 offset-sm-5 col-sm-3 offset-2 col-4">
                 <a href="log-in.html" class="btn btn-outline-danger">Iniciar Sesion</a>
             </div>
         </div>
@@ -28,7 +28,7 @@
     <div class="container mt-4">
         <div class="row" id="form-signin">
         <div class="offset-lg-3 col-lg-5 offset-md-3 col-md-6 col-sm-8 offset-sm-2 col-10 offset-1">
-            <form class="card" id="color">
+            <form class="card" id="colorForm">
                 <div class="text-center">
                     <h2 class="form-title justify-center">Destaca en lo que haces!</h2>
                     <h3>Comienza. ¡Es Gratis!</h3>
@@ -37,17 +37,20 @@
                 <div class="row">
                     <div class="form-signing col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-10 offset-sm-1 col-10 offset-1" id="form-check">
                          <br>
-                            <label>Nombre:</label><br>
-                            <input type="text" class="form-control" id="txt-nombre" onkeydown="validar(this)"><br>
-                            <label>Apellidos:</label><br>
-                            <input type="text" class="form-control" id="txt-apellido" onkeydown="validar(this)"><br>
-                            <label>Correo Electronico:</label><br>
-                            <input type="email" class="form-control" id="txt-email" onkeydown="validarEmail(this)"><br>
-                            <label>Contraseña (6 o más caracteres):</label><br>
-                            <input type="password" class="form-control" id="txt-contrasena" onkeydown="validarContrasena(this)"><br>
-                            <p class="text-center" id="politicas">Al hacer click en Únete ahora, aceptas las Condiciones de Uso, la Politica de Privacidad
+                            <label class="form-check-label">Nombre:</label>
+                            <input type="text" class="form-control mt-2" id="txt-nombre" onkeydown="validar(this)">
+                            <label class="form-check-label mt-2">Apellidos:</label>
+                            <input type="text" class="form-control mt-2" id="txt-apellido" onkeydown="validar(this)">
+                            <label class="form-check-label mt-2">Correo Electronico:</label>
+                            <input type="email" class="form-control mt-2" id="txt-email" onkeydown="validarEmail(this)">
+                            <label class="form-check-label mt-2">Genero:</label><br>
+                            <label class="mt-2"><input type="radio" class="custom-radio" id="rbt-genero" name="rbt-genero" value="1">M</label>
+                            <label class="mt-2"><input type="radio" class="custom-radio"  id="rbt-genero" name="rbt-genero" value="2">F</label><br>
+                            <label class="form-check-label mt-1">Contraseña (6 o más caracteres):</label>
+                            <input type="password" class="form-control mt-2" id="txt-contrasena" onkeydown="validarContrasena(this)">
+                            <p class="text-center mt-4" id="politicas">Al hacer click en Únete ahora, aceptas las Condiciones de Uso, la Politica de Privacidad
                             y la Politica de cookies de LinkedIn</p>
-                            <button type="button" class="btn btn-primary btn-block" id="btn-registro" >Únete Ahora</button>
+                            <button type="button" class="btn btn-primary btn-block mt-3" id="btn-registro">Únete Ahora</button>
                             <br>
                     </div>
                 </div>
