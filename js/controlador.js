@@ -103,6 +103,31 @@ $("#btn-registro").click(function(){
     })
 });
 
+$("#btn-inicio-sesion").click(function(){
+    var parametros = "correo="+$("#txt-correo").val()+"&contrasenia="+$("#txt-contrasenia").val();
+    console.log(parametros);
+    $.ajax({
+        url:"ajax/log-in.php",
+        method:"POST",
+        data: parametros,
+        dataType:"json",
+        success:function(respuesta){
+            console.log(respuesta);
+            function redireccionarPagina(){
+            if (respuesta.codigoResultado==0)
+                window.location.href = "muro.html";
+                $("#txt-correo").val("");
+                $("#txt-contrasenia").val("");
+            }
+            $("#btn-inicio-sesion").attr("disabled", true);
+            window.setTimeout( redireccionarPagina, 5000);
+        },
+        error:function(e){
+            console.log(e);
+        }
+    });
+});
+
 
 $("#btn-post").click(function(){
     var parametros = "post=" + $("#txta-publicar").val()
@@ -137,9 +162,6 @@ $("#colorForm input.required").change(function () {
 
         else{
         $(button).attr("disabled", false);
-        $(button).click(function(){
-            window.location.href='muro.html';
-         });
         }
     } 
     else{

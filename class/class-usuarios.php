@@ -144,6 +144,8 @@
 				$mensaje["mensaje"]="No se ha podido registrar al usuario";
 				return json_encode($mensaje);
 			}
-        }
+		}
+		
+		
 	}
 ?>
