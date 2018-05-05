@@ -14,48 +14,47 @@
 
 <body id="container-muro">
    
-    <nav class="navbar sticky-top ">
+<nav class="navbar sticky-top ">
     
-        <div>
-            <div class="row no-gutters">
-                <div class="col-lg-2 col-12 col-sm-12 col-md-4 navbar-brand text-center form-inline">
-                    <button class="btn btn-link">
-                        <img src="img/logo-in.png" id="logo-muro" class="img-fluid">
-                    </button>
-                </div>
-                
-                    <div class="offset-lg-6 col-lg-3 col-12 col-sm-12 col-md-7 offset-md-0 form-inline text-center">
-                        <div class="row">
-                        <a href="muro.html" class="btn btn-link nav-item"><i class="fas fa-home fa-lg"></i><br><small>Inicio</small></a>
-                        <a href="mi-red.html" class="btn btn-link nav-item"><i class="fas fa-users fa-lg"></i><br><small>Mi Red</small></a>
-                        <a href="empleos.html" class="btn btn-link nav-item"><i class="fas fa-briefcase fa-lg"></i><br><small>Empleos</small></a>
-                        <a href="mensajes.html" class="btn btn-link nav-item active"><i class="fas fa-envelope fa-lg"></i><br><small>Mensajes</small></a>
-                        
-                        <div class="dropdown">
-					  <a style="color: white;" class="dropdown-toggle-split btn btn-link nav-item active" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    <img style="width: 24px; height: 24px" src="img/usuario.png" id="usuario-img" class="img-fluid">
-					    <br>
-                        <small>Yo</small>
-					  </a>
-					  <div class="dropdown-menu dropdown-menu-right pr-2 pl-2" aria-labelledby="dropdownMenuButton">
-                            <div class="card text-center">
-                                <img src="img/usuario.png" class="rounded-circle img-fluid">
-                                <p><strong>Usuario</strong><br>
-                                Estudiante en Universidad Nacional Autonoma de Honduras(UNAH)
-                                </p>
-                            </div>
-					    <a class="dropdown-item btn btn-link text-center" href="perfil.html" id="perfil-muro">Ver Perfil</a>
-					    <a class="dropdown-item btn btn-link text-center" href="index.html" id="perfil-muro">Cerrar Sesion</a>
-					  </div>
-					</div>
-                </div>
+    <div>
+        <div class="row no-gutters">
+            <div class="col-lg-2 col-12 col-sm-12 col-md-4 navbar-brand text-center form-inline">
+                <button class="btn btn-link">
+                    <img src="img/logo-in.png" id="logo-muro" class="img-fluid">
+                </button>
             </div>
-
+            
+                <div class="offset-lg-6 col-lg-3 col-12 col-sm-12 col-md-7 offset-md-0 form-inline text-center">
+                    <div class="row">
+                    <a href="muro.php" class="btn btn-link nav-item"><i class="fas fa-home fa-lg"></i><br><small>Inicio</small></a>
+                    <a href="mi-red.php" class="btn btn-link nav-item"><i class="fas fa-users fa-lg"></i><br><small>Mi Red</small></a>
+                    <a href="empleos.php" class="btn btn-link nav-item"><i class="fas fa-briefcase fa-lg"></i><br><small>Empleos</small></a>
+                    <a href="mensajes.php" class="btn btn-link nav-item active"><i class="fas fa-envelope fa-lg"></i><br><small>Mensajes</small></a>
+                    <div class="dropdown">
+                  <a style="color: white;" class="dropdown-toggle-split btn btn-link nav-item active" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img style="width: 24px; height: 24px" src="img/usuario.png" id="usuario-img" class="img-fluid">
+                    <br>
+                    <small>Yo</small>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right pr-2 pl-2" aria-labelledby="dropdownMenuButton">
+                        <div class="card text-center">
+                            <img src="img/usuario.png" class="rounded-circle img-fluid">
+                            <p><strong>Usuario</strong><br>
+                            Estudiante en Universidad Nacional Autonoma de Honduras(UNAH)
+                            </p>
+                        </div>
+                    <a class="dropdown-item btn btn-link text-center" href="perfil.php" id="perfil-muro">Ver Perfil</a>
+                    <a class="dropdown-item btn btn-link text-center" href="index.html" id="perfil-muro">Cerrar Sesion</a>
+                  </div>
+                </div>
             </div>
         </div>
 
+        </div>
+    </div>
 
-    </nav>
+
+</nav>
 
 
     <div class="container mt-5" >

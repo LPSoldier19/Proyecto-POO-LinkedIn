@@ -115,7 +115,7 @@ $("#btn-inicio-sesion").click(function(){
             console.log(respuesta);
             function redireccionarPagina(){
             if (respuesta.codigoResultado==0)
-                window.location.href = "muro.html";
+                window.location.href = "muro.php";
                 $("#txt-correo").val("");
                 $("#txt-contrasenia").val("");
             }
