@@ -78,17 +78,31 @@ $("#btn-registro").click(function(){
     var parametros = "nombre=" + $("#txt-nombre").val() + "&" +
                      "apellido=" + $("#txt-apellido").val() + "&" + 
                      "correo=" + $("#txt-email").val() + "&" +
+                     "genero=" + $("input:radio[name=rbt-genero]:checked").val() + "&" +
                      "contrasenia=" + $("#txt-contrasena").val();
 
-    alert(parametros);
+    console.log(parametros);
+
+    $.ajax({
+        url: "ajax/api.php?accion=insertar-usuario",
+        method: "POST",
+        data: parametros,
+        dataType: "json",
+        success:function(respuesta){
+            alert("Se ha registrado el usuario");
+            window.location.href = "log-in.html";
+            $("#txt-nombre").val("");
+            $("#txt-apellido").val("");
+            $("#txt-email").val("");
+            $("input:radio[name=rbt-genero]").val("");
+            $("#txt-contrasena").val("");
+        },
+        error:function(e){
+            console.log(e);
+        }
+    })
 });
 
-$("#btn-inicio-sesion").click(function(){
-    var parametros = "correo=" + $("#txt-correo").val() + "&" +
-                     "contrasenia=" + $("#txt-contrasenia").val();
-
-    alert(parametros);
-});
 
 $("#btn-post").click(function(){
     var parametros = "post=" + $("#txta-publicar").val()
