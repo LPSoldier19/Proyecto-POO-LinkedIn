@@ -97,9 +97,7 @@
                                     <div class="modal-body">
                                         <img src="img/fondo-card.svg" class="img-fluid pt-0">
                                         <img src="img/usuario.png" class="img-fluid rounded-circle"><br>
-                                        <label class="btn btn-default btn-file fas fa-pencil-alt" style="color: #0084bf;">
-                                            <input type="file" style="display: none;" class="form-control-file">
-                                        </label>
+                                            
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <label class="float-left">Nombre: <span style="color: #0084bf;">*</span></label>
@@ -108,6 +106,19 @@
                                             <div class="col-lg-6">
                                                 <label class="float-left">Apellido: <span style="color: #0084bf;">*</span></label>
                                                 <input type="text" class="form-control mt-2" placeholder="Apellido" id="txt-apellido-modal">
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <label class="float-left mt-2">Imagen de Perfil:</label>
+                                                <select class="form-control mt-2" name="" id="">
+                                                    <option value="img/img-perfil/usuario1.jpg">Imagen 1</option>
+                                                    <option value="img/img-perfil/usuario2.jpg">Imagen 2</option>
+                                                    <option value="img/img-perfil/usuario3.jpg">Imagen 3</option>
+                                                    <option value="img/img-perfil/usuario4.jpg">Imagen 4</option>
+                                                    <option value="img/img-perfil/usuario5.jpg">Imagen 5</option>
+                                                    <option value="img/img-perfil/usuario6.jpg">Imagen 6</option>
+                                                    <option value="img/img-perfil/usuario7.jpg">Imagen 7</option>
+                                                    <option value="img/img-perfil/usuario8.jpg">Imagen 8</option>
+                                                </select>
                                             </div>
                                             <div class="col-lg-12">
                                                 <label class="float-left mt-2">Titular: <span style="color: #0084bf;">*</span></label>
