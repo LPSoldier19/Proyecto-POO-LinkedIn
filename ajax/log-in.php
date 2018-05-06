@@ -5,10 +5,8 @@
     $sql = sprintf( 
         "SELECT codigo_usuario, correo, contrasena FROM tbl_usuarios WHERE correo = '%s' and contrasena = sha1('%s')",
         $_POST["correo"],
-        $_POST["contrasenia"]
-    );
-    //echo $sql;
-    //exit;
+        $_POST["contrasenia"]);
+ 
     $resultado = $conexion->ejecutarConsulta($sql);
     $respuesta = array();
     if ($conexion->cantidadRegistros($resultado)>0){

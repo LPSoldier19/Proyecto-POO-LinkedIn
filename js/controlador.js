@@ -1,3 +1,5 @@
+
+$(document).ready(function(){
 function validar(){
 	validarCampoVacio("txt-nombre");	
 	validarCampoVacio("txt-apellido");	
@@ -57,6 +59,64 @@ function validarEmail(email) {
     }
 }
 
+var button = $("#btn-inicio-sesion").attr("disabled", true);
+
+$("#colorForm input.required").change(function () {
+    var valid = true;
+    $.each($("#colorForm input.required"), function (index, value) {
+        if(!$(value).val()){
+           valid = false;
+        }
+    });
+    if(valid){
+        if($("#txt-correo").val().indexOf('@', 0) == -1 || $("#txt-correo").val().indexOf('.', 0) == -1) {
+            return false;
+        }
+
+        else{
+        $(button).attr("disabled", false);
+        }
+    } 
+    else{
+        $(button).attr("disabled", true);
+    }
+});
+
+    $.ajax({
+        url:"ajax/api.php?accion=obtener-lista-empleos",
+        method: "get",
+        dataType: "json",
+        success:function(respuesta){
+            for(var i=0; i<respuesta.length; i++){
+                $("#div-empleos").append(
+                    '<div class="col-lg-4 card-text border">'+
+                    '<div class="row no-gutters">'+
+                    '<div class="col-lg-6 pt-2">'+
+                    '<img src="'+respuesta[i].url_imagen_empleo+'" class="img-fluid img-thumbnail">'+
+                    '</div>'+
+                    '<div class="col-lg-6 pl-2">'+
+                    '<p class="pt-4">'+
+                    '<strong>'+respuesta[i].nombre_empleo+'</strong>'+
+                    '</p>'+
+                    '</div>'+
+                    '</div>'+
+                    '<p class="text-justify pt-2">'+respuesta[i].descripcion_empleo+'</p>'+
+                    '<div class="card-body text-center">'+
+                    '<div class="list-group">'+
+                    '<p>Numero de Telefono: '+respuesta[i].telefono_empleo+'</p>'+
+                    '<p>Direccion: '+respuesta[i].direccion_empleo+'</p>'+
+                    '<button type="button" class="btn btn-outline-primary" id="btn-guardar-empleo">Guardar Empleo</button>'+
+                    '</div>'+
+                    '</div>'+
+                    '</div>'
+                );
+            }
+        },
+        error:function(e){
+            console.log(e);
+        }
+    });
+});
 
 $("#btn-enviar").click(function(){
     var parametros ="mensaje="+$("#txt-mensaje").val();
@@ -72,6 +132,10 @@ $("#btn-enviar").click(function(){
             $("#txt-mensaje").val('');
         }
     });
+});
+
+$("#btn-guardar-empleo").click(function(){
+    alert("Se ha guardado el empleo");
 });
 
 $("#btn-registro").click(function(){
@@ -146,26 +210,5 @@ $("#btn-guardar-modal").click(function(){
     alert(parametros);
 });
 
-var button = $("#btn-inicio-sesion").attr("disabled", true);
 
-$("#colorForm input.required").change(function () {
-    var valid = true;
-    $.each($("#colorForm input.required"), function (index, value) {
-        if(!$(value).val()){
-           valid = false;
-        }
-    });
-    if(valid){
-        if($("#txt-correo").val().indexOf('@', 0) == -1 || $("#txt-correo").val().indexOf('.', 0) == -1) {
-            return false;
-        }
-
-        else{
-        $(button).attr("disabled", false);
-        }
-    } 
-    else{
-        $(button).attr("disabled", true);
-    }
-});
 

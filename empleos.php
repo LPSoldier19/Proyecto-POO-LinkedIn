@@ -1,3 +1,8 @@
+<?php
+    session_start();
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -102,33 +107,9 @@
                        <h4 class="pt-2">Empresas que podrian interesarte</h4>
                     </div>
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-lg-4 card-text border">
-                                <div class="row no-gutters">
-                                    <div class="col-lg-4 pt-2">
-                                        <img src="img/kamehouse.jpeg" class="img-fluid img-thumbnail">
-                                    </div>
-                                    <div class="col-lg-8 pl-2">
-                                        <p class="pt-4">
-                                            <strong>Kame-House</strong><br>
-                                            Escuela de Artes Marciales
-                                        </p>
-                                    </div>
-                                </div>
-                                <p class="text-justify pt-2">
-                                    Kame-House es una escuela de artes marciales mixtas que fue fundada cuando el maestro Roshi se encargo de ser el maestro de un joven Krillin y de un pequeño Goku.
-                                </p>
-                                <div class="card-body text-center">
-                                   <div class="list-group">
-                                       <p>Numero de Telefono: +504-9999-9999</p>
-                                       <p>Direccion: En el otro mundo</p>
-                                       <button class="btn btn-outline-primary">Guardar Empleo</button>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="row" id="div-empleos">
                             
-                      </div>
-                      
+                        </div>
                     </div>
                 </div>
             </div>
@@ -184,5 +165,6 @@
     
     <script src="js/jquery-3.3.1.min.js"></script>
    <script src="js/bootstrap.js"></script>
+   <script src="js/controlador.js"></script>
 </body>
 </html>

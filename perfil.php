@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -99,30 +103,7 @@
                                                 <label class="float-left mt-2">Educacion: <span style="color: #0084bf;">*</span></label>
                                                 <input type="text" class="form-control mt-2" placeholder="Añade tu nivel de Educacion" id="txt-educacion-modal">
                                             </div>
-                                            <div class="col-lg-6">
-                                                <label class="float-left mt-2">Pais/Region: <span style="color: #0084bf;">*</span></label>
-                                                <select class="form-control" name="slc-pais" id="slc-pais-modal">
-                                                    <option value="1">Honduras</option>
-                                                    <option value="2">Mexico</option>
-                                                    <option value="3">Costa Rica</option>
-                                                    <option value="4">Panama</option>
-                                                    <option value="5">El Salvador</option>
-                                                    <option value="6">Nicaragua</option>
-                                                    <option value="7">Guatemala</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <label class="float-left mt-2">Sector: <span style="color: #0084bf;">*</span></label>
-                                                <select class="form-control" name="slc-sector" id="slc-sector-modal">
-                                                    <option value="1">Diseño Grafico</option>
-                                                    <option value="2">Desarrollo Web</option>
-                                                    <option value="3">Diseño</option>
-                                                    <option value="4">Arte</option>
-                                                    <option value="5">Contabilidad</option>
-                                                    <option value="6">Marketing</option>
-                                                    <option value="7">Música</option>
-                                                </select>
-                                            </div>
+                        
                                             <div class="col-lg-12">
                                                 <label class="float-left mt-2">Logro: <span style="color: #0084bf;">*</span></label>
                                                 <input type="text" class="form-control mt-2" placeholder="Añade el ultimo logro que has realizado a nivel educativo o laboral" id="txt-logro-modal">

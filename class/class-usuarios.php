@@ -11,8 +11,6 @@
 		private $url_imagen_perfil;
 		private $titular;
 		private $educacion;
-		private $pais;
-		private $sector ;
 		private $logros;
 
 		public function __construct($codigo_usuario,
@@ -24,8 +22,6 @@
 					$url_imagen_perfil,
 					$titular,
 					$educacion,
-					$pais,
-					$sector ,
 					$logros){
 			$this->codigo_usuario = $codigo_usuario;
 			$this->codigo_genero = $codigo_genero;
@@ -36,8 +32,6 @@
 			$this->url_imagen_perfil = $url_imagen_perfil;
 			$this->titular = $titular;
 			$this->educacion = $educacion;
-			$this->pais = $pais;
-			$this->sector  = $sector ;
 			$this->logros = $logros;
 		}
 		public function getCodigo_usuario(){
@@ -94,18 +88,6 @@
 		public function setEducacion($educacion){
 			$this->educacion = $educacion;
 		}
-		public function getPais(){
-			return $this->pais;
-		}
-		public function setPais($pais){
-			$this->pais = $pais;
-		}
-		public function getSector (){
-			return $this->sector ;
-		}
-		public function setSector ($sector ){
-			$this->sector  = $sector ;
-		}
 		public function getLogros(){
 			return $this->logros;
 		}
@@ -122,14 +104,12 @@
 				" Url_imagen_perfil: " . $this->url_imagen_perfil . 
 				" Titular: " . $this->titular . 
 				" Educacion: " . $this->educacion . 
-				" Pais: " . $this->pais . 
-				" Sector : " . $this->sector  . 
 				" Logros: " . $this->logros;
         }
         
         public function insertarUsuario($conexion){
-            $sql = sprintf("INSERT INTO tbl_usuarios(codigo_genero, nombre_usuario, apellido_usuario, correo, contrasena, url_imagen_perfil, titular, educacion, pais, sector, logros) 
-            VALUES (%s,'%s','%s','%s',sha1('%s'),null,null,null,null,null,null)",
+            $sql = sprintf("INSERT INTO tbl_usuarios(codigo_genero, nombre_usuario, apellido_usuario, correo, contrasena, url_imagen_perfil, titular, educacion, logros) 
+            VALUES (%s,'%s','%s','%s',sha1('%s'),null,null,null,null)",
             $conexion->antiInyeccion($this->codigo_genero),
             $conexion->antiInyeccion($this->nombre_usuario),
             $conexion->antiInyeccion($this->apellido_usuario),
