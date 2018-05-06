@@ -1,5 +1,20 @@
-<?php
+<?php 
     session_start();
+    if (!isset($_SESSION["usr"]) || !isset($_SESSION["psw"]))
+        header("Location: index.html");
+    include("class/class-conexion.php");
+    $conexion = new Conexion();
+     $sql = sprintf( 
+        "SELECT codigo_usuario, correo, contrasena FROM tbl_usuarios WHERE correo = '%s' and contrasena = '%s'",
+        $_SESSION["usr"],
+        $_SESSION["psw"]);
+    //echo $sql;
+    //exit;
+    $resultado = $conexion->ejecutarConsulta($sql);
+    $respuesta = array();
+    if ($conexion->cantidadRegistros($resultado)<=0){
+           header("Location: index.html");
+    }
 ?>
 
 
@@ -49,7 +64,7 @@
                             </p>
                         </div>
                     <a class="dropdown-item btn btn-link text-center" href="perfil.php" id="perfil-muro">Ver Perfil</a>
-                    <a class="dropdown-item btn btn-link text-center" href="index.html" id="perfil-muro">Cerrar Sesion</a>
+                    <a class="dropdown-item btn btn-link text-center" href="ajax/log-out.php" id="perfil-muro">Cerrar Sesion</a>
                   </div>
                 </div>
             </div>
