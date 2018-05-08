@@ -125,6 +125,23 @@
 				return json_encode($mensaje);
 			}
 		}
+
+		public function actualizarInfoUsuario($conexion){
+			$sql = sprintf("UPDATE tbl_usuarios SET url_imagen_perfil='%s',titular='%s',educacion='%s',logros='%s'",
+			$conexion->antiInyeccion($this->url_imagen_perfil),
+			$conexion->antiInyeccion($this->titular),
+			$conexion->antiInyeccion($this->educacion),
+			$conexion->antiInyeccion($this->logros));
+			$resultado = $conexion->ejecutarConsulta($sql);
+			if($resultado){
+				$mensaje["mensaje"]="Usuario actualizado exitosamente";
+				return json_encode($mensaje);
+			}
+			else{
+				$mensaje["mensaje"]="No se ha podido actualizar la informacion";
+				return json_encode($mensaje);
+			}
+		}
 		
 		
 	}

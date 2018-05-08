@@ -1,5 +1,12 @@
 
 $(document).ready(function(){
+
+function campoRequerido(id){
+    if(document.getElementById(id).value ==""){
+        alert("Complete los campos vacion");
+    }
+}
+
 function validar(){
 	validarCampoVacio("txt-nombre");	
 	validarCampoVacio("txt-apellido");	
@@ -61,9 +68,9 @@ function validarEmail(email) {
 
 var button = $("#btn-inicio-sesion").attr("disabled", true);
 
-$("#colorForm input.required").change(function () {
+$("#txt-correo").change(function () {
     var valid = true;
-    $.each($("#colorForm input.required"), function (index, value) {
+    $.each($("#txt-correo"), function (index, value) {
         if(!$(value).val()){
            valid = false;
         }
@@ -147,6 +154,7 @@ $("#btn-registro").click(function(){
 
     console.log(parametros);
 
+
     $.ajax({
         url: "ajax/api.php?accion=insertar-usuario",
         method: "POST",
@@ -194,7 +202,8 @@ $("#btn-inicio-sesion").click(function(){
 
 
 $("#btn-post").click(function(){
-    var parametros = "post=" + $("#txta-publicar").val()
+    var parametros = "post=" + $("#txta-publicar").val() + "&" +
+                     "ubicacion=" + $("#txt-ubicacion").val();
 
     alert(parametros);
 });
@@ -208,6 +217,10 @@ $("#btn-guardar-modal").click(function(){
                      "sector=" + $("#slc-sector-modal").val();
 
     alert(parametros);
+
+    $ajax({
+
+    });
 });
 
 

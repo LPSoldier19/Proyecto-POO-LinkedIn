@@ -5,7 +5,7 @@
     include("class/class-conexion.php");
     $conexion = new Conexion();
      $sql = sprintf( 
-        "SELECT codigo_usuario, correo, contrasena FROM tbl_usuarios WHERE correo = '%s' and contrasena = '%s'",
+        "SELECT codigo_usuario, codigo_genero, nombre_usuario, apellido_usuario, correo, contrasena, url_imagen_perfil, titular, educacion, logros FROM tbl_usuarios WHERE correo = '%s' and contrasena = '%s'",
         $_SESSION["usr"],
         $_SESSION["psw"]);
     //echo $sql;
@@ -15,6 +15,8 @@
     if ($conexion->cantidadRegistros($resultado)<=0){
            header("Location: index.html");
     }
+
+    $registro = $conexion->obtenerFila($resultado);
 ?>
 
 
@@ -59,7 +61,7 @@
                   <div class="dropdown-menu dropdown-menu-right pr-2 pl-2" aria-labelledby="dropdownMenuButton">
                         <div class="card text-center">
                             <img src="img/usuario.png" class="rounded-circle img-fluid">
-                            <p><strong>Usuario</strong><br>
+                            <p><strong><?php echo $registro["nombre_usuario"]." ".$registro["apellido_usuario"]?></strong><br>
                             Estudiante en Universidad Nacional Autonoma de Honduras(UNAH)
                             </p>
                         </div>
@@ -82,8 +84,8 @@
                 <div class="card" id="card-muro">
                     <img src="img/fondo-card.svg" class="img-fluid pt-0" >
                    <div class="card-header text-center">
-                        <img src="img/usuario.png" class="img-fluid"  id="img-usuario-perfil">
-                        <p id="Bienvenida"><strong>Te damos la bienvenida, Usuario</strong></p>
+                        <img src="<?php echo $registro["url_imagen_perfil"]?>" class="img-fluid"  id="img-usuario-perfil">
+                        <p id="Bienvenida"><strong>Te damos la bienvenida,<br> <?php echo $registro["nombre_usuario"]." ".$registro["apellido_usuario"]?></strong></p>
                    </div>
                    <div class="card-subtitle text-center pt-4">
                       <h6><a href="mi-red.html">Numero</a></h6>
@@ -92,9 +94,6 @@
                         <strong>Amplia tu Red</strong>
                       </p>
                    </div>
-                   <div class="card-footer text-center">
-                    <p>Accede a informacion exclusiva y herramientas exclusivas</p>
-                   </div>
                 </div>
             </div>
 
@@ -102,24 +101,27 @@
                 <div class="card mb-4" id="card-muro">
                     <div class="card-header">
                         <textarea class="form-control" id="txta-publicar" cols="30" rows="2" 
-                        placeholder="Comparte un artículo, foto, vídeo o idea" ></textarea>
+                        placeholder="Comparte un artículo, foto, vídeo o idea"></textarea>
                     </div>
+                    
+                    
                     <div class="card-footer">
                         <div class="row no-gutters">
                             <div class="col-lg-1 col-1 pt-2 mt-1" id="boton-input-escribir">
                                 <i class="fas fa-edit"></i>
                             </div>
-                            <div class="col-lg-1 col-1 pt-2" id="boton-input-text">
-                                <label class="btn btn-default btn-file fas fa-camera-retro">
-                                    <input type="file" style="display: none;" class="form-control-file">
-                                </label>
+                            <div class="col-lg-7">
+                                <input type="text" class="form-control" id="txt-ubicacion" disabled>
                             </div>
-                            <div class="col-lg-1 col-1 pt-2" id="boton-input-text">
-                                <label class="btn btn-default btn-file fas fa-video">
-                                <input type="file" style="display: none;" class="form-control-file">
-                                </label>
+                            <div class="col-lg-1" >
+                                <button type="button" class="btn btn-link btn" id="btn-ubicacion">
+                                    <i class="fas fa-map-marker-alt" id="boton-input-escribir"></i>
+                                </button>
                             </div>
-                            <div class="col-lg-2 offset-lg-7 col-2 offset-6">
+                            <div class="col-lg-1">
+                                <input type="text" class="form-control" id="latlng" disabled style="display:none;">
+                            </div>
+                            <div class="col-lg-1 col-2 offset-0">
                                 <button type="button" class="btn btn-primary" id="btn-post">Publicar</button>
                             </div>
                         </div>
@@ -316,11 +318,14 @@
 
             <div class="col-lg-3 d-none d-lg-block">
                 <div class="card" id="card-muro">
-                    <div class="card-body text-center">
-                        <a href="empleos.html">
-                            <img src="img/blanco-linkedin.jpg" alt="Advertise on LinkedIn" class="img-fluid">
-                        </a>
-                    </div>
+                <div class="card-body">
+                <a href="empleos.html">
+                    <img src="img/blanco-linkedin.jpg" alt="Advertise on LinkedIn" class="img-fluid">
+                </a>
+                </div>
+                <div class="card-body" id="map-container">
+                    <section id="map"></section>
+                </div>
                     <div class="card-footer">
                         <div class="row no-gutters">
                             <div class="col-lg-3">
@@ -340,6 +345,9 @@
     <script src="js/jquery-3.3.1.min.js"></script>
    <script src="js/bootstrap.js"></script>
    <script src="js/controlador.js"></script>
+   <script src="js/muro.js"></script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBa8T6nCrETXo0P-IzV-d4eVLjN5UBk5oM&signed_in=true" async defer>
    <script src="js/javascript-rafa.js"></script>
+
 </body>
 </html>

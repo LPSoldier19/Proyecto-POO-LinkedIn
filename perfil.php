@@ -5,7 +5,7 @@
     include("class/class-conexion.php");
     $conexion = new Conexion();
      $sql = sprintf( 
-        "SELECT codigo_usuario, correo, contrasena FROM tbl_usuarios WHERE correo = '%s' and contrasena = '%s'",
+        "SELECT codigo_usuario, codigo_genero, nombre_usuario, apellido_usuario, correo, contrasena, url_imagen_perfil, titular, educacion, logros FROM tbl_usuarios WHERE correo = '%s' and contrasena = '%s'",
         $_SESSION["usr"],
         $_SESSION["psw"]);
     //echo $sql;
@@ -15,6 +15,8 @@
     if ($conexion->cantidadRegistros($resultado)<=0){
            header("Location: index.html");
     }
+
+    $registro = $conexion->obtenerFila($resultado);
 ?>
 
 <!DOCTYPE html>
@@ -57,9 +59,9 @@
                   </a>
                   <div class="dropdown-menu dropdown-menu-right pr-2 pl-2" aria-labelledby="dropdownMenuButton">
                         <div class="card text-center">
-                            <img src="img/usuario.png" class="rounded-circle img-fluid">
-                            <p><strong>Usuario</strong><br>
-                            Estudiante en Universidad Nacional Autonoma de Honduras(UNAH)
+                            <img src="<?php echo $registro["url_imagen_perfil"]?>" class="rounded-circle img-fluid">
+                            <p><strong><?php echo $registro["nombre_usuario"]." ".$registro["apellido_usuario"]?></strong><br>
+                            <?php echo $registro["titular"]?>
                             </p>
                         </div>
                     <a class="dropdown-item btn btn-link text-center" href="perfil.php" id="perfil-muro">Ver Perfil</a>
@@ -96,28 +98,25 @@
                                     </div>
                                     <div class="modal-body">
                                         <img src="img/fondo-card.svg" class="img-fluid pt-0">
-                                        <img src="img/usuario.png" class="img-fluid rounded-circle"><br>
+                                        <div class="row">
+                                            <div class="col-lg-4 offset-lg-4">
+                                                <img src="<?php echo $registro["url_imagen_perfil"]?>" class="img-fluid rounded-circle">
+                                            </div>
+                                        
+                                        </div>
                                             
                                         <div class="row">
-                                            <div class="col-lg-6">
-                                                <label class="float-left">Nombre: <span style="color: #0084bf;">*</span></label>
-                                                <input type="text" class="form-control mt-2" placeholder="Nombre" id="txt-nombre-modal">
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <label class="float-left">Apellido: <span style="color: #0084bf;">*</span></label>
-                                                <input type="text" class="form-control mt-2" placeholder="Apellido" id="txt-apellido-modal">
-                                            </div>
                                             <div class="col-lg-12">
                                                 <label class="float-left mt-2">Imagen de Perfil:</label>
                                                 <select class="form-control mt-2" name="" id="">
-                                                    <option value="img/img-perfil/usuario1.jpg">Imagen 1</option>
-                                                    <option value="img/img-perfil/usuario2.jpg">Imagen 2</option>
-                                                    <option value="img/img-perfil/usuario3.jpg">Imagen 3</option>
-                                                    <option value="img/img-perfil/usuario4.jpg">Imagen 4</option>
-                                                    <option value="img/img-perfil/usuario5.jpg">Imagen 5</option>
-                                                    <option value="img/img-perfil/usuario6.jpg">Imagen 6</option>
-                                                    <option value="img/img-perfil/usuario7.jpg">Imagen 7</option>
-                                                    <option value="img/img-perfil/usuario8.jpg">Imagen 8</option>
+                                                    <option value="img/profile-pics/usuario1.jpg">Imagen 1</option>
+                                                    <option value="img/profile-pics/usuario2.jpg">Imagen 2</option>
+                                                    <option value="img/profile-pics/usuario3.jpg">Imagen 3</option>
+                                                    <option value="img/profile-pics/usuario4.jpg">Imagen 4</option>
+                                                    <option value="img/profile-pics/usuario5.jpg">Imagen 5</option>
+                                                    <option value="img/profile-pics/usuario6.jpg">Imagen 6</option>
+                                                    <option value="img/profile-pics/usuario7.jpg">Imagen 7</option>
+                                                    <option value="img/profile-pics/usuario8.jpg">Imagen 8</option>
                                                 </select>
                                             </div>
                                             <div class="col-lg-12">
@@ -143,11 +142,15 @@
                                 </div>
                             </div>
                         </div>
-                        <img src="img/usuario.png" class="img-fluid rounded-circle">
-                        <h4 class="pt-2">Usuario</h4>
-                        <h5>Estudiante en Universidad Nacional Autonoma de Honduras(UNAH)</h5>
-                        <h6>Universidad Nacional Autónoma de Honduras (UNAH)</h6>
-                        <h6>País <i class="fas fa-circle" style="font-size: 40%;"></i> Numero de Contactos <i class="fas fa-users" style="font-size: 100%;"></i></h6>
+                        <div class="row">
+                            <div class="col-lg-4 offset-lg-4">
+                                <img src="<?php echo $registro["url_imagen_perfil"]?>" class="img-fluid rounded-circle">
+                            </div>
+                        
+                        </div>
+                        <h4 class="pt-2"><?php echo $registro["nombre_usuario"]." ".$registro["apellido_usuario"]?></h4>
+                        <h5><?php echo $registro["titular"]?></h5>
+                        <h6><strong><?php echo $registro["educacion"]?></strong></h6>
                    </div>
                 </div>
 
@@ -156,12 +159,18 @@
                     <div class="card-header">
                         <h4>Eduación</h4>
                    </div>
+                   <div class="card-body">
+                       <?php echo $registro["educacion"]?>
+                   </div>
                 </div>
 
                 <div class="card mb-5" id="card-muro">
                     <div class="card-header">
                         <h4>Logros</h4>
                    </div>
+                   <div class="card-body">
+                        <?php echo $registro["logros"]?>
+                    </div>
                 </div>
 
                 </div>
