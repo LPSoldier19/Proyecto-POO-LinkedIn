@@ -54,15 +54,15 @@
                     <a href="mensajes.php" class="btn btn-link nav-item active"><i class="fas fa-envelope fa-lg"></i><br><small>Mensajes</small></a>
                     <div class="dropdown">
                   <a style="color: white;" class="dropdown-toggle-split btn btn-link nav-item active" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img style="width: 24px; height: 24px" src="img/usuario.png" id="usuario-img" class="img-fluid">
+                    <img style="width: 24px; height: 24px" src="<?php echo $registro["url_imagen_perfil"]?>" id="usuario-img" class="img-fluid">
                     <br>
                     <small>Yo</small>
                   </a>
                   <div class="dropdown-menu dropdown-menu-right pr-2 pl-2" aria-labelledby="dropdownMenuButton">
                         <div class="card text-center">
-                            <img src="img/usuario.png" class="rounded-circle img-fluid">
+                            <img src="<?php echo $registro["url_imagen_perfil"]?>" class="rounded-circle img-fluid">
                             <p><strong><?php echo $registro["nombre_usuario"]." ".$registro["apellido_usuario"]?></strong><br>
-                            Estudiante en Universidad Nacional Autonoma de Honduras(UNAH)
+                            <?php echo $registro["titular"]?>
                             </p>
                         </div>
                     <a class="dropdown-item btn btn-link text-center" href="perfil.php" id="perfil-muro">Ver Perfil</a>
@@ -143,26 +143,17 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <p>Al final he logrado alcanzar el nivel perfecto de la doctrina egoista, espero que Jiren tenga la capacidad de hacerme frente
-                            ante esta nueva y poderosa transformacion.
-                        </p>
-                        <img src="img/goku-ultrainstinto.jpg" class="img-fluid">
+                    Al final he logrado alcanzar el nivel perfecto de la doctrina egoista, espero que Jiren tenga la capacidad de hacerme frente
+                    ante esta nueva y poderosa transformacion.
                     </div>
-                    <div class="card-body">
+                    <div class="card-header">
+                    # recomendaciones
+                    </div>
+                    <div class="card-content border-top">
                         <div class="row no-gutters">
-                            <div class="col-lg-1 col-1  pt-2" id="boton-input-text">
-                                <label class="btn btn-default btn-file fas fa-thumbs-up" id="like-logo">
+                            <div class="col-lg-1 col-1" id="boton-input-text">
+                                <label class="btn btn-default btn-file fas fa-thumbs-up " id="like-logo">
                                     <input type="button" style="display: none;" class="form-control-file" id="like">
-                                </label>
-                            </div>
-                            <div class="col-lg-1 col-1 pt-2" id="boton-input-text">
-                                <label class="btn btn-default btn-file fas fa-comments">
-                                    <input type="button" style="display: none;" class="form-control-file">
-                                </label>
-                            </div>
-                            <div class="col-lg-1 col-1 pt-2" id="boton-input-text">
-                                <label class="btn btn-default btn-file fas fa-reply">
-                                <input type="button" style="display: none;" class="form-control-file">
                                 </label>
                             </div>
                         </div>
@@ -176,9 +167,9 @@
                             <div class="col-lg-9 col-9 ml-2">
                                 <input type="text" class="form-control">
                             </div>
-                            <div class="col-lg-1 col-1">
-                                <label class="btn btn-default btn-file fas fa-camera-retro">
-                                    <input type="file" style="display: none;" class="form-control-file">
+                            <div class="col-lg-1 col-1 mt-1">
+                                <label class="btn btn-default btn-file fas fa-paper-plane">
+                                    <input type="button" style="display: none;" class="form-control-file" id="btn-enviar-comentario">
                                 </label>
                             </div>
                         </div>
@@ -186,133 +177,25 @@
                             <div class="col-lg-1 col-1 mr-2">
                                 <img src="img/vegeta.jpg" class="img-fluid rounded-circle">
                             </div>
-                            <div class="col-lg-9 col-9 text-justify">
+                            <div class="col-lg-10 col-9 text-justify">
                                 <p><strong>Vegeta:</strong> Valio la pena darte la ultima pequeña cantidad de energia que tenia, aprovechalo, el Universo 7 debe ganar el gran torneo del poder. Recuerda que deje en tus manos todas las promesas que hice antes y durante el torneo.
                                 </p>
-                                <a href="#" id="btn-link">Recomendar</a>
-                                <a href="#" id="btn-link">Responder</a>
                                 Hace 1 Hora
-                            </div>
-                            <div class="col-lg-1 col-1">
-                                <label class="btn btn-default btn-file fas fa-ellipsis-h">
-                                    <input type="button" style="display: none;" class="form-control-file">
-                                </label>
                             </div>
                         </div>
                         <div class="row no-gutters pb-3">
                             <div class="col-lg-1 col-1 mr-2">
                                 <img src="img/jiren.png" class="img-fluid rounded-circle">
                             </div>
-                            <div class="col-lg-9 col-9 text-justify">
+                            <div class="col-lg-10 col-9 text-justify">
                                 <p><strong>Jiren:</strong> Tu poder comparado con el mio, es muy inferior y te lo demostrare, no dudes que hare que el Universo 11 sea el vencedor del gran torneo del poder y reclamar el deseo.
                                 </p>
-                                <a href="#" id="btn-link">Recomendar</a>
-                                <a href="#" id="btn-link">Responder</a>
                                 Hace 50 minutos
                             </div>
-                            <div class="col-lg-1 col-1">
-                                <label class="btn btn-default btn-file fas fa-ellipsis-h">
-                                    <input type="button" style="display: none;" class="form-control-file">
-                                </label>
-                            </div>
                         </div>
                     </div>
-
-                   
                 </div>
 
-                <div class="card  mb-5" id="card-muro">
-                    <div class="card-header">
-                        <div class="row">
-                            <div class="col-lg-2 col-2">
-                                <img src="img/goku.png" id="img-usuario-perfil" class="img-fluid"> 
-                            </div>
-                            <div class="col-lg-6 col-6">
-                                <p><strong>Goku</strong><br>
-                                    Guerrero del 7º Universo <br>
-                                    1 hora
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <p>Al final he logrado alcanzar el nivel perfecto de la doctrina egoista, espero que Jiren tenga la capacidad de hacerme frente
-                            ante esta nueva y poderosa transformacion.
-                        </p>
-                        <img src="img/goku-ultrainstinto.jpg" class="img-fluid">
-                    </div>
-                    <div class="card-body">
-                        <div class="row no-gutters">
-                            <div class="col-lg-1 col-1 pt-2" id="boton-input-text">
-                                <label class="btn btn-default btn-file fas fa-thumbs-up" id="like-logo">
-                                    <input type="button" style="display: none;" class="form-control-file" id="like">
-                                </label>
-                            </div>
-                            <div class="col-lg-1 col-1 pt-2" id="boton-input-text">
-                                <label class="btn btn-default btn-file fas fa-comments">
-                                    <input type="button" style="display: none;" class="form-control-file">
-                                </label>
-                            </div>
-                            <div class="col-lg-1 col-1 pt-2" id="boton-input-text">
-                                <label class="btn btn-default btn-file fas fa-reply">
-                                <input type="button" style="display: none;" class="form-control-file">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="card-footer">
-                            <div class="row no-gutters pb-3">
-                                <div class="col-lg-1 col-1">
-                                    <img src="img/usuario.png" class="img-fluid rounded-circle">
-                                </div>
-                                <div class="col-lg-9 col-9 ml-2">
-                                    <input type="text" class="form-control">
-                                </div>
-                                <div class="col-lg-1 col-1">
-                                    <label class="btn btn-default btn-file fas fa-camera-retro">
-                                        <input type="file" style="display: none;" class="form-control-file">
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="row no-gutters pb-3">
-                                <div class="col-lg-1 col-1 mr-2">
-                                    <img src="img/vegeta.jpg" class="img-fluid rounded-circle">
-                                </div>
-                                <div class="col-lg-9 col-9 text-justify">
-                                    <p><strong>Vegeta:</strong> Valio la pena darte la ultima pequeña cantidad de energia que tenia, aprovechalo, el Universo 7 debe ganar el gran torneo del poder. Recuerda que deje en tus manos todas las promesas que hice antes y durante el torneo.
-                                    </p>
-                                    <a href="#" id="btn-link">Recomendar</a>
-                                    <a href="#" id="btn-link">Responder</a>
-                                    Hace 1 Hora
-                                </div>
-                                <div class="col-lg-1 col-1">
-                                    <label class="btn btn-default btn-file fas fa-ellipsis-h">
-                                        <input type="button" style="display: none;" class="form-control-file">
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="row no-gutters pb-3">
-                                <div class="col-lg-1 col-1 mr-2">
-                                    <img src="img/jiren.png" class="img-fluid rounded-circle">
-                                </div>
-                                <div class="col-lg-9 col-9 text-justify">
-                                    <p><strong>Jiren:</strong> Tu poder comparado con el mio, es muy inferior y te lo demostrare, no dudes que hare que el Universo 11 sea el vencedor del gran torneo del poder y reclamar el deseo.
-                                    </p>
-                                    <a href="#" id="btn-link">Recomendar</a>
-                                    <a href="#" id="btn-link">Responder</a>
-                                    Hace 50 minutos
-                                </div>
-                                <div class="col-lg-1 col-1">
-                                    <label class="btn btn-default btn-file fas fa-ellipsis-h">
-                                        <input type="button" style="display: none;" class="form-control-file">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                   
-                </div>
 
             </div>
 

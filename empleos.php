@@ -5,7 +5,7 @@
     include("class/class-conexion.php");
     $conexion = new Conexion();
      $sql = sprintf( 
-        "SELECT codigo_usuario, correo, contrasena FROM tbl_usuarios WHERE correo = '%s' and contrasena = '%s'",
+        "SELECT codigo_usuario, codigo_genero, nombre_usuario, apellido_usuario, correo, contrasena, url_imagen_perfil, titular, educacion, logros FROM tbl_usuarios WHERE correo = '%s' and contrasena = '%s'",
         $_SESSION["usr"],
         $_SESSION["psw"]);
     //echo $sql;
@@ -15,6 +15,8 @@
     if ($conexion->cantidadRegistros($resultado)<=0){
            header("Location: index.html");
     }
+
+    $registro = $conexion->obtenerFila($resultado);
 ?>
 
 
@@ -52,15 +54,15 @@
                     <a href="mensajes.php" class="btn btn-link nav-item active"><i class="fas fa-envelope fa-lg"></i><br><small>Mensajes</small></a>
                     <div class="dropdown">
                   <a style="color: white;" class="dropdown-toggle-split btn btn-link nav-item active" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img style="width: 24px; height: 24px" src="img/usuario.png" id="usuario-img" class="img-fluid">
+                    <img style="width: 24px; height: 24px" src="<?php echo $registro["url_imagen_perfil"]?>" id="usuario-img" class="img-fluid">
                     <br>
                     <small>Yo</small>
                   </a>
                   <div class="dropdown-menu dropdown-menu-right pr-2 pl-2" aria-labelledby="dropdownMenuButton">
                         <div class="card text-center">
-                            <img src="img/usuario.png" class="rounded-circle img-fluid">
-                            <p><strong>Usuario</strong><br>
-                            Estudiante en Universidad Nacional Autonoma de Honduras(UNAH)
+                            <img src="<?php echo $registro["url_imagen_perfil"]?>" class="rounded-circle img-fluid">
+                            <p><strong><?php echo $registro["nombre_usuario"]." ".$registro["apellido_usuario"]?></strong><br>
+                            <?php echo $registro["titular"]?>
                             </p>
                         </div>
                     <a class="dropdown-item btn btn-link text-center" href="perfil.php" id="perfil-muro">Ver Perfil</a>

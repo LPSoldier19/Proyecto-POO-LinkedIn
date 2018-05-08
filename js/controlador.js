@@ -205,7 +205,18 @@ $("#btn-post").click(function(){
     var parametros = "post=" + $("#txta-publicar").val() + "&" +
                      "ubicacion=" + $("#txt-ubicacion").val();
 
-    alert(parametros);
+    $.ajax({
+        url: "ajax/api.php?accion=insertar-publicacion",
+        method: "post",
+        data: parametros,
+        dataType: "json",
+        success:function(respuesta){
+            alert("Se ha realizado la publicacion exitosamente");
+        },
+        error:function(e){
+            console.log(e);
+        }
+    });
 });
 
 $("#btn-guardar-modal").click(function(){
@@ -218,9 +229,7 @@ $("#btn-guardar-modal").click(function(){
 
     alert(parametros);
 
-    $ajax({
-
-    });
+   
 });
 
 
