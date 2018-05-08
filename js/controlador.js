@@ -146,6 +146,7 @@ $("#btn-guardar-empleo").click(function(){
 });
 
 $("#btn-registro").click(function(){
+    
     var parametros = "nombre=" + $("#txt-nombre").val() + "&" +
                      "apellido=" + $("#txt-apellido").val() + "&" + 
                      "correo=" + $("#txt-email").val() + "&" +
