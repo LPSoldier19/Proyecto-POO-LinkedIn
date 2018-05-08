@@ -15,6 +15,7 @@
         $respuesta["mensajeResultado"] = "El usuario si existe";
         $_SESSION["usr"] = $respuesta["correo"];
         $_SESSION["psw"] = $respuesta["contrasena"];
+        $_SESSION["codUsr"] = $respuesta["codigo_usuario"];
     }else {
         $respuesta["codigoResultado"] = 1;
         $respuesta["mensajeResultado"] = "El usuario no existe";

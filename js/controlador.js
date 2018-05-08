@@ -220,14 +220,25 @@ $("#btn-post").click(function(){
 });
 
 $("#btn-guardar-modal").click(function(){
-    var parametros = "nombre=" + $("#txt-nombre-modal").val() + "&" +
-                     "apellido=" + $("#txt-apellido-modal").val() + "&" +
+    var parametros = "url_imagen_perfil=" + $("#slc-imagen-perfil option:selected").val() + "&" +
                      "titular=" + $("#txta-titular-modal").val() + "&" +
                      "educacion=" + $("#txt-educacion-modal").val() + "&" +
-                     "pais=" + $("#slc-pais-modal").val() + "&" +
-                     "sector=" + $("#slc-sector-modal").val();
+                     "logro=" + $("#txt-logro-modal").val();
 
-    alert(parametros);
+    console.log(parametros);
+
+    $.ajax({
+        url:"ajax/api.php?accion=actualizar-usuario",
+        method: "post",
+        data: parametros,
+        dataType: "json",
+        success:function(respuesta){
+            alert("Se ha actualizado la informacion del usuario");
+        },
+        error:function(e){
+            console.log(e);
+        }
+    });
 
    
 });

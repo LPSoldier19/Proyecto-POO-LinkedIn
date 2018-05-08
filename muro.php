@@ -7,7 +7,8 @@
      $sql = sprintf( 
         "SELECT codigo_usuario, codigo_genero, nombre_usuario, apellido_usuario, correo, contrasena, url_imagen_perfil, titular, educacion, logros FROM tbl_usuarios WHERE correo = '%s' and contrasena = '%s'",
         $_SESSION["usr"],
-        $_SESSION["psw"]);
+        $_SESSION["psw"],
+        $_SESSION["codigo_usuario"]);
     //echo $sql;
     //exit;
     $resultado = $conexion->ejecutarConsulta($sql);

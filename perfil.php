@@ -19,6 +19,8 @@
     $registro = $conexion->obtenerFila($resultado);
 ?>
 
+
+
 <!DOCTYPE html>
 <html>
 
@@ -34,7 +36,7 @@
 </head>
 
 <body id="container-muro">
-   
+    <!--<span class="d-none"><input type="text" value="<?php #echo $registro["codigo_usuario"]?>" id="txt-codigo-usuario" disabled></span>-->
 <nav class="navbar sticky-top ">
     
     <div>
@@ -108,30 +110,30 @@
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <label class="float-left mt-2">Imagen de Perfil:</label>
-                                                <select class="form-control mt-2" name="" id="">
-                                                    <option value="img/profile-pics/usuario1.jpg">Imagen 1</option>
-                                                    <option value="img/profile-pics/usuario2.jpg">Imagen 2</option>
-                                                    <option value="img/profile-pics/usuario3.jpg">Imagen 3</option>
-                                                    <option value="img/profile-pics/usuario4.jpg">Imagen 4</option>
-                                                    <option value="img/profile-pics/usuario5.jpg">Imagen 5</option>
-                                                    <option value="img/profile-pics/usuario6.jpg">Imagen 6</option>
-                                                    <option value="img/profile-pics/usuario7.jpg">Imagen 7</option>
-                                                    <option value="img/profile-pics/usuario8.jpg">Imagen 8</option>
+                                                <select class="form-control mt-2" name="" id="slc-imagen-perfil">
+                                                    <option value="img/profile-pics/usuario1.jpg">Usuario Masculino 1</option>
+                                                    <option value="img/profile-pics/usuario2.jpg">Usuario Masculino 2</option>
+                                                    <option value="img/profile-pics/usuario3.jpg">Usuario Masculino 3</option>
+                                                    <option value="img/profile-pics/usuario4.jpg">Usuario Masculino 4</option>
+                                                    <option value="img/profile-pics/usuario5.jpg">Usuario Feminino 1</option>
+                                                    <option value="img/profile-pics/usuario6.jpg">Usuario Feminino 1</option>
+                                                    <option value="img/profile-pics/usuario7.jpg">Usuario Feminino 1</option>
+                                                    <option value="img/profile-pics/usuario8.jpg">Usuario Feminino 1</option>
                                                 </select>
                                             </div>
                                             <div class="col-lg-12">
                                                 <label class="float-left mt-2">Titular: <span style="color: #0084bf;">*</span></label>
                                                 <textarea class="form-control" id="txta-titular-modal" cols="30" rows="2" 
-                                                placeholder="Titular" ></textarea>
+                                                placeholder="Titular"><?php echo $registro["titular"]?></textarea>
                                             </div>
                                             <div class="col-lg-12">
                                                 <label class="float-left mt-2">Educacion: <span style="color: #0084bf;">*</span></label>
-                                                <input type="text" class="form-control mt-2" placeholder="Añade tu nivel de Educacion" id="txt-educacion-modal">
+                                                <input type="text" class="form-control mt-2" placeholder="Añade tu nivel de Educacion" id="txt-educacion-modal" value="<?php echo $registro["educacion"]?>">
                                             </div>
                         
                                             <div class="col-lg-12">
                                                 <label class="float-left mt-2">Logro: <span style="color: #0084bf;">*</span></label>
-                                                <input type="text" class="form-control mt-2" placeholder="Añade el ultimo logro que has realizado a nivel educativo o laboral" id="txt-logro-modal">
+                                                <input type="text" class="form-control mt-2" placeholder="Añade el ultimo logro que has realizado a nivel educativo o laboral" id="txt-logro-modal" value="<?php echo $registro["logros"]?>">
                                             </div>                                                     
                                         </div>
                                     </div>
@@ -150,7 +152,7 @@
                         </div>
                         <h4 class="pt-2"><?php echo $registro["nombre_usuario"]." ".$registro["apellido_usuario"]?></h4>
                         <h5><?php echo $registro["titular"]?></h5>
-                        <h6><strong><?php echo $registro["educacion"]?></strong></h6>
+                        <h6><strong><i class="fas fa-university"></i><?php echo $registro["educacion"]?></strong></h6>
                    </div>
                 </div>
 

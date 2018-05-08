@@ -94,10 +94,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-lg-8">
-                                <h5>No hay invitaciones pendientes</h5>
-                            </div>
-                            <div class="col-lg-4 pt-1" >
-                                <a href="" id="gestion-invitaciones">Gestionar invitaciones</a>
+                                <h4>Contactos</h4>
                             </div>
                         </div>
                     </div>
@@ -107,21 +104,6 @@
                    <div class="card-header">
                         <h5>Gente que podrias conocer</h5>
                    </div>
-                <div class="card-header">
-                       <div class="btn-group btn-group-toggle">
-                        <div class="row no-gutters">
-                            <div>
-                                <a href="" class="col-lg-2 col-1" id="btn-grupo-red"><strong>Todos</strong></a>
-                            </div>
-                            <div >
-                                <a href="" class="col-lg-2 col-1" id="btn-grupo-red"><strong>Antiguos Alumnos</strong></a>
-                            </div>
-                            <div>
-                                <a href="" class="col-lg-4 col-2" id="btn-grupo-red"><strong>Compañeros de Trabajo</strong></a>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
                       <div class="row card-body" id="card-usuarios-red">
                         <div class="col-lg-4 col-6 card-body border text-center">
                             <img src="img/goku.png" class="img-fluid rounded-circle pt-2 pb-3">
