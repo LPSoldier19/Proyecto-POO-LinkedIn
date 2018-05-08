@@ -47,7 +47,7 @@
                 </button>
             </div>
             
-                <div class="offset-lg-6 col-lg-3 col-12 col-sm-12 col-md-7 offset-md-0 form-inline text-center">
+                <div class="offset-lg-6 col-lg-3 col-12 col-sm-12 col-md-5 offset-md-2 form-inline text-center">
                     <div class="row">
                     <a href="muro.php" class="btn btn-link nav-item"><i class="fas fa-home fa-lg"></i><br><small>Inicio</small></a>
                     <a href="mi-red.php" class="btn btn-link nav-item"><i class="fas fa-users fa-lg"></i><br><small>Mi Red</small></a>
@@ -55,7 +55,7 @@
                     <a href="mensajes.php" class="btn btn-link nav-item active"><i class="fas fa-envelope fa-lg"></i><br><small>Mensajes</small></a>
                     <div class="dropdown">
                   <a style="color: white;" class="dropdown-toggle-split btn btn-link nav-item active" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img style="width: 24px; height: 24px" src="<?php echo $registro["url_imagen_perfil"]?>" id="usuario-img" class="img-fluid">
+                    <img style="width: 24px; height: 24px" src="<?php echo $registro["url_imagen_perfil"]?>" class="img-fluid rounded-circle">
                     <br>
                     <small>Yo</small>
                   </a>
@@ -116,9 +116,9 @@
                                                     <option value="img/profile-pics/usuario3.jpg">Usuario Masculino 3</option>
                                                     <option value="img/profile-pics/usuario4.jpg">Usuario Masculino 4</option>
                                                     <option value="img/profile-pics/usuario5.jpg">Usuario Feminino 1</option>
-                                                    <option value="img/profile-pics/usuario6.jpg">Usuario Feminino 1</option>
-                                                    <option value="img/profile-pics/usuario7.jpg">Usuario Feminino 1</option>
-                                                    <option value="img/profile-pics/usuario8.jpg">Usuario Feminino 1</option>
+                                                    <option value="img/profile-pics/usuario6.jpg">Usuario Feminino 2</option>
+                                                    <option value="img/profile-pics/usuario7.jpg">Usuario Feminino 3</option>
+                                                    <option value="img/profile-pics/usuario8.jpg">Usuario Feminino 4</option>
                                                 </select>
                                             </div>
                                             <div class="col-lg-12">
