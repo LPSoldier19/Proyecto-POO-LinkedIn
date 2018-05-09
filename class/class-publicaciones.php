@@ -68,8 +68,8 @@
         }
         
         public function insertarPublicacion($conexion){
-            $sql = sprintf("INSERT INTO tbl_publicaciones(codigo_usuario, contenido_publicacion, numero_likes, fecha-publicacion, ubicacion) 
-            VALUES (%s,'%s',null,NOW(),'%s')",
+            $sql = sprintf("INSERT INTO tbl_publicaciones(codigo_publicacion, codigo_usuario, contenido_publicacion, numero_likes, fecha-publicacion, ubicacion) 
+			VALUES (null, %s,'%s',null,curdate(),'%s')",
             $conexion->antiInyeccion($this->codigo_usuario),
             $conexion->antiInyeccion($this->contenido_publicacion),
             $conexion->antiInyeccion($this->ubicacion));

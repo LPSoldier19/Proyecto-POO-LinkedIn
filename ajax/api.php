@@ -18,12 +18,12 @@
         break;
 
         case "insertar-publicacion":
-        $p = new Publicacion(null,$_POST['codUsr'],$_POST['post'],null,null,$_POST['ubicacion']);
+        $p = new Publicacion(null,$_POST["codUsr"],$_POST["publicacion"],null,null,$_POST["ubicacion"]);
         echo $p->insertarPublicacion($conexion);
         break;
 
         case "actualizar-usuario":
-        $u = new Usuario(null,null,null,null,null,null,$_POST["url_imagen_perfil"],$_POST["titular"],$_POST["educacion"],$_POST["logro"]);
+        $u = new Usuario($_POST["codigo_usuario"],null,null,null,null,null,$_POST["url_imagen_perfil"],$_POST["titular"],$_POST["educacion"],$_POST["logro"]);
         echo $u->actualizarInfoUsuario($conexion);
         break;
     }

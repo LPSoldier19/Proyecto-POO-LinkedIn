@@ -5,9 +5,10 @@
     include("class/class-conexion.php");
     $conexion = new Conexion();
      $sql = sprintf( 
-        "SELECT codigo_usuario, codigo_genero, nombre_usuario, apellido_usuario, correo, contrasena, url_imagen_perfil, titular, educacion, logros FROM tbl_usuarios WHERE correo = '%s' and contrasena = '%s'",
+        "SELECT codigo_usuario, codigo_genero, nombre_usuario, apellido_usuario, correo, contrasena, url_imagen_perfil, titular, educacion, logros FROM tbl_usuarios WHERE correo = '%s' and contrasena = '%s' and codigo_usuario = %s",
         $_SESSION["usr"],
-        $_SESSION["psw"]);
+        $_SESSION["psw"],
+        $_SESSION["codUsr"]);
     //echo $sql;
     //exit;
     $resultado = $conexion->ejecutarConsulta($sql);
@@ -35,6 +36,9 @@
 </head>
 
 <body id="container-muro">
+    <span class="d-none">
+    <input type="text" value="<?php echo $_SESSION["codUsr"]?>" id="txt-codigo-usuario">
+    </span>
    
 <nav class="navbar sticky-top ">
     

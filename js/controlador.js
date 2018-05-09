@@ -203,8 +203,11 @@ $("#btn-inicio-sesion").click(function(){
 
 
 $("#btn-post").click(function(){
-    var parametros = "post=" + $("#txta-publicar").val() + "&" +
+    var parametros = "codUsr=" + $("#txt-codigo-usuario").val() + "&" +
+                     "publicacion=" + $("#txta-publicar").val() + "&" +
                      "ubicacion=" + $("#txt-ubicacion").val();
+
+    alert(parametros);
 
     $.ajax({
         url: "ajax/api.php?accion=insertar-publicacion",
@@ -221,7 +224,8 @@ $("#btn-post").click(function(){
 });
 
 $("#btn-guardar-modal").click(function(){
-    var parametros = "url_imagen_perfil=" + $("#slc-imagen-perfil option:selected").val() + "&" +
+    var parametros = "codigo_usuario=" + $("#txt-codigo-usuario").val() + "&" +
+                     "url_imagen_perfil=" + $("#slc-imagen-perfil option:selected").val() + "&" +
                      "titular=" + $("#txta-titular-modal").val() + "&" +
                      "educacion=" + $("#txt-educacion-modal").val() + "&" +
                      "logro=" + $("#txt-logro-modal").val();
@@ -235,6 +239,7 @@ $("#btn-guardar-modal").click(function(){
         dataType: "json",
         success:function(respuesta){
             alert("Se ha actualizado la informacion del usuario");
+            location.reload();
         },
         error:function(e){
             console.log(e);

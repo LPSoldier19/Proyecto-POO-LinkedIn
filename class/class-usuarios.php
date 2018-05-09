@@ -127,11 +127,12 @@
 		}
 
 		public function actualizarInfoUsuario($conexion){
-			$sql = sprintf("UPDATE tbl_usuarios SET url_imagen_perfil='%s',titular='%s',educacion='%s',logros='%s'",
+			$sql = sprintf("UPDATE tbl_usuarios SET url_imagen_perfil='%s',titular='%s',educacion='%s',logros='%s' where codigo_usuario = %s",
 			$conexion->antiInyeccion($this->url_imagen_perfil),
 			$conexion->antiInyeccion($this->titular),
 			$conexion->antiInyeccion($this->educacion),
-			$conexion->antiInyeccion($this->logros));
+			$conexion->antiInyeccion($this->logros),
+			$conexion->antiInyeccion($this->codigo_usuario));
 			$resultado = $conexion->ejecutarConsulta($sql);
 			if($resultado){
 				$mensaje["mensaje"]="Usuario actualizado exitosamente";
