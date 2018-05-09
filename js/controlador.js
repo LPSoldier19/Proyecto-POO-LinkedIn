@@ -208,7 +208,6 @@ $("#btn-post").click(function(){
                      "ubicacion=" + $("#txt-ubicacion").val();
 
     alert(parametros);
-
     $.ajax({
         url:"ajax/api.php?accion=insertar-publicacion",
         method:"POST",
@@ -216,7 +215,7 @@ $("#btn-post").click(function(){
         dataType:"json",
         success:function(respuesta){
             console.log(respuesta);
-            location.reload();
+            //location.reload();
         },
         error:function(e){
             console.log(e);

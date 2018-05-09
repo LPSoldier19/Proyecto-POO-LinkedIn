@@ -106,8 +106,6 @@
                         <textarea class="form-control" id="txta-publicar" cols="30" rows="2" 
                         placeholder="Comparte un artículo, foto, vídeo o idea"></textarea>
                     </div>
-                    
-                    
                     <div class="card-footer">
                         <div class="row no-gutters">
                             <div class="col-lg-1 col-1 pt-2 mt-1" id="boton-input-escribir">

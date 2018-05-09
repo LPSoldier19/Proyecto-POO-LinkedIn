@@ -68,17 +68,19 @@
         }
         
         public function insertarPublicacion($conexion){
-            $sql = sprintf("INSERT INTO tbl_publicaciones(codigo_publicacion, codigo_usuario, contenido_publicacion, numero_likes, fecha_publicacion, ubicacion) VALUES (null,%s,'%s',null,now(),'%s')",
+            $sql = sprintf("INSERT INTO tbl_publicaciones(codigo_usuario, contenido_publicacion,fecha_publicacion, ubicacion) VALUES (%s,'%s',now(),'%s')",
             $conexion->antiInyeccion($this->codigo_usuario),
             $conexion->antiInyeccion($this->contenido_publicacion),
             $conexion->antiInyeccion($this->ubicacion));
             $resultado = $conexion->ejecutarConsulta($sql);
             if($resultado){
 				$mensaje["mensaje"]="Publicacion realizada exitosamente";
+				$mensaje["sql"]=$sql;
 				return json_encode($mensaje);
 			}
 			else{
 				$mensaje["mensaje"]="No se ha podido realizar la publicacion";
+				$mensaje["sql"]=$sql;
 				return json_encode($mensaje);
 			}
 		}

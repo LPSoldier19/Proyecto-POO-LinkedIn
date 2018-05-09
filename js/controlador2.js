@@ -1,6 +1,5 @@
 $(document).ready(function(){
     var parametros = "codigo_usuario="+$("#txt-codigo-usuario").val();
-    console.log(parametros);
 
     $.ajax({
         url:"ajax/api.php?accion=obtener-lista-publicaciones",
@@ -48,7 +47,7 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="col-lg-1 col-1 mt-1">'+
                     '<label class="btn btn-default btn-file fas fa-paper-plane">'+
-                        '<input type="button" style="display: none;" class="form-control-file" id="btn-enviar-comentario">'+
+                        '<button type="button" style="display: none;" class="form-control-file" id="btn-enviar-comentario"> </button>'+
                     '</label>'+
                 '</div>'+
             '</div>'+
@@ -78,7 +77,7 @@ $(document).ready(function(){
                             '<p>'+respuesta[i].titular+'<br>'+
                             '<i class="fas fa-university fa-lg"></i> '+respuesta[i].educacion+'</p>'+
                             '<div class="card-body">'+
-                            '<button class="btn btn-outline-primary btn-sm mb-3">Conectar</button>'+
+                            '<button class="btn btn-outline-primary btn-sm mb-3" id="btn-conectar">Conectar</button>'+
                             '</div>'+
                         '</div>');
             }
@@ -89,4 +88,4 @@ $(document).ready(function(){
 
     });
 
-})
+});
