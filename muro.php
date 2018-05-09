@@ -36,7 +36,9 @@
 </head>
 
 <body id="container-muro">
-   
+<span class="d-none">
+    <input type="text" value="<?php echo $_SESSION["codUsr"]?>" id="txt-codigo-usuario">
+    </span>
 <nav class="navbar sticky-top ">
     
     <div>
