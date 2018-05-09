@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 07-05-2018 a las 01:37:15
+-- Tiempo de generación: 09-05-2018 a las 19:36:16
 -- Versión del servidor: 5.7.19
 -- Versión de PHP: 5.6.31
 
@@ -30,11 +30,11 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `tbl_amigos`;
 CREATE TABLE IF NOT EXISTS `tbl_amigos` (
-  `codigo_usuario_amigo` int(11) NOT NULL,
   `codigo_usuario` int(11) NOT NULL,
-  PRIMARY KEY (`codigo_usuario_amigo`,`codigo_usuario`),
-  KEY `fk_tbl_usuarios_has_tbl_usuarios_tbl_usuarios2_idx` (`codigo_usuario`),
-  KEY `fk_tbl_usuarios_has_tbl_usuarios_tbl_usuarios1_idx` (`codigo_usuario_amigo`)
+  `codigo_usuario_amigo` int(11) NOT NULL,
+  PRIMARY KEY (`codigo_usuario`,`codigo_usuario_amigo`),
+  KEY `fk_tbl_usuarios_has_tbl_usuarios_tbl_usuarios2_idx` (`codigo_usuario_amigo`),
+  KEY `fk_tbl_usuarios_has_tbl_usuarios_tbl_usuarios1_idx` (`codigo_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -169,13 +169,22 @@ DROP TABLE IF EXISTS `tbl_publicaciones`;
 CREATE TABLE IF NOT EXISTS `tbl_publicaciones` (
   `codigo_publicacion` int(11) NOT NULL AUTO_INCREMENT,
   `codigo_usuario` int(11) NOT NULL,
-  `contenido_publicacion` varchar(45) DEFAULT NULL,
-  `numero_likes` varchar(45) DEFAULT NULL,
-  `fecha-publicacion` varchar(45) DEFAULT NULL,
+  `contenido_publicacion` varchar(300) DEFAULT NULL,
+  `numero_likes` int(45) DEFAULT NULL,
+  `fecha_publicacion` datetime DEFAULT NULL,
   `ubicacion` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`codigo_publicacion`),
   KEY `fk_tbl_publicaciones_tbl_usuarios_idx` (`codigo_usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tbl_publicaciones`
+--
+
+INSERT INTO `tbl_publicaciones` (`codigo_publicacion`, `codigo_usuario`, `contenido_publicacion`, `numero_likes`, `fecha_publicacion`, `ubicacion`) VALUES
+(3, 1, 'Esperemos que ese haya sido el error :v', NULL, '2018-05-08 00:00:00', 'Barrio San Felipe, Tegucigalpa, Honduras'),
+(4, 1, 'Otro intento :v', NULL, '2018-05-08 22:48:02', 'Barrio San Felipe, Tegucigalpa, Honduras'),
+(5, 4, 'Este es el primer intento de una publicacion mandada desde otro perfil', NULL, '2018-05-08 22:49:24', 'Villa Delmi, Tegucigalpa, Honduras');
 
 -- --------------------------------------------------------
 
@@ -192,9 +201,9 @@ CREATE TABLE IF NOT EXISTS `tbl_usuarios` (
   `correo` varchar(100) DEFAULT NULL,
   `contrasena` varchar(45) DEFAULT NULL,
   `url_imagen_perfil` varchar(45) DEFAULT NULL,
-  `titular` varchar(45) DEFAULT NULL,
-  `educacion` varchar(45) DEFAULT NULL,
-  `logros` varchar(45) DEFAULT NULL,
+  `titular` varchar(200) DEFAULT NULL,
+  `educacion` varchar(200) DEFAULT NULL,
+  `logros` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`codigo_usuario`),
   KEY `fk_tbl_usuarios_tbl_generos1_idx` (`codigo_genero`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
@@ -204,12 +213,12 @@ CREATE TABLE IF NOT EXISTS `tbl_usuarios` (
 --
 
 INSERT INTO `tbl_usuarios` (`codigo_usuario`, `codigo_genero`, `nombre_usuario`, `apellido_usuario`, `correo`, `contrasena`, `url_imagen_perfil`, `titular`, `educacion`, `logros`) VALUES
-(1, 1, 'Rafael', 'Bautista', 'rafael.bautista1@hotmail.es', 'bcdcb29ed2aab16d48c11485264df665e906bdd9', NULL, NULL, NULL, NULL),
-(2, 1, 'Alejandro', 'Bautista', 'alejandro@gmail.com', '2d09563fb5d7e92c6642519acacbde85e6c76b3c', NULL, NULL, NULL, NULL),
-(3, 2, 'Sandra', 'Santos', 'sandra@gmail.com', '5449a21db45725d6ccf8f3008202876fe680db02', NULL, NULL, NULL, NULL),
-(4, 1, 'Walter', 'Bautista', 'walter@gmail.com', 'bcdcb29ed2aab16d48c11485264df665e906bdd9', NULL, NULL, NULL, NULL),
-(12, 2, 'Angie', 'MembreÃ±o', 'angie@gmail.com', 'bcdcb29ed2aab16d48c11485264df665e906bdd9', NULL, NULL, NULL, NULL),
-(13, 1, 'Walter ', 'Bautista', 'wbale_7@hotmail.com', '56046ad055681218890824ee5fc5f7a4478ef23e', NULL, NULL, NULL, NULL);
+(1, 1, 'Rafael', 'Bautista', 'rafael.bautista1@hotmail.es', 'bcdcb29ed2aab16d48c11485264df665e906bdd9', 'img/profile-pics/usuario3.jpg', 'Estudiante en Universidad Nacional AutÃ³noma de Honduras (UNAH)', 'Universidad Nacional AutÃ³noma de Honduras (UNAH)', 'Certificado de Photoshop en NextU'),
+(2, 1, 'Alejandro', 'Bautista', 'alejandro@gmail.com', '2d09563fb5d7e92c6642519acacbde85e6c76b3c', 'img/profile-pics/usuario1.jpg', 'Hola', 'Hola', 'Hola'),
+(3, 2, 'Sandra', 'Santos', 'sandra@gmail.com', '5449a21db45725d6ccf8f3008202876fe680db02', 'img/profile-pics/usuario1.jpg', 'Hola', 'Hola', 'Hola'),
+(4, 1, 'Walter', 'Bautista', 'walter@gmail.com', 'bcdcb29ed2aab16d48c11485264df665e906bdd9', 'img/profile-pics/usuario3.jpg', 'Estudiante en Centro Universitario Tecnologico (CEUTEC)', 'Centro Universitario Tecnologico (CEUTEC)', 'Certificado de excel avanzado en INFOP'),
+(12, 2, 'Angie', 'MembreÃ±o', 'angie@gmail.com', 'bcdcb29ed2aab16d48c11485264df665e906bdd9', 'img/profile-pics/usuario1.jpg', 'Hola', 'Hola', 'Hola'),
+(13, 1, 'Walter ', 'Bautista', 'wbale_7@hotmail.com', '56046ad055681218890824ee5fc5f7a4478ef23e', 'img/profile-pics/usuario1.jpg', 'Hola', 'Hola', 'Hola');
 
 --
 -- Restricciones para tablas volcadas
@@ -219,8 +228,8 @@ INSERT INTO `tbl_usuarios` (`codigo_usuario`, `codigo_genero`, `nombre_usuario`,
 -- Filtros para la tabla `tbl_amigos`
 --
 ALTER TABLE `tbl_amigos`
-  ADD CONSTRAINT `fk_tbl_usuarios_has_tbl_usuarios_tbl_usuarios1` FOREIGN KEY (`codigo_usuario_amigo`) REFERENCES `tbl_usuarios` (`codigo_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tbl_usuarios_has_tbl_usuarios_tbl_usuarios2` FOREIGN KEY (`codigo_usuario`) REFERENCES `tbl_usuarios` (`codigo_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_tbl_usuarios_has_tbl_usuarios_tbl_usuarios1` FOREIGN KEY (`codigo_usuario`) REFERENCES `tbl_usuarios` (`codigo_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_tbl_usuarios_has_tbl_usuarios_tbl_usuarios2` FOREIGN KEY (`codigo_usuario_amigo`) REFERENCES `tbl_usuarios` (`codigo_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `tbl_chats`
