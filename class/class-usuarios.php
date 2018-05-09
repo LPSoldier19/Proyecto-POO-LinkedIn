@@ -143,6 +143,17 @@
 				return json_encode($mensaje);
 			}
 		}
+
+		public function listaUsuarios($conexion){
+			$sql = sprintf("SELECT codigo_usuario, codigo_genero, nombre_usuario, apellido_usuario, correo, contrasena, url_imagen_perfil, titular, educacion, logros FROM tbl_usuarios WHERE codigo_usuario != %s",
+			$conexion->antiInyeccion($this->codigo_usuario));
+			$resultado = $conexion->ejecutarConsulta($sql);
+			$listaUsuarios = array();
+			while($fila = $conexion->obtenerFila($resultado)){
+				$listaUsuarios[] = $fila;
+			}
+			return json_encode($listaUsuarios);
+		}
 		
 		
 	}

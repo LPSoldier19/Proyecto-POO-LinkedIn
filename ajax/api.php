@@ -31,6 +31,11 @@
         $p = new Publicacion(null,$_GET["codigo_usuario"],null,null,null,null);
         echo $p->visualizarPublicaciones($conexion);
         break;
+
+        case "obtener-lista-usuarios":
+        $u = new Usuario($_GET["codigo_usuario"],null,null,null,null,null,null,null,null,null);
+        echo $u->listaUsuarios($conexion);
+        break;
     }
 
 

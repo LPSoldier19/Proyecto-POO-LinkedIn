@@ -5,9 +5,10 @@
     include("class/class-conexion.php");
     $conexion = new Conexion();
      $sql = sprintf( 
-        "SELECT codigo_usuario, codigo_genero, nombre_usuario, apellido_usuario, correo, contrasena, url_imagen_perfil, titular, educacion, logros FROM tbl_usuarios WHERE correo = '%s' and contrasena = '%s'",
+        "SELECT codigo_usuario, codigo_genero, nombre_usuario, apellido_usuario, correo, contrasena, url_imagen_perfil, titular, educacion, logros FROM tbl_usuarios WHERE correo = '%s' and contrasena = '%s' and codigo_usuario = %s",
         $_SESSION["usr"],
-        $_SESSION["psw"]);
+        $_SESSION["psw"],
+        $_SESSION["codUsr"]);
     //echo $sql;
     //exit;
     $resultado = $conexion->ejecutarConsulta($sql);
@@ -34,7 +35,9 @@
 </head>
 
 <body id="container-muro">
-   
+    <span class="d-none">
+    <input type="text" value="<?php echo $_SESSION["codUsr"]?>" id="txt-codigo-usuario">
+    </span>
 <nav class="navbar sticky-top ">
     
     <div>
@@ -105,66 +108,7 @@
                         <h5>Gente que podrias conocer</h5>
                    </div>
                       <div class="row card-body" id="card-usuarios-red">
-                        <div class="col-lg-4 col-6 card-body border text-center">
-                            <img src="img/goku.png" class="img-fluid rounded-circle pt-2 pb-3">
-                            <h6><strong>Goku</strong></h6>
-                            <p>Guerreo mas poderoso del Universo 7<br>
-                            <i class="fas fa-university fa-lg"></i> Escuela del Supremo Kaiosama
-                            </p>
-                            <div class="card-body">  
-                            <a href="#" class="btn btn-outline-primary btn-sm mb-3">Conectar</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-6 card-body border text-center">
-                            <img src="img/toppo.jpg" class="img-fluid rounded-circle pt-2 pb-3">
-                            <h6><strong>Toppo</strong></h6>
-                            <p>Dios de la Destruccion del Universo 11<br>
-                            <i class="fas fa-university fa-lg"></i> Aprendiz de Vermoud
-                            </p>  
-                            <div class="card-body">  
-                            <a href="#" class="btn btn-outline-primary btn-sm mb-3">Conectar</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-6 card-body border text-center">
-                            <img src="img/vegeta.jpg" class="img-fluid rounded-circle pt-2 pb-3">
-                            <h6><strong>Vegeta</strong></h6>
-                            <p>Principe de los Sayayins<br>
-                            <i class="fas fa-university fa-lg"></i> Autodidacta 
-                            </p>  
-                            <div class="card-body">  
-                            <a href="#" class="btn btn-outline-primary btn-sm mb-3">Conectar</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-6 card-body border text-center">
-                            <img src="img/jiren.png" class="img-fluid rounded-circle pt-2 pb-4">
-                            <h6><strong>Jiren</strong></h6>
-                            <p>Guerreo mas poderoso del Universo 11<br></p>
-                            <p><i class="fas fa-university fa-lg"></i> Escuela de formacion de guerreros 
-                            </p>  
-                            <div class="card-body">  
-                            <a href="#" class="btn btn-outline-primary btn-sm mb-3">Conectar</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-6 card-body border text-center">
-                            <img src="img/freezer.jpg" class="img-fluid rounded-circle pt-2 pb-4">
-                            <h6><strong>Freezer</strong></h6>
-                            <p>Villano mas odiado del Universo 7</p>
-                            <p><i class="fas fa-university fa-lg"></i> Autodidacta
-                            </p>  
-                            <div class="card-body">  
-                            <a href="#" class="btn btn-outline-primary btn-sm mb-3">Conectar</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-6 card-body border text-center">
-                            <img src="img/A18.png" class="img-fluid rounded-circle pt-2 pb-4 mb-1">
-                            <h6><strong>Androide No. 18</strong></h6>
-                            <p>Androide convertida en humana gracias a las Esferas del Dragon</p>
-                            <p><i class="fas fa-university fa-lg"></i> Creacion del Doctor Gero   </p>                         
-                          
-                           <div class="card-body">  
-                            <a href="#" class="btn btn-outline-primary btn-sm mb-3">Conectar</a>
-                            </div>
-                        </div>
+                        
                       </div>
                   </div>
 
@@ -185,5 +129,6 @@
     
     <script src="js/jquery-3.3.1.min.js"></script>
    <script src="js/bootstrap.js"></script>
+   <script src="js/controlador2.js"></script>
 </body>
 </html>

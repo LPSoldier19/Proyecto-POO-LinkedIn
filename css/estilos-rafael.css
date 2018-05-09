@@ -105,6 +105,10 @@ body{
     font-size: 90%;
 }
 
+#div-publicaciones{
+    font-size: 90%;
+}
+
 #card-muro:hover{
     box-shadow: 3px 5px 20px 0px #8d8d8d6c;
 }

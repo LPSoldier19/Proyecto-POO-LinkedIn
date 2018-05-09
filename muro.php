@@ -36,9 +36,6 @@
 </head>
 
 <body id="container-muro">
-    <span class="d-none">
-    <input type="text" value="<?php echo $_SESSION["codUsr"]?>" id="txt-codigo-usuario">
-    </span>
    
 <nav class="navbar sticky-top ">
     
@@ -132,45 +129,7 @@
                     </div>
                 </div>
 
-                <div class="card mb-5" id="card-muro">
-                    <div class"div-publicaciones">
-                    </div>
-
-                    <div class="card-footer">
-                        <div class="row no-gutters pb-3">
-                            <div class="col-lg-1 col-1">
-                                <img src="img/usuario.png" class="img-fluid rounded-circle">
-                            </div>
-                            <div class="col-lg-9 col-9 ml-2">
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="col-lg-1 col-1 mt-1">
-                                <label class="btn btn-default btn-file fas fa-paper-plane">
-                                    <input type="button" style="display: none;" class="form-control-file" id="btn-enviar-comentario">
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row no-gutters pb-3">
-                            <div class="col-lg-1 col-1 mr-2">
-                                <img src="img/vegeta.jpg" class="img-fluid rounded-circle">
-                            </div>
-                            <div class="col-lg-10 col-9 text-justify">
-                                <p><strong>Vegeta:</strong> Valio la pena darte la ultima pequeña cantidad de energia que tenia, aprovechalo, el Universo 7 debe ganar el gran torneo del poder. Recuerda que deje en tus manos todas las promesas que hice antes y durante el torneo.
-                                </p>
-                                Hace 1 Hora
-                            </div>
-                        </div>
-                        <div class="row no-gutters pb-3">
-                            <div class="col-lg-1 col-1 mr-2">
-                                <img src="img/jiren.png" class="img-fluid rounded-circle">
-                            </div>
-                            <div class="col-lg-10 col-9 text-justify">
-                                <p><strong>Jiren:</strong> Tu poder comparado con el mio, es muy inferior y te lo demostrare, no dudes que hare que el Universo 11 sea el vencedor del gran torneo del poder y reclamar el deseo.
-                                </p>
-                                Hace 50 minutos
-                            </div>
-                        </div>
-                    </div>
+                <div id="div-publicaciones">
                 </div>
 
 
