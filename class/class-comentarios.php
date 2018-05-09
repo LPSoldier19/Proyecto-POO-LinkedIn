@@ -56,5 +56,7 @@
 				" Fecha_comentario: " . $this->fecha_comentario . 
 				" Contenido_comentario: " . $this->contenido_comentario;
 		}
+
+		
 	}
 ?>

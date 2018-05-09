@@ -26,6 +26,11 @@
         $u = new Usuario($_POST["codigo_usuario"],null,null,null,null,null,$_POST["url_imagen_perfil"],$_POST["titular"],$_POST["educacion"],$_POST["logro"]);
         echo $u->actualizarInfoUsuario($conexion);
         break;
+
+        case "obtener-lista-publicaciones":
+        $p = new Publicacion(null,$_GET["codigo_usuario"],null,null,null,null);
+        echo $p->visualizarPublicaciones($conexion);
+        break;
     }
 
 

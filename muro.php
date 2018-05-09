@@ -133,34 +133,7 @@
                 </div>
 
                 <div class="card mb-5" id="card-muro">
-                    <div class="card-header">
-                        <div class="row">
-                            <div class="col-lg-2 col-2">
-                                <img src="img/goku.png" class="img-fluid rounded-circle"> 
-                            </div>
-                            <div class="col-lg-6 col-7">
-                                <p><strong>Goku</strong><br>
-                                    Guerrero del 7º Universo <br>
-                                    1 hora
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                    Al final he logrado alcanzar el nivel perfecto de la doctrina egoista, espero que Jiren tenga la capacidad de hacerme frente
-                    ante esta nueva y poderosa transformacion.
-                    </div>
-                    <div class="card-header">
-                    # recomendaciones
-                    </div>
-                    <div class="card-content border-top">
-                        <div class="row no-gutters">
-                            <div class="col-lg-1 col-1" id="boton-input-text">
-                                <label class="btn btn-default btn-file fas fa-thumbs-up " id="like-logo">
-                                    <input type="button" style="display: none;" class="form-control-file" id="like">
-                                </label>
-                            </div>
-                        </div>
+                    <div class"div-publicaciones">
                     </div>
 
                     <div class="card-footer">
@@ -206,7 +179,7 @@
             <div class="col-lg-3 d-none d-lg-block">
                 <div class="card" id="card-muro">
                 <div class="card-body">
-                <a href="empleos.html">
+                <a href="empleos.php">
                     <img src="img/blanco-linkedin.jpg" alt="Advertise on LinkedIn" class="img-fluid">
                 </a>
                 </div>
@@ -231,6 +204,7 @@
     
     <script src="js/jquery-3.3.1.min.js"></script>
    <script src="js/bootstrap.js"></script>
+   <script src="js/controlador2.js"></script>
    <script src="js/controlador.js"></script>
    <script src="js/muro.js"></script>
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBa8T6nCrETXo0P-IzV-d4eVLjN5UBk5oM&signed_in=true" async defer>

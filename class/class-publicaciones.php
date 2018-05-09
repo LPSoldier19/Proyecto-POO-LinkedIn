@@ -81,6 +81,26 @@
 				$mensaje["mensaje"]="No se ha podido realizar la publicacion";
 				return json_encode($mensaje);
 			}
-        }
+		}
+		
+		public function visualizarPublicaciones($conexion){
+			$sql = sprintf("SELECT a.codigo_publicacion, b.nombre_usuario, b.apellido_usuario, b.url_imagen_perfil, b.titular,
+            a.codigo_usuario, a.contenido_publicacion, a.numero_likes, a.fecha_publicacion, a.ubicacion
+           FROM tbl_publicaciones a
+           INNER JOIN tbl_usuarios b
+           ON (a.codigo_usuario = b.codigo_usuario)
+           WHERE a.codigo_usuario = %s
+           OR a.codigo_usuario in (
+        	select codigo_usuario_amigo from tbl_amigos
+			where codigo_usuario = %s);",
+			$conexion->antiInyeccion($this->codigo_usuario),
+			$conexion->antiInyeccion($this->codigo_usuario));
+			$resultado = $conexion->ejecutarConsulta($sql);
+			$listaPublicaciones = array();
+			while($fila = $conexion->obtenerFila($resultado)){
+				$listaPublicaciones[] = $fila;
+			}
+			return json_encode($listaPublicaciones);
+		}
 	}
 ?>
