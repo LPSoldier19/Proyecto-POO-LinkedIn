@@ -210,12 +210,13 @@ $("#btn-post").click(function(){
     alert(parametros);
 
     $.ajax({
-        url: "ajax/api.php?accion=insertar-publicacion",
-        method: "post",
+        url:"ajax/api.php?accion=insertar-publicacion",
+        method:"POST",
         data: parametros,
-        dataType: "json",
+        dataType:"json",
         success:function(respuesta){
-            alert("Se ha realizado la publicacion exitosamente");
+            console.log(respuesta);
+            location.reload();
         },
         error:function(e){
             console.log(e);
