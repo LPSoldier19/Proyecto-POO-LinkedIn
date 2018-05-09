@@ -78,7 +78,7 @@ $(document).ready(function(){
                             '<p>'+respuesta[i].titular+'<br>'+
                             '<i class="fas fa-university fa-lg"></i> '+respuesta[i].educacion+'</p>'+
                             '<div class="card-body">'+
-                            '<a href="#" class="btn btn-outline-primary btn-sm mb-3">Conectar</a>'+
+                            '<button class="btn btn-outline-primary btn-sm mb-3">Conectar</button>'+
                             '</div>'+
                         '</div>');
             }
