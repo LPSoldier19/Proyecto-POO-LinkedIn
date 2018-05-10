@@ -134,7 +134,6 @@
                                         <div class="avatar" style="padding:0px 0px 0px 10px !important"><img class="rounded-circle" style="width:100%;" src="img/freezer.jpg" /></div>                               
                                         <div class="text text-r">
                                             <p>Yo matare a quien se me de la gana, y un inferior Sayayin como tu, no me vendra a dar ordenes a mi, el Emperador del Mal </p>
-                                            <img src="img/krilin-levitando.jpg" height="50%" width="50%">
                                             <p><small>date</small></p>
                                         </div>
                                     
@@ -144,7 +143,6 @@
                                     <div class="msj-rta macro">
                                         <div class="text text-l">
                                             <p>
-                                                <img src="img/ya-basta-freezer.jpg" height="50%" width="50%">
                                             </p>
                                             <p><small>date</small></p>
                                         </div>
@@ -158,7 +156,6 @@
                                         <div class="avatar" style="padding:0px 0px 0px 10px !important"><img class="rounded-circle" style="width:100%;" src="img/freezer.jpg" /></div>  
                                         <div class="text text-r">
                                             <p> Goooookuuuuu AHHHHHGG! <br>
-                                                 <img src="img/krilin-explotado.jpg" height="50%" width="50%">
                                             </p>
                                             <p><small>date</small></p>
                                         </div>
@@ -169,7 +166,6 @@
                                     <div class="msj-rta macro">
                                         <div class="text text-l">
                                             <p> AHHHHHHH! como te atreviste a matar a krilin <br>
-                                                <img src="img/goku-transformandose.jpg" height="50%" width="50%"></p>
                                                 <p><small>date</small></p>
                                             </div>
                                         <div class="avatar"><img class="rounded-circle" style="width:100%;" src="img/goku.png" /></div>
@@ -180,11 +176,9 @@
                                <li style="width:100%">
                                     <div class="msj-rta macro">
                                         <div class="text text-l">
-                                            <p> Ahora si, preparate, pues vengare la vida de todas las personas que has matado <br>
-                                                <img src="img/goku-transformado.jpg" height="50%" width="50%"></p>
+                                            <p> Ahora si, preparate, pues vengare la vida de todas las personas que has matado <br></p>
                                                 <p><small>date</small></p>
                                             </div>
-                                        <div class="avatar"><img class="rounded-circle" style="width:100%;" src="img/goku.png" /></div>
                                         </div>
                                 </li>
                                 
@@ -194,7 +188,6 @@
                                         <div class="avatar" style="padding:0px 0px 0px 10px !important"><img class="rounded-circle" style="width:100%;" src="img/freezer.jpg" /></div>
                                         <div class="text text-r">
                                             <p>
-                                            <img src="img/vamonos-alv-wey.jpg" height="50%" width="50%">
                                             </p>
                                             <p><small>date</small></p>
                                         </div>
