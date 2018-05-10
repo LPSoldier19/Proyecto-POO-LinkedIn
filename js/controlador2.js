@@ -107,7 +107,7 @@ $(document).ready(function(){
         }
     });
 
-    $.ajax({
+    /*$.ajax({
         url:"ajax/api.php?accion=obtener-lista-chats",
         method: "get",
         data: parametros,
@@ -131,7 +131,7 @@ $(document).ready(function(){
         error:function(e){
             console.log(e);
         }
-    });
+    });*/
 
         var parametrosCom = "codigo_usuario="+$("#txt-codigo-usuario").val();
         console.log(parametrosCom);

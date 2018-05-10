@@ -48,7 +48,20 @@
         }
         
         public function insertarMensaje($conexion){
-            $sql =sprintf("")
+            $sql =sprintf("INSERT INTO tbl_mensajes(codigo_usuario, contenido_mensaje, fecha_mensaje) VALUES (%s,'%s',now())",
+            $conexion->antiInyeccion($this->codigo_usuario),
+            $conexion->antiInyeccion($this->contenido_mensaje));
+            $resultado = $conexion->ejecutarConsulta($sql);
+            if($resultado){
+				$mensaje["mensaje"]="Mensaje enviado exitosamente";
+				$mensaje["sql"]=$sql;
+				return json_encode($mensaje);
+			}
+			else{
+				$mensaje["mensaje"]="No se ha podido enviar el mensaje";
+				$mensaje["sql"]=$sql;
+				return json_encode($mensaje);
+			}
         }
 	}
 ?>

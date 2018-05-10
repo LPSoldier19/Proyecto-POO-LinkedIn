@@ -240,7 +240,7 @@
     <script src="js/jquery-3.3.1.min.js"></script>
    <script src="js/bootstrap.js"></script>
    <script src="js/javascript-rafa.js"></script>
-   <script src="js/controlador2.js"></script>
+   <script src="js/controlador.js"></script>
 
 </body>
 </html>

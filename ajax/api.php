@@ -5,6 +5,7 @@
     include ("../class/class-publicaciones.php");
     include ("../class/class-chat.php");
     include ("../class/class-comentarios.php");
+    include ("../class/class-mensajes.php");
 
     $conexion = new Conexion();
 
@@ -75,6 +76,10 @@
         echo $c->listaChat($conexion);
         break;
 
+        case "insertar-mensaje":
+        $m = new Mensaje(null,$_POST["codigo_usuario"],$_POST["contenido_mensaje"],null);
+        echo $m->insertarMensaje($conexion);
+        break;
 
     }
 

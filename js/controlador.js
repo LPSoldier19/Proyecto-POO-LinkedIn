@@ -163,19 +163,28 @@ $("#txt-correo").change(function () {
 });
 
 $("#btn-enviar").click(function(){
-    var parametros ="mensaje="+$("#txt-mensaje").val();
+    var parametros ="contenido_mensaje="+$("#txt-mensaje").val() + "&" + "codigo_usuario=" + $("#txt-codigo-usuario").val();
 
     alert(parametros);
 
+    if($("#txt-mensaje").val()==""){
+        alert("No se puede enviar un mensaje vacio");
+    }
+    else{
     $.ajax({
-        url: 'class/procesar.php',
+        url: 'ajax/api.php?accion=insertar-mensaje',
         method:'POST',
-		data:parametros,
+        data: parametros,
+        dataType: "json",
         success: function(respuesta){
-            $("#ul-chat").append(respuesta);
+            alert("Mensaje enviado exitosamente");
             $("#txt-mensaje").val('');
+        },
+        error: function(e){
+            console.log(e);
         }
     });
+    }
 });
 
 $("#btn-guardar-empleo").click(function(){
