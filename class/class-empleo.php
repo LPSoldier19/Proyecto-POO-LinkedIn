@@ -75,6 +75,10 @@
 				$listaEmpleos[] = $fila;
 			}
 			return json_encode($listaEmpleos);
-        }
+		}
+		
+		public function guardarEmpleo($conexion){
+			$sql = sprintf("INSERT INTO tbl_empleos_guardados(codigo_empleo_guardado, codigo_usuario) VALUES (valor1,valor2)");
+		}
 	}
 ?>

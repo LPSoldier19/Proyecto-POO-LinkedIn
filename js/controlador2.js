@@ -32,7 +32,7 @@ $(document).ready(function(){
                 '<div class="row no-gutters">'+
                     '<div class="col-lg-1 col-1" id="boton-input-text">'+
                         '<label class="btn btn-default btn-file fas fa-thumbs-up " id="like-logo">'+
-                            '<input type="button" style="display: none;" class="form-control-file" id="like">'+
+                            '<button type="button" style="display: none;" class="form-control-file" id="like"></button>'+
                         '</label>'+
                     '</div>'+
                 '</div>'+
@@ -89,3 +89,22 @@ $(document).ready(function(){
     });
 
 });
+
+$("body").on("click","#btn-conectar",function(event){
+     
+    alert("Probando asignación");
+     
+});
+
+$("body").on("click","#btn-enviar-comentario",function(event){
+     
+    alert("Probando asignación");
+     
+});
+
+$("body").on("click","#like",function(event){
+     
+    alert("Probando asignación");
+     
+});
+

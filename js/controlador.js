@@ -215,7 +215,7 @@ $("#btn-post").click(function(){
         dataType:"json",
         success:function(respuesta){
             console.log(respuesta);
-            //location.reload();
+            location.reload();
         },
         error:function(e){
             console.log(e);
@@ -248,6 +248,17 @@ $("#btn-guardar-modal").click(function(){
 
    
 });
+
+$("body").on("click","#btn-guardar-empleo",function(event){
+     
+    alert("Probando asignación");
+
+    $.ajax({
+
+    });
+     
+});
+
 
 
 
