@@ -18,6 +18,7 @@
     }
 
     $registro = $conexion->obtenerFila($resultado);
+
 ?>
 
 
@@ -123,6 +124,8 @@
                 </div>
 
                 <div id="div-publicaciones">
+
+               
                 </div>
 
 

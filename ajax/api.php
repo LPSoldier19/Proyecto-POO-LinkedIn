@@ -59,14 +59,20 @@
         echo $u->obtenerListaUsuariosGuardados($conexion,$_GET["codigo_usuario"]);
         break;
 
-        case "obtener-lista-chats":
-        $c = new Chat(null,null,null);
-        echo $c->recibirListaChats($conexion, $_GET["codigo_usuario"]);
-        break;
 
         case "insertar-comentario":
         $com = new Comentario(null,$_POST["codigo_usuario"],$_POST["codigo_publicacion"],null,$_POST["comentario"]);
         echo $com->insertarComentario($conexion);
+        break;
+
+        case "obtener-lista-comentarios":
+        $com = new Comentario(null,$_GET["codigo_usuario"],null,null,null);
+        echo $com->visualizarComentarios($conexion);
+        break;
+
+        case "obtener-lista-chats":
+        $c = new Chat(null,null,$_GET["codigo_usuario"]);
+        echo $c->listaChat($conexion);
         break;
 
 

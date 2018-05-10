@@ -74,5 +74,24 @@
 				return json_encode($mensaje);
 			}
 		}
+
+		public function visualizarComentarios($conexion){
+			$sql = sprintf("SELECT a.codigo_comentario, a.codigo_usuario, a.codigo_publicacion, a.fecha_comentario, a.contenido_comentario, b.url_imagen_perfil, b.nombre_usuario, b.apellido_usuario 
+			FROM tbl_comentarios a
+			INNER JOIN tbl_usuarios b
+			ON (a.codigo_usuario = b.codigo_usuario)
+			WHERE a.codigo_usuario = %s
+			or a.codigo_usuario in (
+			select codigo_usuario_amigo from tbl_amigos
+			where codigo_usuario = %s) ORDER BY a.fecha_comentario DESC",
+			$conexion->antiInyeccion($this->codigo_usuario),
+			$conexion->antiInyeccion($this->codigo_usuario));
+			$resultado = $conexion->ejecutarConsulta($sql);
+			$listaComentarios = array();
+			while($fila = $conexion->obtenerFila($resultado)){
+				$listaComentarios[] = $fila;
+			}
+			return json_encode($listaComentarios);
+		}
 	}
 ?>

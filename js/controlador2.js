@@ -9,7 +9,7 @@ $(document).ready(function(){
         success:function(respuesta){
             for(var i=0;i<respuesta.length;i++){
                 $("#div-publicaciones").append(
-                '<div class="card">'+    
+                '<div class="card" id="div-publicacion-'+respuesta[i].codigo_publicacion+'">'+    
                 '<div class="card-header">'+
                 '<div class="row">'+
                     '<div class="col-lg-2 col-2">'+
@@ -48,11 +48,11 @@ $(document).ready(function(){
                 '<div class="col-lg-1 col-1 mt-1 ml-2">'+
                     '<button type="button" class="form-control-file btn btn-link" id="btn-enviar-comentario" onclick="enviarComentario('+respuesta[i].codigo_publicacion+')"><i class="fas fa-paper-plane" style="color:black;"></i> </button>'+
                 '</div>'+
+                '<div id="div-comentarios"></div>'+
             '</div>'+
         '</div>'+
         '</div> <br>')
             }
-            ;
         },
         error:function(e){
             console.log(e);
@@ -85,7 +85,7 @@ $(document).ready(function(){
         }
 
     });
-
+   
     $.ajax({
         url: "ajax/api.php?accion=obtener-usuarios-guardados",
         method:"get",
@@ -132,6 +132,40 @@ $(document).ready(function(){
             console.log(e);
         }
     });
+
+        var parametrosCom = "codigo_usuario="+$("#txt-codigo-usuario").val();
+        console.log(parametrosCom);
+
+        $.ajax({
+            url:"ajax/api.php?accion=obtener-lista-comentarios",
+            method:"get",
+            data: parametrosCom,
+            dataType: "json",
+            success:function(respuesta){
+                for(var i=0;i<respuesta.length;i++){
+                    $("#div-comentarios").append(
+                        '<div class="row no-gutters mt-3" id="div-comentario">'+
+                        '<div class="col-lg-1 col-1">'+
+                        '<img src="'+respuesta[i].url_imagen_perfil+'" class="img-fluid rounded-circle">'+
+                        '</div>'+
+                        '<div class="col-lg-10 col-9 ml-3">'+
+                        '<h6><strong>'+respuesta[i].nombre_usuario+' '+respuesta[i].apellido_usuario+'</stron></h6>'+
+                        '<p class="mt-2">'+respuesta[i].contenido_comentario+
+                        '<br>'+'<small>'+respuesta[i].fecha_comentario+'</small>'+
+                        '</p>'+
+                        '</div>'+
+                        '</div>'
+                    )
+                }
+                console.log(respuesta);
+            },
+            error:function(e){
+                console.log(e);
+            }
+        });
+    
+
+    
 
 });
 
@@ -184,10 +218,5 @@ function enviarComentario(id){
     }
 }
 
-$("body").on("click","#like",function(event){
-     
-    alert("Probando asignación");
-     
-});
 
 

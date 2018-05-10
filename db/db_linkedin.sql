@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 10-05-2018 a las 17:01:05
+-- Tiempo de generación: 10-05-2018 a las 22:40:23
 -- Versión del servidor: 5.7.19
 -- Versión de PHP: 5.6.31
 
@@ -86,14 +86,15 @@ CREATE TABLE IF NOT EXISTS `tbl_comentarios` (
   PRIMARY KEY (`codigo_comentario`),
   KEY `fk_tbl_comentarios_tbl_publicaciones1_idx` (`codigo_publicacion`),
   KEY `fk_tbl_comentarios_tbl_usuarios1_idx` (`codigo_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbl_comentarios`
 --
 
 INSERT INTO `tbl_comentarios` (`codigo_comentario`, `codigo_usuario`, `codigo_publicacion`, `fecha_comentario`, `contenido_comentario`) VALUES
-(3, 14, 21, '2018-05-10 09:40:08', 'Funcionara ahora?');
+(3, 14, 21, '2018-05-10 09:40:08', 'Funcionara ahora?'),
+(4, 14, 26, '2018-05-10 15:13:56', 'Intento 2');
 
 -- --------------------------------------------------------
 
@@ -110,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `tbl_empleos` (
   `direccion_empleo` varchar(200) DEFAULT NULL,
   `url_imagen_empleo` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`codigo_empleo`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbl_empleos`
@@ -118,7 +119,13 @@ CREATE TABLE IF NOT EXISTS `tbl_empleos` (
 
 INSERT INTO `tbl_empleos` (`codigo_empleo`, `nombre_empleo`, `descripcion_empleo`, `telefono_empleo`, `direccion_empleo`, `url_imagen_empleo`) VALUES
 (1, 'BAC Credomatic', 'Se busca cajero principiante, motivado para trabajar, que sea Bachiller en Contaduria Publica y Finanzas, con buena educacion y con certificado de cursos de atencion al cliente.', '+504 2336-6565', 'Blvd. Morazan', 'img/img-empleo/bac.png'),
-(3, 'Ficohsa', 'Se busca gerente para nueva sucursal Fichosa La Ceiba, que viva en la ciudad, con titulo universitario y preferiblemente con cursos de atencion al cliente.', '+504 2236-3636', 'La Ceiba, Atlantida, Honduras', 'img/img-empleo/ficohsa.png');
+(3, 'Ficohsa', 'Se busca gerente para nueva sucursal Fichosa La Ceiba, que viva en la ciudad, con titulo universitario y preferiblemente con cursos de atencion al cliente.', '+504 2236-3636', 'La Ceiba, Atlantida, Honduras', 'img/img-empleo/ficohsa.png'),
+(4, 'Chillis', 'Se busca mesero de genero femenino sin ningun tipo de experiencia laboral con bachillerato en ciencias y letras', '+504 2235-5880', 'Los Proceres,Tegucigalpa, Honduras', 'img/img-empleo/chillis.png'),
+(5, 'Diunsa', 'Se busca cajero sin ningun tipo de experiencia laboral con titulo de bachillerato en contaduria publica y finanzas', '+504 2220-8580', 'Los Proceres,Tegucigalpa, Honduras', 'img/img-empleo/diunsa.jpg'),
+(6, 'Almacenes Lady Lee', 'Se busca personal de apoyo para el area de bodegas, sin ningun tipo de experiencia laboral', '+504 2335-7986', 'Mall Multiplaza,Tegucigalpa, Honduras', 'img/img-empleo/ladylee.png'),
+(7, 'Breado Co', 'Se busca distribuidor de producto con transporte, capaz de movilizarse a nivel nacional, sin ningun tipo de experiencia', '+504 2145-7896', 'Colonia Miraflores,Tegucigalpa, Honduras', 'img/img-empleo/breadco.jpg'),
+(8, 'Burger King', 'Se busca mesero para nueva sucursal, sin ningun tipo de experiencia laboral, con buenos modales', '+504 2586-7898', 'Boulevard del Norte ,San Pedro Sula, Honduras', 'img/img-empleo/burgerking.png'),
+(9, 'Pizza Hut', 'Se busca mesero para nueva sucursal, sin ningun tipo de experiencia laboral, con buenos modales', '+504 2586-7898', 'Boulevard Fuerzas Armadas, Tegucigalpa, Honduras', 'img/img-empleo/pizzahut.png');
 
 -- --------------------------------------------------------
 
