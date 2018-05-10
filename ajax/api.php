@@ -67,7 +67,7 @@
         break;
 
         case "obtener-lista-comentarios":
-        $com = new Comentario(null,$_GET["codigo_usuario"],null,null,null);
+        $com = new Comentario(null,$_GET["codigo_usuario"],$_GET["codigo_publicacion"],null,null);
         echo $com->visualizarComentarios($conexion);
         break;
 

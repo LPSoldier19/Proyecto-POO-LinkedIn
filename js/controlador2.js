@@ -48,7 +48,7 @@ $(document).ready(function(){
                 '<div class="col-lg-1 col-1 mt-1 ml-2">'+
                     '<button type="button" class="form-control-file btn btn-link" id="btn-enviar-comentario" onclick="enviarComentario('+respuesta[i].codigo_publicacion+')"><i class="fas fa-paper-plane" style="color:black;"></i> </button>'+
                 '</div>'+
-                '<div id="div-comentarios"></div>'+
+                '<div id="div-comentarios"><input type="text" class="d-none" value="'+respuesta[i].codigo_publicacion+'" id="txt-codigo-publicacion"></div>'+
             '</div>'+
         '</div>'+
         '</div> <br>')
@@ -133,8 +133,7 @@ $(document).ready(function(){
         }
     });*/
 
-        var parametrosCom = "codigo_usuario="+$("#txt-codigo-usuario").val();
-        console.log(parametrosCom);
+    var parametrosCom = "codigo_usuario=" + $("#txt-codigo-usuario").val() + "codigo_publicacion=" + $("#txt-codigo-publicacion").val();
 
         $.ajax({
             url:"ajax/api.php?accion=obtener-lista-comentarios",
