@@ -18,6 +18,8 @@
     }
 
     $registro = $conexion->obtenerFila($resultado);
+
+    
 ?>
 
 <!DOCTYPE html>

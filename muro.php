@@ -19,6 +19,7 @@
 
     $registro = $conexion->obtenerFila($resultado);
 
+    
 ?>
 
 
