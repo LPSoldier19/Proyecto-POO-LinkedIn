@@ -192,25 +192,30 @@ $("#btn-registro").click(function(){
 
     console.log(parametros);
 
-
-    $.ajax({
-        url: "ajax/api.php?accion=insertar-usuario",
-        method: "POST",
-        data: parametros,
-        dataType: "json",
-        success:function(respuesta){
-            alert("Se ha registrado el usuario");
-            window.location.href = "log-in.html";
-            $("#txt-nombre").val("");
-            $("#txt-apellido").val("");
-            $("#txt-email").val("");
-            $("input:radio[name=rbt-genero]").val("");
-            $("#txt-contrasena").val("");
-        },
-        error:function(e){
-            console.log(e);
-        }
-    })
+    if($("#txt-nombre").val()=="" || $("#txt-apellido").val()=="" || $("#txt-email").val()=="" || $("#txt-contrasena").val()==""){
+        alert("Hacen falta campos por llenar");
+    }
+    else{
+        $.ajax({
+            url: "ajax/api.php?accion=insertar-usuario",
+            method: "POST",
+            data: parametros,
+            dataType: "json",
+            success:function(respuesta){
+                alert("Se ha registrado el usuario");
+                $("#txt-nombre").val("");
+                $("#txt-apellido").val("");
+                $("#txt-email").val("");
+                $("input:radio[name=rbt-genero]").val("");
+                $("#txt-contrasena").val("");
+                window.location.href = "log-in.html";
+            },
+            error:function(e){
+                console.log(e);
+            }
+        });
+    }
+    
 });
 
 $("#btn-inicio-sesion").click(function(){
@@ -245,19 +250,25 @@ $("#btn-post").click(function(){
                      "ubicacion=" + $("#txt-ubicacion").val();
 
     alert(parametros);
-    $.ajax({
-        url:"ajax/api.php?accion=insertar-publicacion",
-        method:"POST",
-        data: parametros,
-        dataType:"json",
-        success:function(respuesta){
-            console.log(respuesta);
-            location.reload();
-        },
-        error:function(e){
-            console.log(e);
-        }
-    });
+    if($("#txta-publicar").val()==""){
+        alert("Hace falta contenido en la publicacion")
+    }
+    else{
+        $.ajax({
+            url:"ajax/api.php?accion=insertar-publicacion",
+            method:"POST",
+            data: parametros,
+            dataType:"json",
+            success:function(respuesta){
+                console.log(respuesta);
+                location.reload();
+            },
+            error:function(e){
+                console.log(e);
+            }
+        });
+    }
+    
 });
 
 $("#btn-guardar-modal").click(function(){

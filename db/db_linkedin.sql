@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 09-05-2018 a las 19:36:16
+-- Tiempo de generación: 10-05-2018 a las 17:01:05
 -- Versión del servidor: 5.7.19
 -- Versión de PHP: 5.6.31
 
@@ -30,12 +30,22 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `tbl_amigos`;
 CREATE TABLE IF NOT EXISTS `tbl_amigos` (
-  `codigo_usuario` int(11) NOT NULL,
   `codigo_usuario_amigo` int(11) NOT NULL,
-  PRIMARY KEY (`codigo_usuario`,`codigo_usuario_amigo`),
-  KEY `fk_tbl_usuarios_has_tbl_usuarios_tbl_usuarios2_idx` (`codigo_usuario_amigo`),
-  KEY `fk_tbl_usuarios_has_tbl_usuarios_tbl_usuarios1_idx` (`codigo_usuario`)
+  `codigo_usuario` int(11) NOT NULL,
+  PRIMARY KEY (`codigo_usuario_amigo`,`codigo_usuario`),
+  KEY `fk_tbl_usuarios_has_tbl_usuarios_tbl_usuarios2_idx` (`codigo_usuario`),
+  KEY `fk_tbl_usuarios_has_tbl_usuarios_tbl_usuarios1_idx` (`codigo_usuario_amigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tbl_amigos`
+--
+
+INSERT INTO `tbl_amigos` (`codigo_usuario_amigo`, `codigo_usuario`) VALUES
+(2, 1),
+(4, 1),
+(1, 4),
+(4, 14);
 
 -- --------------------------------------------------------
 
@@ -46,10 +56,19 @@ CREATE TABLE IF NOT EXISTS `tbl_amigos` (
 DROP TABLE IF EXISTS `tbl_chats`;
 CREATE TABLE IF NOT EXISTS `tbl_chats` (
   `codigo_chat` int(11) NOT NULL AUTO_INCREMENT,
+  `codigo_usuario_amigo` int(11) NOT NULL,
   `codigo_usuario` int(11) NOT NULL,
   PRIMARY KEY (`codigo_chat`),
-  KEY `fk_tbl_chats_tbl_usuarios1_idx` (`codigo_usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `fk_tbl_chats_tbl_amigos1_idx` (`codigo_usuario_amigo`,`codigo_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tbl_chats`
+--
+
+INSERT INTO `tbl_chats` (`codigo_chat`, `codigo_usuario_amigo`, `codigo_usuario`) VALUES
+(1, 1, 4),
+(2, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -62,12 +81,19 @@ CREATE TABLE IF NOT EXISTS `tbl_comentarios` (
   `codigo_comentario` int(11) NOT NULL AUTO_INCREMENT,
   `codigo_usuario` int(11) NOT NULL,
   `codigo_publicacion` int(11) NOT NULL,
-  `fecha_comentario` varchar(45) DEFAULT NULL,
-  `contenido_comentario` varchar(45) DEFAULT NULL,
+  `fecha_comentario` datetime DEFAULT NULL,
+  `contenido_comentario` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`codigo_comentario`),
   KEY `fk_tbl_comentarios_tbl_publicaciones1_idx` (`codigo_publicacion`),
   KEY `fk_tbl_comentarios_tbl_usuarios1_idx` (`codigo_usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tbl_comentarios`
+--
+
+INSERT INTO `tbl_comentarios` (`codigo_comentario`, `codigo_usuario`, `codigo_publicacion`, `fecha_comentario`, `contenido_comentario`) VALUES
+(3, 14, 21, '2018-05-10 09:40:08', 'Funcionara ahora?');
 
 -- --------------------------------------------------------
 
@@ -109,6 +135,16 @@ CREATE TABLE IF NOT EXISTS `tbl_empleos_guardados` (
   KEY `fk_tbl_empleos_has_tbl_usuarios_tbl_empleos1_idx` (`codigo_empleo_guardado`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `tbl_empleos_guardados`
+--
+
+INSERT INTO `tbl_empleos_guardados` (`codigo_empleo_guardado`, `codigo_usuario`) VALUES
+(1, 1),
+(3, 1),
+(3, 4),
+(3, 14);
+
 -- --------------------------------------------------------
 
 --
@@ -139,9 +175,11 @@ INSERT INTO `tbl_generos` (`codigo_genero`, `genero`) VALUES
 DROP TABLE IF EXISTS `tbl_mensajes`;
 CREATE TABLE IF NOT EXISTS `tbl_mensajes` (
   `codigo_mensaje` int(11) NOT NULL AUTO_INCREMENT,
-  `contenido_mensaje` varchar(45) DEFAULT NULL,
-  `fecha_mensaje` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`codigo_mensaje`)
+  `codigo_usuario` int(11) NOT NULL,
+  `contenido_mensaje` varchar(500) DEFAULT NULL,
+  `fecha_mensaje` datetime DEFAULT NULL,
+  PRIMARY KEY (`codigo_mensaje`),
+  KEY `fk_tbl_mensajes_tbl_usuarios1_idx` (`codigo_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -172,19 +210,22 @@ CREATE TABLE IF NOT EXISTS `tbl_publicaciones` (
   `contenido_publicacion` varchar(300) DEFAULT NULL,
   `numero_likes` int(45) DEFAULT NULL,
   `fecha_publicacion` datetime DEFAULT NULL,
-  `ubicacion` varchar(45) DEFAULT NULL,
+  `ubicacion` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`codigo_publicacion`),
   KEY `fk_tbl_publicaciones_tbl_usuarios_idx` (`codigo_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbl_publicaciones`
 --
 
 INSERT INTO `tbl_publicaciones` (`codigo_publicacion`, `codigo_usuario`, `contenido_publicacion`, `numero_likes`, `fecha_publicacion`, `ubicacion`) VALUES
-(3, 1, 'Esperemos que ese haya sido el error :v', NULL, '2018-05-08 00:00:00', 'Barrio San Felipe, Tegucigalpa, Honduras'),
-(4, 1, 'Otro intento :v', NULL, '2018-05-08 22:48:02', 'Barrio San Felipe, Tegucigalpa, Honduras'),
-(5, 4, 'Este es el primer intento de una publicacion mandada desde otro perfil', NULL, '2018-05-08 22:49:24', 'Villa Delmi, Tegucigalpa, Honduras');
+(19, 1, 'Holisss', NULL, '2018-05-09 16:34:05', 'Calle RepÃºblica del Ecuador, Tegucigalpa, Honduras'),
+(20, 1, 'Esta es mi segunda publicacion ', NULL, '2018-05-09 17:43:55', 'Calle RepÃºblica del Ecuador, Tegucigalpa, Honduras'),
+(21, 4, 'Primera publicacion desde otro usuario', NULL, '2018-05-09 21:40:56', 'Calle RepÃºblica del Ecuador, Tegucigalpa, Honduras'),
+(24, 1, 'Hola a todos', NULL, '2018-05-10 07:13:45', ''),
+(25, 1, 'Intento de publicacion', NULL, '2018-05-10 08:50:21', 'Modesto Rodas, Tegucigalpa, Honduras'),
+(26, 14, 'Primera publicacion desde el ultimo usuario registrado actualmente', NULL, '2018-05-10 09:02:51', 'Modesto Rodas, Tegucigalpa, Honduras');
 
 -- --------------------------------------------------------
 
@@ -206,19 +247,17 @@ CREATE TABLE IF NOT EXISTS `tbl_usuarios` (
   `logros` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`codigo_usuario`),
   KEY `fk_tbl_usuarios_tbl_generos1_idx` (`codigo_genero`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbl_usuarios`
 --
 
 INSERT INTO `tbl_usuarios` (`codigo_usuario`, `codigo_genero`, `nombre_usuario`, `apellido_usuario`, `correo`, `contrasena`, `url_imagen_perfil`, `titular`, `educacion`, `logros`) VALUES
-(1, 1, 'Rafael', 'Bautista', 'rafael.bautista1@hotmail.es', 'bcdcb29ed2aab16d48c11485264df665e906bdd9', 'img/profile-pics/usuario3.jpg', 'Estudiante en Universidad Nacional AutÃ³noma de Honduras (UNAH)', 'Universidad Nacional AutÃ³noma de Honduras (UNAH)', 'Certificado de Photoshop en NextU'),
-(2, 1, 'Alejandro', 'Bautista', 'alejandro@gmail.com', '2d09563fb5d7e92c6642519acacbde85e6c76b3c', 'img/profile-pics/usuario1.jpg', 'Hola', 'Hola', 'Hola'),
-(3, 2, 'Sandra', 'Santos', 'sandra@gmail.com', '5449a21db45725d6ccf8f3008202876fe680db02', 'img/profile-pics/usuario1.jpg', 'Hola', 'Hola', 'Hola'),
+(1, 1, 'Rafael', 'Bautista', 'rafael.bautista1@hotmail.es', 'bcdcb29ed2aab16d48c11485264df665e906bdd9', 'img/profile-pics/usuario4.jpg', 'Estudiante en Universidad Nacional AutÃ³noma de Honduras (UNAH)', 'Universidad Nacional AutÃ³noma de Honduras (UNAH)', 'Certificado de Photoshop en NextU'),
+(2, 1, 'Alejandro', 'Bautista', 'alejandro@gmail.com', '2d09563fb5d7e92c6642519acacbde85e6c76b3c', 'img/profile-pics/usuario1.jpg', 'Estudiante en Interamerican School', 'Interamerican School', 'Certificado curso de Ingles #1 - IHCI'),
 (4, 1, 'Walter', 'Bautista', 'walter@gmail.com', 'bcdcb29ed2aab16d48c11485264df665e906bdd9', 'img/profile-pics/usuario3.jpg', 'Estudiante en Centro Universitario Tecnologico (CEUTEC)', 'Centro Universitario Tecnologico (CEUTEC)', 'Certificado de excel avanzado en INFOP'),
-(12, 2, 'Angie', 'MembreÃ±o', 'angie@gmail.com', 'bcdcb29ed2aab16d48c11485264df665e906bdd9', 'img/profile-pics/usuario1.jpg', 'Hola', 'Hola', 'Hola'),
-(13, 1, 'Walter ', 'Bautista', 'wbale_7@hotmail.com', '56046ad055681218890824ee5fc5f7a4478ef23e', 'img/profile-pics/usuario1.jpg', 'Hola', 'Hola', 'Hola');
+(14, 2, 'Sandra', 'Santos', 'sandra@gmail.com', 'bcdcb29ed2aab16d48c11485264df665e906bdd9', 'img/profile-pics/usuario7.jpg', 'Gerente General en Banco Ficohsa', 'Instituto HondureÃ±o de Cultura Interamericana (IHCI)', 'Diploma de secretariado bilingÃ¼e - IHCI');
 
 --
 -- Restricciones para tablas volcadas
@@ -228,14 +267,14 @@ INSERT INTO `tbl_usuarios` (`codigo_usuario`, `codigo_genero`, `nombre_usuario`,
 -- Filtros para la tabla `tbl_amigos`
 --
 ALTER TABLE `tbl_amigos`
-  ADD CONSTRAINT `fk_tbl_usuarios_has_tbl_usuarios_tbl_usuarios1` FOREIGN KEY (`codigo_usuario`) REFERENCES `tbl_usuarios` (`codigo_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tbl_usuarios_has_tbl_usuarios_tbl_usuarios2` FOREIGN KEY (`codigo_usuario_amigo`) REFERENCES `tbl_usuarios` (`codigo_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_tbl_usuarios_has_tbl_usuarios_tbl_usuarios1` FOREIGN KEY (`codigo_usuario_amigo`) REFERENCES `tbl_usuarios` (`codigo_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_tbl_usuarios_has_tbl_usuarios_tbl_usuarios2` FOREIGN KEY (`codigo_usuario`) REFERENCES `tbl_usuarios` (`codigo_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `tbl_chats`
 --
 ALTER TABLE `tbl_chats`
-  ADD CONSTRAINT `fk_tbl_chats_tbl_usuarios1` FOREIGN KEY (`codigo_usuario`) REFERENCES `tbl_usuarios` (`codigo_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_tbl_chats_tbl_amigos1` FOREIGN KEY (`codigo_usuario_amigo`,`codigo_usuario`) REFERENCES `tbl_amigos` (`codigo_usuario_amigo`, `codigo_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `tbl_comentarios`
@@ -250,6 +289,12 @@ ALTER TABLE `tbl_comentarios`
 ALTER TABLE `tbl_empleos_guardados`
   ADD CONSTRAINT `fk_tbl_empleos_has_tbl_usuarios_tbl_empleos1` FOREIGN KEY (`codigo_empleo_guardado`) REFERENCES `tbl_empleos` (`codigo_empleo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_tbl_empleos_has_tbl_usuarios_tbl_usuarios1` FOREIGN KEY (`codigo_usuario`) REFERENCES `tbl_usuarios` (`codigo_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `tbl_mensajes`
+--
+ALTER TABLE `tbl_mensajes`
+  ADD CONSTRAINT `fk_tbl_mensajes_tbl_usuarios1` FOREIGN KEY (`codigo_usuario`) REFERENCES `tbl_usuarios` (`codigo_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `tbl_mensajes_amigos`

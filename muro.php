@@ -88,14 +88,7 @@
                     <img src="img/fondo-card.svg" class="img-fluid pt-0" >
                    <div class="card-header text-center">
                         <img src="<?php echo $registro["url_imagen_perfil"]?>" class="img-fluid"  id="img-usuario-perfil">
-                        <p id="Bienvenida"><strong>Te damos la bienvenida,<br> <?php echo $registro["nombre_usuario"]." ".$registro["apellido_usuario"]?></strong></p>
-                   </div>
-                   <div class="card-subtitle text-center pt-4">
-                      <h6><a href="mi-red.html">Numero</a></h6>
-                      <p>Contacto
-                        <br>
-                        <strong>Amplia tu Red</strong>
-                      </p>
+                        <p id="Bienvenida" class="mt-4"><strong>Te damos la bienvenida,<br> <?php echo $registro["nombre_usuario"]." ".$registro["apellido_usuario"]?></strong></p>
                    </div>
                 </div>
             </div>

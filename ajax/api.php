@@ -3,6 +3,8 @@
     include ("../class/class-usuarios.php");
     include ("../class/class-empleo.php");
     include ("../class/class-publicaciones.php");
+    include ("../class/class-chat.php");
+    include ("../class/class-comentarios.php");
 
     $conexion = new Conexion();
 
@@ -55,6 +57,16 @@
         case "obtener-usuarios-guardados":
         $u = new Usuario(null,null,null,null,null,null,null,null,null,null);
         echo $u->obtenerListaUsuariosGuardados($conexion,$_GET["codigo_usuario"]);
+        break;
+
+        case "obtener-lista-chats":
+        $c = new Chat(null,null,null);
+        echo $c->recibirListaChats($conexion, $_GET["codigo_usuario"]);
+        break;
+
+        case "insertar-comentario":
+        $com = new Comentario(null,$_POST["codigo_usuario"],$_POST["codigo_publicacion"],null,$_POST["comentario"]);
+        echo $com->insertarComentario($conexion);
         break;
 
 

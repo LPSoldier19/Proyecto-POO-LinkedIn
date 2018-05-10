@@ -87,63 +87,13 @@
                                     <h6><strong>Mensajes</strong></h6>
                                 </div>
                                 <div class="offset-lg-3 col-lg-2 col-2 offset-2 mb-2">
-                                   <button class="btn btn-link" style="color: #0084bf;"><i class="fas fa-edit fa-lg"></i></button>
+                                   <i class="fas fa-edit fa-lg mt-2" style="color: #0084bf;"></i>
                                 </div>
                             </div>
-                            <div class="row card-header-tabs border-bottom">
-                                <div class="col-lg-9 col-9">
-                                    <input type="text" class="form-control-plaintext" placeholder="Buscar Mensajes">
-                                </div>
-                                <div class="col-lg-1 col-1 offset-1">
-                                   <button class="btn btn-light rounded-circle"><i class="fas fa-list-alt"></i></button>
-                                </div>
+                            <div id="div-chat">
+                            
                             </div>
-                            <button class="row btn btn-toolbar mt-4 border pt-2 pb-2 no-gutters pr-5" id="contacto-chat">
-                                <div class="col-lg-6 col-4 col-md-4">
-                                    <img src="img/freezer.jpg" class="img-fluid rounded-circle">
-                                </div>
-                                <div class="col-lg-3 col-4 col-md-4 pl-2 pr-5 mr-md-4">
-                                   <p><strong>Freezer</strong><br>
-                                    <i class="fas fa-camera-retro"></i>Imagen</p>
-                                </div>
-                            </button>
-                            <button class="row btn btn-toolbar mt-4 border pt-2 pb-2 no-gutters pr-5">
-                                <div class="col-lg-6 col-4 col-md-4">
-                                    <img src="img/jiren.png" class="img-fluid rounded-circle">
-                                </div>
-                                <div class="col-lg-3 col-2 pl-2">
-                                   <p><strong>Jiren</strong><br>
-                                    ...</p>
-                                </div>
-                            </button>
-                            <button class="row btn btn-toolbar mt-4 border pt-2 pb-2 no-gutters pr-5" id="contacto-chat">
-                                <div class="col-lg-6 col-4 col-md-4">
-                                    <img src="img/vegeta.jpg" class="img-fluid rounded-circle">
-                                </div>
-                                <div class="col-lg-3 col-4 col-md-4 pl-2 pl-md-3 pr-5 mr-md-4">
-                                   <p><strong>Vegeta</strong><br>
-                                    Insecto!!
-                                   </p>
-                                </div>
-                            </button>
-                            <button class="row btn btn-toolbar mt-4 border pt-2 pb-2 no-gutters">
-                                <div class="col-lg-5 col-4">
-                                    <img src="img/A18.png" class="img-fluid rounded-circle">
-                                </div>
-                                <div class="col-lg-4 col-1 pl-2">
-                                   <p><strong>Androide 18</strong><br>
-                                   Todo queda...</p>
-                                </div>
-                            </button>
-                            <button class="row btn btn-toolbar mt-4 border pt-2 pb-2 no-gutters">
-                                <div class="col-lg-5 col-4">
-                                    <img src="img/Toppo.jpg" class="img-fluid rounded-circle">
-                                </div>
-                                <div class="col-lg-4 col-1 pl-2">
-                                   <p><strong>Toppo</strong><br>
-                                   Todo queda...</p>
-                                </div>
-                            </button>
+                            
                     </div>
                     <div class="col-lg-8 col-12 frame d-none d-lg-block" id="msj-chat">
                         <header class="card-header mb-5" style="background-color:#2B3E4A;" >
@@ -292,7 +242,7 @@
     <script src="js/jquery-3.3.1.min.js"></script>
    <script src="js/bootstrap.js"></script>
    <script src="js/javascript-rafa.js"></script>
-   <script src="js/controlador.js"></script>
+   <script src="js/controlador2.js"></script>
 
 </body>
 </html>

@@ -42,13 +42,11 @@ $(document).ready(function(){
                 '<div class="col-lg-1 col-1">'+
                     '<img src="img/usuario.png" class="img-fluid rounded-circle">'+
                 '</div>'+
-                '<div class="col-lg-9 col-9 ml-2">'+
-                    '<input type="text" class="form-control" id="txt-comentario">'+
+                '<div class="col-lg-9 col-9 ml-3">'+
+                    '<input type="text" class="form-control" id="txt-comentario-publicacion-'+respuesta[i].codigo_publicacion+'">'+
                 '</div>'+
-                '<div class="col-lg-1 col-1 mt-1">'+
-                    '<label class="btn btn-default btn-file fas fa-paper-plane">'+
-                        '<button type="button" style="display: none;" class="form-control-file" id="btn-enviar-comentario" > </button>'+
-                    '</label>'+
+                '<div class="col-lg-1 col-1 mt-1 ml-2">'+
+                    '<button type="button" class="form-control-file btn btn-link" id="btn-enviar-comentario" onclick="enviarComentario('+respuesta[i].codigo_publicacion+')"><i class="fas fa-paper-plane" style="color:black;"></i> </button>'+
                 '</div>'+
             '</div>'+
         '</div>'+
@@ -109,6 +107,32 @@ $(document).ready(function(){
         }
     });
 
+    $.ajax({
+        url:"ajax/api.php?accion=obtener-lista-chats",
+        method: "get",
+        data: parametros,
+        dataType: "json",
+        success:function(respuesta){
+            for(var i=0;i<respuesta.length;i++){
+                $("#div-chat").append(
+                '<div id="div-chat-usuario-"'+respuesta[i].codigo_usuario_amigo+'>'+
+                '<button class="row btn btn-toolbar mt-4 border pt-2 pb-2 no-gutters pr-5" id="contacto-chat">'+
+                '<div class="col-lg-6 col-4 col-md-4">'+
+                    '<img src="'+respuesta[i].url_imagen_perfil+'" class="img-fluid rounded-circle">'+
+                '</div>'+
+                '<div class="col-lg-3 col-4 col-md-4 pl-2 pr-5 mr-md-4">'+
+                  ' <p><strong>'+respuesta[i].nombre_usuario+' '+respuesta[i].apellido_usuario+'/strong><br>'+
+                '</div>'+
+            '</button>'+
+            '</div>');
+            }
+            console.log(respuesta);
+        },
+        error:function(e){
+            console.log(e);
+        }
+    });
+
 });
 
 function guardarUsuario(id){
@@ -129,15 +153,41 @@ function guardarUsuario(id){
     });
 }
 
-$("body").on("click","#btn-enviar-comentario",function(event){
-     
-    alert("Probando asignación");
-     
-});
+function enviarComentario(id){
+    
+    var x = document.getElementById('txt-comentario-publicacion-'+id).value;
+    
+    var parametros = "comentario=" + x + "&" +
+                     "codigo_usuario=" +  $("#txt-codigo-usuario").val() + "&" +
+                     "codigo_publicacion=" + id;
+    
+    console.log(parametros);
+
+
+    if(document.getElementById('txt-comentario-publicacion-'+id).value==""){
+        alert("No ha escrito ningun comentario");
+    }
+    else{
+    $.ajax({
+        url: "ajax/api.php?accion=insertar-comentario",
+        method: "post",
+        data: parametros,
+        dataType: "json",
+        success:function(respuesta){
+            console.log(respuesta);
+            alert("Se ha añadido el comentario");
+        },
+        error:function(e){
+            console.log(e);
+        }
+    });
+    }
+}
 
 $("body").on("click","#like",function(event){
      
     alert("Probando asignación");
      
 });
+
 

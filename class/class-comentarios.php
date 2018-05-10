@@ -57,6 +57,22 @@
 				" Contenido_comentario: " . $this->contenido_comentario;
 		}
 
-		
+		public function insertarComentario($conexion){
+			$sql = sprintf("INSERT INTO tbl_comentarios(codigo_usuario, codigo_publicacion, fecha_comentario, contenido_comentario) VALUES (%s,%s,now(),'%s')",
+		$conexion->antiInyeccion($this->codigo_usuario),
+		$conexion->antiInyeccion($this->codigo_publicacion),
+		$conexion->antiInyeccion($this->contenido_comentario));
+		$resultado = $conexion->ejecutarConsulta($sql);
+            if($resultado){
+				$mensaje["mensaje"]="Comentario guardado exitosamente";
+				$mensaje["sql"]=$sql;
+				return json_encode($mensaje);
+			}
+			else{
+				$mensaje["mensaje"]="No se ha podido guardar el Comentario";
+				$mensaje["sql"]=$sql;
+				return json_encode($mensaje);
+			}
+		}
 	}
 ?>
