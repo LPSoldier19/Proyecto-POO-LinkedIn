@@ -154,6 +154,38 @@
 			}
 			return json_encode($listaUsuarios);
 		}
+
+		public function guardarUsuario($conexion,$id){
+			$sql = sprintf("INSERT INTO tbl_amigos(codigo_usuario_amigo, codigo_usuario) VALUES (%s,%s)",
+			$conexion->antiInyeccion($this->codigo_usuario),
+			$conexion->antiInyeccion($id));
+			$resultado = $conexion->ejecutarConsulta($sql);
+            if($resultado){
+				$mensaje["mensaje"]="Empleo guardado exitosamente";
+				$mensaje["sql"]=$sql;
+				return json_encode($mensaje);
+			}
+			else{
+				$mensaje["mensaje"]="No se ha podido guardar el empleo";
+				$mensaje["sql"]=$sql;
+				return json_encode($mensaje);
+			}
+		}
+
+		public function obtenerListaUsuariosGuardados($conexion,$id){
+			$sql = sprintf("SELECT a.codigo_usuario_amigo, a.codigo_usuario, b.nombre_usuario, b.apellido_usuario, b.titular, b.educacion, b.url_imagen_perfil 
+			FROM tbl_amigos a
+			INNER JOIN tbl_usuarios b
+			ON (a.codigo_usuario_amigo = b.codigo_usuario)
+			WHERE a.codigo_usuario = %s",
+			$conexion->antiInyeccion($id));
+			$resultado = $conexion->ejecutarConsulta($sql);
+			$listaUsuariosGuardados = array();
+			while($fila = $conexion->obtenerFila($resultado)){
+				$listaUsuariosGuardados[] = $fila;
+			}
+			return json_encode($listaUsuariosGuardados);
+		}
 		
 		
 	}

@@ -47,7 +47,7 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="col-lg-1 col-1 mt-1">'+
                     '<label class="btn btn-default btn-file fas fa-paper-plane">'+
-                        '<button type="button" style="display: none;" class="form-control-file" id="btn-enviar-comentario"> </button>'+
+                        '<button type="button" style="display: none;" class="form-control-file" id="btn-enviar-comentario" > </button>'+
                     '</label>'+
                 '</div>'+
             '</div>'+
@@ -77,7 +77,7 @@ $(document).ready(function(){
                             '<p>'+respuesta[i].titular+'<br>'+
                             '<i class="fas fa-university fa-lg"></i> '+respuesta[i].educacion+'</p>'+
                             '<div class="card-body">'+
-                            '<button class="btn btn-outline-primary btn-sm mb-3" id="btn-conectar">Conectar</button>'+
+                            '<button class="btn btn-outline-primary btn-sm mb-3" id="btn-conectar" onclick=guardarUsuario('+respuesta[i].codigo_usuario+')>Conectar</button>'+
                             '</div>'+
                         '</div>');
             }
@@ -88,13 +88,46 @@ $(document).ready(function(){
 
     });
 
+    $.ajax({
+        url: "ajax/api.php?accion=obtener-usuarios-guardados",
+        method:"get",
+        data:parametros,
+        dataType:"json",
+        success:function(respuesta){
+            for(var i=0;i<respuesta.length;i++){
+                $("#div-usuarios-guardados").append(
+                    '<div class="col-lg-4 col-6 card-body border text-center">'+
+                            '<img src="'+respuesta[i].url_imagen_perfil+'" class="img-fluid rounded-circle pt-2 pb-3">'+
+                            '<h6><strong>'+respuesta[i].nombre_usuario+' '+respuesta[i].apellido_usuario+'</strong></h6>'+
+                            '<p>'+respuesta[i].titular+'<br>'+
+                            '<i class="fas fa-university fa-lg"></i> '+respuesta[i].educacion+'</p>'+
+                    '</div>');
+            }
+        },
+        error:function(e){
+            console.log(e);
+        }
+    });
+
 });
 
-$("body").on("click","#btn-conectar",function(event){
-     
-    alert("Probando asignación");
-     
-});
+function guardarUsuario(id){
+    var parametros = "codigo_usuario=" + $("#txt-codigo-usuario").val() + "&" +
+    "codigo_usuario_guardar=" + id;
+    $.ajax({
+    url: "ajax/api.php?accion=guardar-usuario",
+    method: "POST",
+    data: parametros,
+    dataType:"json",
+    success:function(respuesta){
+    alert("Se ha guardado el empleo exitosamente");
+    console.log(respuesta);
+    },
+    error: function(e){
+    console.log(e);
+    }
+    });
+}
 
 $("body").on("click","#btn-enviar-comentario",function(event){
      

@@ -5,9 +5,10 @@
     include("class/class-conexion.php");
     $conexion = new Conexion();
      $sql = sprintf( 
-        "SELECT codigo_usuario, codigo_genero, nombre_usuario, apellido_usuario, correo, contrasena, url_imagen_perfil, titular, educacion, logros FROM tbl_usuarios WHERE correo = '%s' and contrasena = '%s'",
+        "SELECT codigo_usuario, codigo_genero, nombre_usuario, apellido_usuario, correo, contrasena, url_imagen_perfil, titular, educacion, logros FROM tbl_usuarios WHERE correo = '%s' and contrasena = '%s' and codigo_usuario = %s",
         $_SESSION["usr"],
-        $_SESSION["psw"]);
+        $_SESSION["psw"],
+        $_SESSION["codUsr"]);
     //echo $sql;
     //exit;
     $resultado = $conexion->ejecutarConsulta($sql);
@@ -17,6 +18,7 @@
     }
 
     $registro = $conexion->obtenerFila($resultado);
+
 ?>
 
 
@@ -35,7 +37,9 @@
 </head>
 
 <body id="container-muro">
-   
+    <span class="d-none">
+        <input type="text" value="<?php echo $_SESSION["codUsr"]?>" id="txt-codigo-usuario">
+    </span>
 <nav class="navbar sticky-top ">
     
     <div>
@@ -88,30 +92,8 @@
                     </div>
                     <div class="card-body">
                         <div class="card-body">
-                        <div class="row">
-                            <div class="col-lg-4 card-text border">
-                                <div class="row no-gutters">
-                                    <div class="col-lg-4 pt-2">
-                                        <img src="img/kamehouse.jpeg" class="img-fluid img-thumbnail">
-                                    </div>
-                                    <div class="col-lg-8 pl-2">
-                                        <p class="pt-4">
-                                            <strong>Kamisama Gym</strong><br>
-                                            Escuela de Artes Marciales
-                                        </p>
-                                    </div>
-                                </div>
-                                <p class="text-justify pt-2">
-                                    Kamisama Gym es una escuela de artes marciales mixtas fundada por el supremo kayosama en el otro mundo, para que los guerreros
-                                    que mueren puedan entrenar con el.
-                                </p>
-                                <div class="card-body text-center">
-                                   <div class="list-group">
-                                       <p>Numero de Telefono: +504-9999-9999</p>
-                                       <p>Direccion: En el otro mundo</p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="row" id="div-empleos-guardados">
+                            
                             
                       </div>
                       

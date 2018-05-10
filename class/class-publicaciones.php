@@ -94,7 +94,7 @@
            WHERE a.codigo_usuario = %s
            OR a.codigo_usuario in (
         	select codigo_usuario_amigo from tbl_amigos
-			where codigo_usuario = %s);",
+			where codigo_usuario = %s) ORDER BY a.fecha_publicacion DESC",
 			$conexion->antiInyeccion($this->codigo_usuario),
 			$conexion->antiInyeccion($this->codigo_usuario));
 			$resultado = $conexion->ejecutarConsulta($sql);

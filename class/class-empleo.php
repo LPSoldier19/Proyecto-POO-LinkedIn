@@ -77,8 +77,36 @@
 			return json_encode($listaEmpleos);
 		}
 		
-		public function guardarEmpleo($conexion){
-			$sql = sprintf("INSERT INTO tbl_empleos_guardados(codigo_empleo_guardado, codigo_usuario) VALUES (valor1,valor2)");
+		public function guardarEmpleo($conexion,$id){
+			$sql = sprintf("INSERT INTO tbl_empleos_guardados(codigo_empleo_guardado, codigo_usuario) VALUES (%s,%s)",
+			$conexion->antiInyeccion($this->codigo_empleo),
+			$conexion->antiInyeccion($id));
+			$resultado = $conexion->ejecutarConsulta($sql);
+            if($resultado){
+				$mensaje["mensaje"]="Empleo guardado exitosamente";
+				$mensaje["sql"]=$sql;
+				return json_encode($mensaje);
+			}
+			else{
+				$mensaje["mensaje"]="No se ha podido guardar el empleo";
+				$mensaje["sql"]=$sql;
+				return json_encode($mensaje);
+			}
+		}
+
+		public function obtenerListaEmpleosGuardados($conexion,$id){
+			$sql = sprintf("SELECT a.codigo_empleo_guardado, a.codigo_usuario, b.nombre_empleo, b.descripcion_empleo, b.telefono_empleo, b.direccion_empleo, b.url_imagen_empleo 
+			FROM tbl_empleos_guardados a
+			INNER JOIN tbl_empleos b
+			ON (a.codigo_empleo_guardado = b.codigo_empleo)
+			WHERE a.codigo_usuario = %s",
+			$conexion->antiInyeccion($id));
+			$resultado = $conexion->ejecutarConsulta($sql);
+			$listaEmpleosGuardados = array();
+			while($fila = $conexion->obtenerFila($resultado)){
+				$listaEmpleosGuardados[] = $fila;
+			}
+			return json_encode($listaEmpleosGuardados);
 		}
 	}
 ?>

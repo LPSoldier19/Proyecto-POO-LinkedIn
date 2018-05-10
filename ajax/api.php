@@ -36,6 +36,28 @@
         $u = new Usuario($_GET["codigo_usuario"],null,null,null,null,null,null,null,null,null);
         echo $u->listaUsuarios($conexion);
         break;
+
+        case "guardar-empleos":
+        $e = new Empleo($_POST["codigo_empleo"],null,null,null,null,null);
+        echo $e->guardarEmpleo($conexion,$_POST["codigo_usuario"]);
+        break;
+
+        case "obtener-empleos-guardados":
+        $e = new Empleo(null,null,null,null,null,null);
+        echo $e->obtenerListaEmpleosGuardados($conexion, $_GET["codigo_usuario"]);
+        break;
+
+        case "guardar-usuario":
+        $u = new Usuario($_POST["codigo_usuario_guardar"],null,null,null,null,null,null,null,null,null);
+        echo $u->guardarUsuario($conexion,$_POST["codigo_usuario"]);
+        break;
+
+        case "obtener-usuarios-guardados":
+        $u = new Usuario(null,null,null,null,null,null,null,null,null,null);
+        echo $u->obtenerListaUsuariosGuardados($conexion,$_GET["codigo_usuario"]);
+        break;
+
+
     }
 
 

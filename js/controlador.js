@@ -112,12 +112,49 @@ $("#txt-correo").change(function () {
                     '<div class="list-group">'+
                     '<p>Numero de Telefono: '+respuesta[i].telefono_empleo+'</p>'+
                     '<p>Direccion: '+respuesta[i].direccion_empleo+'</p>'+
-                    '<button type="button" class="btn btn-outline-primary" id="btn-guardar-empleo">Guardar Empleo</button>'+
+                    '<button type="button" class="btn btn-outline-primary" id="btn-guardar-empleo" onclick=guardarEmpleo('+respuesta[i].codigo_empleo+')>Guardar Empleo</button>'+
                     '</div>'+
                     '</div>'+
                     '</div>'
                 );
             }
+        },
+        error:function(e){
+            console.log(e);
+        }
+    });
+
+    var parametros = "codigo_usuario=" + $("#txt-codigo-usuario").val();
+
+    $.ajax({
+        url: "ajax/api.php?accion=obtener-empleos-guardados",
+        method:"get",
+        data:parametros,
+        dataType:"json",
+        success:function(respuesta){
+            for(var i=0;i<respuesta.length;i++){
+                $("#div-empleos-guardados").append(
+                '<div class="col-lg-4 card-text border">'+
+                '<div class="row no-gutters">'+
+                    '<div class="col-lg-4 pt-2">'+
+                        '<img src="'+respuesta[i].url_imagen_empleo+'" class="img-fluid img-thumbnail">'+
+                    '</div>'+
+                    '<div class="col-lg-8 pl-2">'+
+                        '<p class="pt-4">'+
+                            '<strong>'+respuesta[i].nombre_empleo+'</strong>'+
+                        '</p>'+
+                    '</div>'+
+                '</div>'+
+                '<p class="text-justify pt-2">'+respuesta[i].descripcion_empleo+'</p>'+
+                '<div class="card-body text-center">'+
+                   '<div class="list-group">'+
+                       '<p>Numero de Telefono: '+respuesta[i].telefono_empleo+'</p>'+
+                       '<p>Direccion: '+respuesta[i].direccion_empleo+'</p>'+
+                    '</div>'+
+                '</div>'+
+            '</div>');
+            }
+            
         },
         error:function(e){
             console.log(e);
@@ -249,15 +286,23 @@ $("#btn-guardar-modal").click(function(){
    
 });
 
-$("body").on("click","#btn-guardar-empleo",function(event){
-     
-    alert("Probando asignación");
-
+function guardarEmpleo(id){
+    var parametros = "codigo_usuario=" + $("#txt-codigo-usuario").val() + "&" +
+    "codigo_empleo=" + id;
     $.ajax({
-
+    url: "ajax/api.php?accion=guardar-empleos",
+    method: "POST",
+    data: parametros,
+    dataType:"json",
+    success:function(respuesta){
+    alert("Se ha guardado el empleo exitosamente");
+    console.log(respuesta);
+    },
+    error: function(e){
+    console.log(e);
+    }
     });
-     
-});
+}
 
 
 
