@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 11-05-2018 a las 06:29:39
+-- Tiempo de generación: 11-05-2018 a las 11:16:18
 -- Versión del servidor: 5.7.19
 -- Versión de PHP: 5.6.31
 
@@ -44,8 +44,10 @@ CREATE TABLE IF NOT EXISTS `tbl_amigos` (
 INSERT INTO `tbl_amigos` (`codigo_usuario_amigo`, `codigo_usuario`) VALUES
 (14, 1),
 (15, 1),
+(20, 1),
 (1, 14),
-(1, 15);
+(1, 15),
+(1, 20);
 
 -- --------------------------------------------------------
 
@@ -86,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `tbl_comentarios` (
   PRIMARY KEY (`codigo_comentario`),
   KEY `fk_tbl_comentarios_tbl_publicaciones1_idx` (`codigo_publicacion`),
   KEY `fk_tbl_comentarios_tbl_usuarios1_idx` (`codigo_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbl_comentarios`
@@ -94,7 +96,8 @@ CREATE TABLE IF NOT EXISTS `tbl_comentarios` (
 
 INSERT INTO `tbl_comentarios` (`codigo_comentario`, `codigo_usuario`, `codigo_publicacion`, `fecha_comentario`, `contenido_comentario`) VALUES
 (3, 14, 21, '2018-05-10 09:40:08', 'Funcionara ahora?'),
-(4, 14, 26, '2018-05-10 15:13:56', 'Intento 2');
+(4, 14, 26, '2018-05-10 15:13:56', 'Intento 2'),
+(5, 20, 27, '2018-05-11 01:51:03', 'Hola amigo mio');
 
 -- --------------------------------------------------------
 
@@ -151,7 +154,8 @@ INSERT INTO `tbl_empleos_guardados` (`codigo_empleo_guardado`, `codigo_usuario`)
 (3, 1),
 (3, 4),
 (3, 14),
-(4, 14);
+(4, 14),
+(1, 20);
 
 -- --------------------------------------------------------
 
@@ -188,14 +192,15 @@ CREATE TABLE IF NOT EXISTS `tbl_mensajes` (
   `fecha_mensaje` datetime DEFAULT NULL,
   PRIMARY KEY (`codigo_mensaje`),
   KEY `fk_tbl_mensajes_tbl_usuarios1_idx` (`codigo_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbl_mensajes`
 --
 
 INSERT INTO `tbl_mensajes` (`codigo_mensaje`, `codigo_usuario`, `contenido_mensaje`, `fecha_mensaje`) VALUES
-(1, 14, 'Hola', '2018-05-10 17:42:26');
+(1, 14, 'Hola', '2018-05-10 17:42:26'),
+(2, 20, 'Hola amigo', '2018-05-11 01:53:18');
 
 -- --------------------------------------------------------
 
@@ -228,7 +233,7 @@ CREATE TABLE IF NOT EXISTS `tbl_publicaciones` (
   `ubicacion` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`codigo_publicacion`),
   KEY `fk_tbl_publicaciones_tbl_usuarios_idx` (`codigo_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbl_publicaciones`
@@ -240,7 +245,8 @@ INSERT INTO `tbl_publicaciones` (`codigo_publicacion`, `codigo_usuario`, `conten
 (21, 4, 'Primera publicacion desde otro usuario', NULL, '2018-05-09 21:40:56', 'Calle RepÃºblica del Ecuador, Tegucigalpa, Honduras'),
 (24, 1, 'Hola a todos', NULL, '2018-05-10 07:13:45', ''),
 (25, 1, 'Intento de publicacion', NULL, '2018-05-10 08:50:21', 'Modesto Rodas, Tegucigalpa, Honduras'),
-(26, 14, 'Primera publicacion desde el ultimo usuario registrado actualmente', NULL, '2018-05-10 09:02:51', 'Modesto Rodas, Tegucigalpa, Honduras');
+(26, 14, 'Primera publicacion desde el ultimo usuario registrado actualmente', NULL, '2018-05-10 09:02:51', 'Modesto Rodas, Tegucigalpa, Honduras'),
+(27, 20, 'Hola a todos, esta es mi primera publicacion', NULL, '2018-05-11 01:50:23', 'EstaciÃ³n de Buses de PrÃ³ceres, Avenida la Paz, Tegucigalpa, Honduras');
 
 -- --------------------------------------------------------
 
@@ -262,7 +268,7 @@ CREATE TABLE IF NOT EXISTS `tbl_usuarios` (
   `logros` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`codigo_usuario`),
   KEY `fk_tbl_usuarios_tbl_generos1_idx` (`codigo_genero`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbl_usuarios`
@@ -273,7 +279,8 @@ INSERT INTO `tbl_usuarios` (`codigo_usuario`, `codigo_genero`, `nombre_usuario`,
 (2, 1, 'Alejandro', 'Bautista', 'alejandro@gmail.com', '2d09563fb5d7e92c6642519acacbde85e6c76b3c', 'img/profile-pics/usuario1.jpg', 'Estudiante en Interamerican School', 'Interamerican School', 'Certificado curso de Ingles #1 - IHCI'),
 (4, 1, 'Walter', 'Bautista', 'walter@gmail.com', 'bcdcb29ed2aab16d48c11485264df665e906bdd9', 'img/profile-pics/usuario3.jpg', 'Estudiante en Centro Universitario Tecnologico (CEUTEC)', 'Centro Universitario Tecnologico (CEUTEC)', 'Certificado de excel avanzado en INFOP'),
 (14, 2, 'Sandra', 'Santos', 'sandra@gmail.com', 'bcdcb29ed2aab16d48c11485264df665e906bdd9', 'img/profile-pics/usuario7.jpg', 'Gerente General en Banco Ficohsa', 'Instituto HondureÃ±o de Cultura Interamericana (IHCI)', 'Diploma de secretariado bilingÃ¼e - IHCI'),
-(15, 2, 'Angie', 'MembreÃ±o', 'angie@gmail.com', 'bcdcb29ed2aab16d48c11485264df665e906bdd9', 'img/profile-pics/usuario8.jpg', 'Estudiante en Universidad Nacional Autonoma de Honduras (UNAH)', 'Universidad Nacional Autonoma de Honduras (UNAH)', 'Certificado Ingles Basico-2 - INFOP');
+(15, 2, 'Angie', 'MembreÃ±o', 'angie@gmail.com', 'bcdcb29ed2aab16d48c11485264df665e906bdd9', 'img/profile-pics/usuario8.jpg', 'Estudiante en Universidad Nacional Autonoma de Honduras (UNAH)', 'Universidad Nacional Autonoma de Honduras (UNAH)', 'Certificado Ingles Basico-2 - INFOP'),
+(20, 1, 'Goku', 'Perez', 'goku@gmail.com', 'bcdcb29ed2aab16d48c11485264df665e906bdd9', 'img/profile-pics/usuario2.jpg', 'Estudiante en Universidad Nacional Autonoma de Honduras (UNAH)', 'Universidad Nacional Autonoma de Honduras (UNAH)', 'Certificado curso de desarrollo web en NextU');
 
 --
 -- Restricciones para tablas volcadas
