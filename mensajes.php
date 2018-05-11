@@ -95,7 +95,7 @@
                                    <i class="fas fa-edit fa-lg mt-2" style="color: #0084bf;"></i>
                                 </div>
                             </div>
-                            <div id="div-chat">
+                            <div class="row" id="div-chat">
                             
                             </div>
                             
@@ -241,6 +241,8 @@
    <script src="js/bootstrap.js"></script>
    <script src="js/javascript-rafa.js"></script>
    <script src="js/controlador.js"></script>
+   <script src="js/controlador2.js"></script>
+   
 
 </body>
 </html>

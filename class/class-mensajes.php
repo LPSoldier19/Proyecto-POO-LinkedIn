@@ -62,6 +62,8 @@
 				$mensaje["sql"]=$sql;
 				return json_encode($mensaje);
 			}
-        }
+		}
+		
+		
 	}
 ?>

@@ -136,10 +136,10 @@ $("#txt-correo").change(function () {
                 $("#div-empleos-guardados").append(
                 '<div class="col-lg-4 card-text border">'+
                 '<div class="row no-gutters">'+
-                    '<div class="col-lg-4 pt-2">'+
+                    '<div class="col-lg-6 pt-2">'+
                         '<img src="'+respuesta[i].url_imagen_empleo+'" class="img-fluid img-thumbnail">'+
                     '</div>'+
-                    '<div class="col-lg-8 pl-2">'+
+                    '<div class="col-lg-6 pl-2">'+
                         '<p class="pt-4">'+
                             '<strong>'+respuesta[i].nombre_empleo+'</strong>'+
                         '</p>'+
@@ -320,7 +320,7 @@ function guardarEmpleo(id){
     dataType:"json",
     success:function(respuesta){
     alert("Se ha guardado el empleo exitosamente");
-    console.log(respuesta);
+    location.reload();
     },
     error: function(e){
     console.log(e);

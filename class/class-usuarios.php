@@ -186,6 +186,21 @@
 			}
 			return json_encode($listaUsuariosGuardados);
 		}
+
+		public function obtenerListaChat($conexion,$id){
+			$sql = sprintf("SELECT a.codigo_usuario_amigo, a.codigo_usuario, b.nombre_usuario, b.apellido_usuario, b.titular, b.educacion, b.url_imagen_perfil 
+			FROM tbl_amigos a
+			INNER JOIN tbl_usuarios b
+			ON (a.codigo_usuario_amigo = b.codigo_usuario)
+			WHERE a.codigo_usuario = %s",
+			$conexion->antiInyeccion($id));
+			$resultado = $conexion->ejecutarConsulta($sql);
+			$listaUsuariosGuardados = array();
+			while($fila = $conexion->obtenerFila($resultado)){
+				$listaUsuariosGuardados[] = $fila;
+			}
+			return json_encode($listaUsuariosGuardados);
+		}
 		
 		
 	}

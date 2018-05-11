@@ -101,7 +101,7 @@
                             </div>
                         </div>
                         
-                        <div class="row card" id="div-usuarios-guardados">
+                        <div class="row" id="div-usuarios-guardados">
                         
                         </div>
                     </div>

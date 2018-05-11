@@ -94,13 +94,38 @@ $(document).ready(function(){
         success:function(respuesta){
             for(var i=0;i<respuesta.length;i++){
                 $("#div-usuarios-guardados").append(
-                    
                     '<div class="col-lg-4 col-6 card-body border text-center">'+
                             '<img src="'+respuesta[i].url_imagen_perfil+'" class="img-fluid rounded-circle pt-2 pb-3">'+
                             '<h6><strong>'+respuesta[i].nombre_usuario+' '+respuesta[i].apellido_usuario+'</strong></h6>'+
                             '<p>'+respuesta[i].titular+'<br>'+
                             '<i class="fas fa-university fa-lg"></i> '+respuesta[i].educacion+'</p>'+
                     '</div>');
+            }
+        },
+        error:function(e){
+            console.log(e);
+        }
+    });
+
+    $.ajax({
+        url: "ajax/api.php?accion=obtener-lista-chat",
+        method:"get",
+        data:parametros,
+        dataType:"json",
+        success:function(respuesta){
+            for(var i=0;i<respuesta.length;i++){
+                $("#div-chat").append(
+                    '<button class="col-lg-12 col-6 card-body border text-center mt-2" onclick=cambiarChat('+respuesta[i].codigo_usuario_amigo+')>'+
+                            '<div class="row">'+
+                            '<div class="col-lg-4">'+
+                            '<img src="'+respuesta[i].url_imagen_perfil+'" class="img-fluid rounded-circle">'+
+                            '</div>'+
+                            '<div class="col-lg-6 mt-2">'+
+                            '<h6 clas=""><strong>'+respuesta[i].nombre_usuario+' '+respuesta[i].apellido_usuario+'</strong></h6>'+
+                            '<input class="d-none" type="text" id="txt-codigo-usuario-amigo-'+respuesta[i].codigo_usuario_amigo+'" value="'+respuesta[i].codigo_usuario_amigo+'">'+
+                            '</div>'+
+                            '</div>'+
+                    '</button>');
             }
         },
         error:function(e){
@@ -134,7 +159,7 @@ $(document).ready(function(){
         }
     });*/
 
-    var parametrosCom = "codigo_usuario=" + $("#txt-codigo-usuario").val() + "codigo_publicacion=" + $("#txt-codigo-publicacion").val(24);
+    var parametrosCom = "codigo_usuario=" + $("#txt-codigo-usuario").val() + "codigo_publicacion=" + $("#txt-codigo-publicacion").val();
 
         $.ajax({
             url:"ajax/api.php?accion=obtener-lista-comentarios",
@@ -179,6 +204,7 @@ function guardarUsuario(id){
     dataType:"json",
     success:function(respuesta){
     alert("Se ha guardado el empleo exitosamente");
+    location.reload();
     console.log(respuesta);
     },
     error: function(e){
@@ -216,6 +242,14 @@ function enviarComentario(id){
         }
     });
     }
+}
+
+function cambiarChat(id){
+    var x = document.getElementById('txt-codigo-usuario-amigo-'+id).value;
+
+    var parametros = "codigo_usuario_amigo=" + x + "&" + "codigo_usuario=" + $("#txt-codigo-usuario").val();
+
+    alert(parametros);
 }
 
 

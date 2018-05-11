@@ -81,6 +81,10 @@
         echo $m->insertarMensaje($conexion);
         break;
 
+        case "obtener-lista-chat":
+        $u = new Usuario(null,null,null,null,null,null,null,null,null,null);
+        echo $u->obtenerListaChat($conexion,$_GET["codigo_usuario"]);
+        break;
     }
 
 
