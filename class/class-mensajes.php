@@ -64,6 +64,22 @@
 			}
 		}
 		
-		
+		public function visualizarMensajes($conexion,$id){
+			$sql = sprintf("SELECT a.codigo_mensaje, a.codigo_usuario, a.contenido_mensaje, a.fecha_mensaje, b.url_imagen_perfil, b.nombre_usuario, b.codigo_usuario 
+			FROM tbl_mensajes a
+			INNER JOIN tbl_usuarios b
+			ON (a.codigo_usuario = b.codigo_usuario)
+			WHERE a.codigo_usuario = %s
+			OR a.codigo_usuario in(select codigo_usuario_amigo from tbl_amigos
+			where codigo_usuario = %s) ORDER BY a.fecha_publicacion DESC",
+			$conexion->antiInyeccion($this->codigo_usuario),
+			$conexion->antiInyeccion($id));
+			$resultado = $conexion->ejecutarConsulta($sql);
+			$listaMensajes = array();
+			while($fila = $conexion->obtenerFila($resultado)){
+				$listaMensajes[] = $fila;
+			}
+			return json_encode($listaMensajes);
+		}
 	}
 ?>

@@ -1,0 +1,26 @@
+<header class="card-header mb-5" style="background-color:#2B3E4A;" >
+                            <div class="row">
+                                <div class="col-lg-1 col-1 mr-3 d-lg-none">
+                                    <button class="btn btn-link" style="color:white;" id="msj-regresar"><i class="fas fa-arrow-circle-left fa-lg"></i></button>
+                                </div>
+                                <div class="col-lg-6 col-6 ">
+                                    <h5 style="color:white;">Freezer</h5>
+                                </div>
+                            </div>
+                        </header>
+                        <div id="scrollbar" style="">
+                        <ul id="ul-chat" class="mt-4 ml-5">
+                        <li style="width:100%">
+                             <div class="msj macro">
+                             
+                                <div class="text text-l">
+                                        <p>Freezer ya deja de matar gente inocente!!!!</p>
+                                        <p><small>date</small></p>
+                                </div>
+                                <div class="avatar"> <img class="rounded-circle" style="width:100%;" src="img/goku.png" /> </div>
+                            </div>
+                        </li>
+
+
+                     </ul>
+                    </div>

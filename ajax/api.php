@@ -55,6 +55,11 @@
         echo $u->guardarUsuario($conexion,$_POST["codigo_usuario"]);
         break;
 
+        case "guardar-usuario-contrario":
+        $u = new Usuario($_POST["codigo_usuario"],null,null,null,null,null,null,null,null,null);
+        echo $u->guardarUsuario($conexion,$_POST["codigo_usuario_guardar"]);
+        break;
+
         case "obtener-usuarios-guardados":
         $u = new Usuario(null,null,null,null,null,null,null,null,null,null);
         echo $u->obtenerListaUsuariosGuardados($conexion,$_GET["codigo_usuario"]);
@@ -84,6 +89,11 @@
         case "obtener-lista-chat":
         $u = new Usuario(null,null,null,null,null,null,null,null,null,null);
         echo $u->obtenerListaChat($conexion,$_GET["codigo_usuario"]);
+        break;
+
+        case "obtener-lista-mensajes":
+        $m = new Mensaje(null,$_GET["codigo_usuario"],null,null);
+        echo $m->visualizarMensajes($conexion, $_GET["codigo_usuario_amigo"]);
         break;
     }
 

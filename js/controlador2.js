@@ -203,7 +203,7 @@ function guardarUsuario(id){
     data: parametros,
     dataType:"json",
     success:function(respuesta){
-    alert("Se ha guardado el empleo exitosamente");
+    alert("Se ha conectado con el usuario exitosamente");
     location.reload();
     console.log(respuesta);
     },
@@ -211,6 +211,19 @@ function guardarUsuario(id){
     console.log(e);
     }
     });
+
+    $.ajax({
+        url: "ajax/api.php?accion=guardar-usuario-contrario",
+        method: "POST",
+        data: parametros,
+        dataType:"json",
+        success:function(respuesta){
+        console.log(respuesta);
+        },
+        error: function(e){
+        console.log(e);
+        }
+        });
 }
 
 function enviarComentario(id){
@@ -250,6 +263,46 @@ function cambiarChat(id){
     var parametros = "codigo_usuario_amigo=" + x + "&" + "codigo_usuario=" + $("#txt-codigo-usuario").val();
 
     alert(parametros);
+
+    $.ajax({
+        url: "ajax/api.php?accion=obtener-lista-mensajes",
+        method: "GET",
+        data: parametros,
+        dataType: "json",
+        success:function(respuesta){
+            for(var i=0;i<respuesta.length;i++){
+                $("#div-chat").html(
+                '<header class="card-header mb-5" style="background-color:#2B3E4A;" >'+
+                '<div class="row">'+
+                    '<div class="col-lg-1 col-1 mr-3 d-lg-none">'+
+                        '<button class="btn btn-link" style="color:white;" id="msj-regresar"><i class="fas fa-arrow-circle-left fa-lg"></i></button>'+
+                    '</div>'+
+                    '<div class="col-lg-6 col-6 ">'+
+                        '<h5 style="color:white;">'+respuesta[i].nombre_usuario+' '+respuesta[i].apellido_usuario+'</h5>'+
+                    '</div>'+
+                '</div>'+
+            '</header>'+
+            '<div id="scrollbar" style="">'+
+            '<ul id="ul-chat" class="mt-4 ml-5">'+
+            '<li style="width:100%">'+
+                 '<div class="msj macro">'+
+                    '<div class="text text-l">'+
+                            '<p>'+respuesta[i].contenido_mensaje+'</p>'+
+                            '<p><small>'+respuesta[i].fecha_mensaje+'</small></p>'+
+                    '</div>'+
+                    '<div class="avatar"> <img class="rounded-circle" style="width:100%;" src="'+respuesta[i].url_imagen_perfil+'" /></div>'+
+                '</div>'+
+            '</li>'+
+         '</ul>'+
+        '</div>');
+            }
+            console.log(respuesta);
+
+        },
+        error:function(e){
+            console.log(e);
+        }
+    });
 }
 
 

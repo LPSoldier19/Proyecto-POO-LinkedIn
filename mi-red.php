@@ -83,16 +83,8 @@
 
     <div class="container mt-5" >
         <div class="row">
-            <div class="col-lg-3 offset-lg-0 col-8 offset-2 mb-5 d-none d-lg-block">
-                <div class="card pt-5" id="card-muro">
-                   <div class="card-body text-center pt-4 pb-5">
-                      <h3><a href="#" id="numero-mi-red">Numero</a></h3>
-                      <h6>Contactos</h6>
-                   </div>
-                </div>
-            </div>
 
-            <div class="col-lg-6 offset-lg-0 col-12 ">
+            <div class="col-lg-9 offset-lg-0 col-12 ">
                 <div class="card mb-3" id="card-muro">
                     <div class="card-header">
                         <div class="row">
