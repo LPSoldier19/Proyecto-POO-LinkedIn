@@ -89,6 +89,28 @@ $("#txt-correo").change(function () {
     }
 });
 
+var button1 = $("#btn-registro").attr("disabled",true);
+$("#txt-email").change(function () {
+    var valid = true;
+    $.each($("#txt-email"), function (index, value) {
+        if(!$(value).val()){
+           valid = false;
+        }
+    });
+    if(valid){
+        if($("#txt-email").val().indexOf('@', 0) == -1 || $("#txt-email").val().indexOf('.', 0) == -1) {
+            return false;
+        }
+
+        else{
+        $(button1).attr("disabled", false);
+        }
+    } 
+    else{
+        $(button1).attr("disabled", true);
+    }
+});
+
     $.ajax({
         url:"ajax/api.php?accion=obtener-lista-empleos",
         method: "get",
@@ -191,10 +213,6 @@ $("#btn-enviar").click(function(){
     }
 });
 
-$("#btn-guardar-empleo").click(function(){
-    alert("Se ha guardado el empleo");
-});
-
 $("#btn-registro").click(function(){
     
     var parametros = "nombre=" + $("#txt-nombre").val() + "&" +
@@ -205,8 +223,9 @@ $("#btn-registro").click(function(){
 
     console.log(parametros);
 
-    if($("#txt-nombre").val()=="" || $("#txt-apellido").val()=="" || $("#txt-email").val()=="" || $("#txt-contrasena").val()==""){
+    if($("#txt-nombre").val()=="" || $("#txt-apellido").val()=="" || $("#txt-email").val()=="" || $("#txt-contrasena").val()=="" || $("input:radio[name=rbt-genero]:checked").val()==""){
         alert("Hacen falta campos por llenar");
+        location.reload();
     }
     else{
         $.ajax({
@@ -221,7 +240,7 @@ $("#btn-registro").click(function(){
                 $("#txt-email").val("");
                 $("input:radio[name=rbt-genero]").val("");
                 $("#txt-contrasena").val("");
-                window.location.href = "log-in.html";
+
             },
             error:function(e){
                 console.log(e);

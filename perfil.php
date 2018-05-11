@@ -135,7 +135,7 @@
                                             </div>
                         
                                             <div class="col-lg-12">
-                                                <label class="float-left mt-2">Logro: <span style="color: #0084bf;">*</span></label>
+                                                <label class="float-left mt-2">Ultimo Logro: <span style="color: #0084bf;">*</span></label>
                                                 <input type="text" class="form-control mt-2" placeholder="Añade el ultimo logro que has realizado a nivel educativo o laboral" id="txt-logro-modal" value="<?php echo $registro["logros"]?>">
                                             </div>                                                     
                                         </div>
@@ -171,7 +171,7 @@
 
                 <div class="card mb-5" id="card-muro">
                     <div class="card-header">
-                        <h4>Logros</h4>
+                        <h4>Ultimo Logro</h4>
                    </div>
                    <div class="card-body">
                         <?php echo $registro["logros"]?>
