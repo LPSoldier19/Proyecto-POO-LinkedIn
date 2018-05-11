@@ -94,6 +94,7 @@ $(document).ready(function(){
         success:function(respuesta){
             for(var i=0;i<respuesta.length;i++){
                 $("#div-usuarios-guardados").append(
+                    
                     '<div class="col-lg-4 col-6 card-body border text-center">'+
                             '<img src="'+respuesta[i].url_imagen_perfil+'" class="img-fluid rounded-circle pt-2 pb-3">'+
                             '<h6><strong>'+respuesta[i].nombre_usuario+' '+respuesta[i].apellido_usuario+'</strong></h6>'+
@@ -133,7 +134,7 @@ $(document).ready(function(){
         }
     });*/
 
-    var parametrosCom = "codigo_usuario=" + $("#txt-codigo-usuario").val() + "codigo_publicacion=" + $("#txt-codigo-publicacion").val();
+    var parametrosCom = "codigo_usuario=" + $("#txt-codigo-usuario").val() + "codigo_publicacion=" + $("#txt-codigo-publicacion").val(24);
 
         $.ajax({
             url:"ajax/api.php?accion=obtener-lista-comentarios",

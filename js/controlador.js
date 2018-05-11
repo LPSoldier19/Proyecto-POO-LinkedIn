@@ -160,6 +160,10 @@ $("#txt-correo").change(function () {
             console.log(e);
         }
     });
+
+    $.ajax({
+
+    });
 });
 
 $("#btn-enviar").click(function(){
