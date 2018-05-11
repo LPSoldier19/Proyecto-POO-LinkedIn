@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 10-05-2018 a las 22:40:23
+-- Tiempo de generación: 11-05-2018 a las 06:29:39
 -- Versión del servidor: 5.7.19
 -- Versión de PHP: 5.6.31
 
@@ -42,10 +42,10 @@ CREATE TABLE IF NOT EXISTS `tbl_amigos` (
 --
 
 INSERT INTO `tbl_amigos` (`codigo_usuario_amigo`, `codigo_usuario`) VALUES
-(2, 1),
-(4, 1),
-(1, 4),
-(4, 14);
+(14, 1),
+(15, 1),
+(1, 14),
+(1, 15);
 
 -- --------------------------------------------------------
 
@@ -150,7 +150,8 @@ INSERT INTO `tbl_empleos_guardados` (`codigo_empleo_guardado`, `codigo_usuario`)
 (1, 1),
 (3, 1),
 (3, 4),
-(3, 14);
+(3, 14),
+(4, 14);
 
 -- --------------------------------------------------------
 
@@ -187,7 +188,14 @@ CREATE TABLE IF NOT EXISTS `tbl_mensajes` (
   `fecha_mensaje` datetime DEFAULT NULL,
   PRIMARY KEY (`codigo_mensaje`),
   KEY `fk_tbl_mensajes_tbl_usuarios1_idx` (`codigo_usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tbl_mensajes`
+--
+
+INSERT INTO `tbl_mensajes` (`codigo_mensaje`, `codigo_usuario`, `contenido_mensaje`, `fecha_mensaje`) VALUES
+(1, 14, 'Hola', '2018-05-10 17:42:26');
 
 -- --------------------------------------------------------
 
@@ -254,7 +262,7 @@ CREATE TABLE IF NOT EXISTS `tbl_usuarios` (
   `logros` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`codigo_usuario`),
   KEY `fk_tbl_usuarios_tbl_generos1_idx` (`codigo_genero`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbl_usuarios`
@@ -264,31 +272,12 @@ INSERT INTO `tbl_usuarios` (`codigo_usuario`, `codigo_genero`, `nombre_usuario`,
 (1, 1, 'Rafael', 'Bautista', 'rafael.bautista1@hotmail.es', 'bcdcb29ed2aab16d48c11485264df665e906bdd9', 'img/profile-pics/usuario4.jpg', 'Estudiante en Universidad Nacional AutÃ³noma de Honduras (UNAH)', 'Universidad Nacional AutÃ³noma de Honduras (UNAH)', 'Certificado de Photoshop en NextU'),
 (2, 1, 'Alejandro', 'Bautista', 'alejandro@gmail.com', '2d09563fb5d7e92c6642519acacbde85e6c76b3c', 'img/profile-pics/usuario1.jpg', 'Estudiante en Interamerican School', 'Interamerican School', 'Certificado curso de Ingles #1 - IHCI'),
 (4, 1, 'Walter', 'Bautista', 'walter@gmail.com', 'bcdcb29ed2aab16d48c11485264df665e906bdd9', 'img/profile-pics/usuario3.jpg', 'Estudiante en Centro Universitario Tecnologico (CEUTEC)', 'Centro Universitario Tecnologico (CEUTEC)', 'Certificado de excel avanzado en INFOP'),
-(14, 2, 'Sandra', 'Santos', 'sandra@gmail.com', 'bcdcb29ed2aab16d48c11485264df665e906bdd9', 'img/profile-pics/usuario7.jpg', 'Gerente General en Banco Ficohsa', 'Instituto HondureÃ±o de Cultura Interamericana (IHCI)', 'Diploma de secretariado bilingÃ¼e - IHCI');
+(14, 2, 'Sandra', 'Santos', 'sandra@gmail.com', 'bcdcb29ed2aab16d48c11485264df665e906bdd9', 'img/profile-pics/usuario7.jpg', 'Gerente General en Banco Ficohsa', 'Instituto HondureÃ±o de Cultura Interamericana (IHCI)', 'Diploma de secretariado bilingÃ¼e - IHCI'),
+(15, 2, 'Angie', 'MembreÃ±o', 'angie@gmail.com', 'bcdcb29ed2aab16d48c11485264df665e906bdd9', 'img/profile-pics/usuario8.jpg', 'Estudiante en Universidad Nacional Autonoma de Honduras (UNAH)', 'Universidad Nacional Autonoma de Honduras (UNAH)', 'Certificado Ingles Basico-2 - INFOP');
 
 --
 -- Restricciones para tablas volcadas
 --
-
---
--- Filtros para la tabla `tbl_amigos`
---
-ALTER TABLE `tbl_amigos`
-  ADD CONSTRAINT `fk_tbl_usuarios_has_tbl_usuarios_tbl_usuarios1` FOREIGN KEY (`codigo_usuario_amigo`) REFERENCES `tbl_usuarios` (`codigo_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tbl_usuarios_has_tbl_usuarios_tbl_usuarios2` FOREIGN KEY (`codigo_usuario`) REFERENCES `tbl_usuarios` (`codigo_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `tbl_chats`
---
-ALTER TABLE `tbl_chats`
-  ADD CONSTRAINT `fk_tbl_chats_tbl_amigos1` FOREIGN KEY (`codigo_usuario_amigo`,`codigo_usuario`) REFERENCES `tbl_amigos` (`codigo_usuario_amigo`, `codigo_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `tbl_comentarios`
---
-ALTER TABLE `tbl_comentarios`
-  ADD CONSTRAINT `fk_tbl_comentarios_tbl_publicaciones1` FOREIGN KEY (`codigo_publicacion`) REFERENCES `tbl_publicaciones` (`codigo_publicacion`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tbl_comentarios_tbl_usuarios1` FOREIGN KEY (`codigo_usuario`) REFERENCES `tbl_usuarios` (`codigo_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `tbl_empleos_guardados`
